@@ -30,14 +30,8 @@ h1{
 		<marquee direction="right"><h1> Đã xóa sản phẩm !!!</h1></marquee>
 		
 <?php 
-    
-    // $loaicay=$_GET['Loaicay_cookie'];
-    $ca=$_GET['$ca']
+
     $mact=$_GET['id'];
-    include "connect.php";
-    $con->set_charset('utf8');
-    $sql = $connect->query("SELECT Loaicay FROM db_trees WHERE Mact='$mact' ");
-   
     include "connect.php";
     $con->set_charset('utf8');
     // $data="DELETE FROM db_trees WHERE Mact=$mact";
