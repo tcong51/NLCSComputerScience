@@ -39,7 +39,7 @@ foreach ($sql = $con->query("SELECT Mact,Tencay FROM db_trees WHERE Loaicay='Ăn
    
     <td > ".$value['Tencay']."</td>
     
-    <td><h3><a href =detail.php?id=".$value['Mact'].">Xem chi tiết</a>||<a href =xoasp.php?id=".$value['Mact'].">Xóa</a>||<a href=suasp.php?id=".$value['Mact']." >Sửa</a></h3></td>
+    <td><h3><a href =detail.php?id=".$value['Mact'].">Xem chi tiết</a>||<a href =xoasp.php?id=".$value['Mact'].">Xóa</a>||<a href=update_trees.php?id=".$value['Mact']." >Sửa</a></h3></td>
     </tr>"; 
     }
 echo "</table>";
