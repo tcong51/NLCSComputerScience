@@ -14,7 +14,7 @@
     //Lấy dữ liệu từ form về
     $tencay = $_POST['Tencay'];
     $dacdiem = $_POST['Dacdiem'];
-    $loaicay = $_POST['Loaicay'];
+    $loaicay=$_POST['Loaicay'];
     $cachchamsoc = $_POST['Cachchamsoc'];
     $hinhanh="./img/".$_FILES['Hinh']['name'];
     move_uploaded_file($_FILES['Hinh']['tmp_name'],$hinhanh);

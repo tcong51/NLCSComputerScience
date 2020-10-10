@@ -30,11 +30,20 @@
 				<td><input type="text" name="Dacdiem" style="width: 300px;"><br>
             </td></tr>
 			<tr>
-				<th align="left"> Loại cây </th>
-				<td><input type="text" name="Loaicay" style="width: 300px;"><br>
-            </td></tr>
+			<td> Loại cây </td>
+			<td>
+				<select name="Loaicay"> 
+					<option name="cayanqua"> Ăn quả </option>
+					<option name="caykieng"> Kiểng </option>
+					 <option name="caydayleo"> Dây leo </option>
+					<option name="caythaoduoc"> Thảo dược 	</option>
+					<option name="caythango"> Thân gỗ 	</option>
+					<option name="Khac"> Khác 	</option>
+				</select>
+			</td>	
+ 			</tr>
             <tr>
-				<th align="left"> Cách chăm sóc </th>
+ 				<th align="left"> Cách chăm sóc </th>
 				<td><input type="text" name="Cachchamsoc" style="width: 300px;"><br>
             </td></tr>
 			<tr>
