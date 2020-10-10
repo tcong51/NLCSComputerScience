@@ -1,7 +1,6 @@
 <?php
     session_start();
 ?>
-
 <?php 
 	if(isset($_SESSION['tendangnhap'])){
 			$tendangnhap = $_SESSION['tendangnhap'];
@@ -20,7 +19,6 @@
     move_uploaded_file($_FILES['Hinh']['tmp_name'],$hinhanh);
     $motacay = $_POST['Motacay'];
     //Thao tác với CSDL
-    
     include "connect.php";
     $sql = "INSERT INTO db_trees(Tencay, Dacdiem, Loaicay, Cachchamsoc, Hinh, Motacay)
     VALUES('$tencay','$dacdiem', '$loaicay', '$cachchamsoc', '$hinhanh', '$motacay')";
@@ -29,7 +27,6 @@
     $result = $con->query($sql);
    $con->close();
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>

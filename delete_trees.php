@@ -3,27 +3,7 @@
 	<head>
 	<meta charset="utf8">
 		<style>
-		body{  text-color:black;
-	background-image:url(background11.jpg);}
-h1{
-	color:yellow;}
-	p {font-size:20px;
-			text-decoration: none;
-    color: blue;
-    margin-bot: 100px;
-    border-top:5px solid black;}
-	#color{color:blue; 
-			margin:center;}
-			#color{text-decoration:none;}
-		#color:hover{color : pink;}
-	#tr {color:black;
-	}
-	#tr td s a :hover {text-color:blue;
-									}
-	#trc {color:black;
-	}
-	
-	table{ border-color:brown;}
+		
 		</style>
 	</head>
 	<body>

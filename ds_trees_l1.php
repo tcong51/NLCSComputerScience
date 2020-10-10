@@ -1,9 +1,6 @@
 <!DOCTYPE html>
  <html>
  <script>
-  
-
-  
   </script>
 <head>
 <meta charset="utf8">
@@ -13,12 +10,7 @@
 </head>
 <body>
 <?php
-
 include "connect.php";
-
-// $sql = $con->query("SELECT Loaicay FROM db_trees WHERE Loaicay='Ăn quả' ");
-// $sql = $sql->fetch_assoc();
-// $null=$sql['Loaicay'];
 echo "<form action=chitiet.php method=GET>";
 echo '<table frame="border" border=4>';
 echo "<tr id='tr'><th>Tên cây </th><th>Lựa chọn</th>";
@@ -35,10 +27,5 @@ $con->close();
  <div id="Detail"></div>
  <div id="Update"></div>
  <div id="Delete"></div>
-
-
- 
-  
-
 </body>
 </html>
