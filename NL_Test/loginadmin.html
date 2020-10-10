@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADMIN LOGIN</title>
+        <meta charset = "utf8">
+        <link rel="stylesheet" href="loginadmin.css">
+    </head>
+    <body>
+        <div id = "header-main">
+            <h1>WEBSITE CÂY TRỒNG</h1>
+            <div class="formlogin">
+              <form action="inputadmin.php" method="post">
+                <input type="text" value="USERNAME" name="tendangnhap" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'USERNAME';}" required><br>
+                <input type="password" value="PASSWORD" name="matkhau" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'PASSWORD';}" required>
+                <input type = "submit" name="submit" value="Đăng nhập">
+              </form>
+            </div>
+          </div>
+    </body>
+</html>
