@@ -20,15 +20,14 @@
     move_uploaded_file($_FILES['Hinh']['tmp_name'],$hinhanh);
     $motacay = $_POST['Motacay'];
     //Thao tác với CSDL
-    $con = new mysqli('localhost', 'root', '', 'database_trees');
-    $con -> set_charset('utf8');
-
+    
+    include "connect.php";
     $sql = "INSERT INTO db_trees(Tencay, Dacdiem, Loaicay, Cachchamsoc, Hinh, Motacay)
     VALUES('$tencay','$dacdiem', '$loaicay', '$cachchamsoc', '$hinhanh', '$motacay')";
     $con->query($sql);
     $sql = "SELECT * FROM db_trees";
     $result = $con->query($sql);
-    $con->close();
+   $con->close();
 ?>
 
 <!DOCTYPE html>
