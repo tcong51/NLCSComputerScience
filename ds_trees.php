@@ -3,7 +3,6 @@
 <head>
 <style>
 .button{
-    
     margin: auto;
     /* display: block; */
     height: 100px;
@@ -13,7 +12,6 @@
     background-color: bisque
     padding: 12px 28px;
     }
-
 </style>
 </head>
 <body>
@@ -32,18 +30,7 @@
 <div class="button">
             <button onclick="window.location.href='ds_trees_l5.php'">Cây thân gỗ</button>
 </div>
-
 </body>
 </html>
 <?php
-
-include"connect.php";
-
-
-
-
-
-
-
-
 ?>
