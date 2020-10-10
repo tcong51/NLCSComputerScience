@@ -73,12 +73,22 @@ else{
     $con->set_charset('utf8');
     $data = $con->query("SELECT Mact, Tencay, Dacdiem, Loaicay, Cachchamsoc, Hinh, Motacay FROM db_trees WHERE Mact = '$mact'");
     $data = $data->fetch_assoc();
+    //echo $mact;
     
-    echo '<form action=input_update_hinh.php method="GET">';
-    echo '<input type="hidden" name="Mact" value='.$data['Mact'].'>';
+    //form hình
+    // echo '<form action=input_update_hinh.php method="GET">';
+    // echo '<input type="hidden" name="Mact" value='.$data['Mact'].'>';
     // echo '<img src='.$data['Hinh'].' alt="hinhsanpham" width = "25%">'.'<br>';
-    echo '<input type="file" name="Hinh" style="width: 700px    ;">';
-    
+    // echo '<input type="file" name="Hinh">';
+    //form đặc điểm
+    echo '<br>';
+    echo '<form action=input_update_dacdiem.php method="GET">';
+    echo '<input type="hidden" name="Mact" value='.$data['Mact'].'>';
+    echo '<td>'.$data['Dacdiem'].'</td>';
+    echo '<h2>'.'Điền thông tin cần sửa'.'</h2>';
+    echo '<textarea rows="5" cols="20" placeholder="Đây là vùng nhập text" name="Dacdiem" style="width: 700px;height: 200px;"></textarea></td>';
+    //
+
     echo '<br>';
     echo '<input type="submit" value="Xác nhận sửa thông tin">';
     echo '</form>';

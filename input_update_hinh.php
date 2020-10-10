@@ -14,8 +14,9 @@
     $mact = $_GET['Mact'];
     // echo $mact;
     //Lấy dữ liệu từ form về
-    $hinhanh="./img/".$_FILES['Hinh']['name'];
-    move_uploaded_file($_FILES['Hinh']['tmp_name'],$hinhanh);
+    // $hinhanh="./img/".$_FILES['Hinh']['name'];
+    // move_uploaded_file($_FILES['Hinh']['tmp_name'],$hinhanh);
+
     //Thao tác với CSDL
     
     include "connect.php";

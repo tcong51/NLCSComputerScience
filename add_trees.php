@@ -39,7 +39,7 @@
 				<select name="Loaicay"> 
 					<option name="cayanqua"> Ăn quả </option>
 					<option name="caykieng"> Kiểng </option>
-					 <option name="caydayleo"> Dây leo </option>
+					<option name="caydayleo"> Dây leo </option>
 					<option name="caythaoduoc"> Thảo dược 	</option>
 					<option name="caythango"> Thân gỗ 	</option>
 					<option name="Khac"> Khác 	</option>
