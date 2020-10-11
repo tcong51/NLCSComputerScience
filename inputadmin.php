@@ -14,8 +14,7 @@
   $matkhau = $_POST['matkhau'];
   //Thao tác với CSDL
   //B1: Tạo kết nối
-  $con = new mysqli('localhost', 'root', '','database_trees');
-  $con -> set_charset(utf8);
+  include "connect.php";
   //B2: Viết câu sql
   $sql = "SELECT * FROM db_admin WHERE (tendangnhap='".$tendangnhap."') AND (matkhau='".$matkhau."')";
   //B3: Thực hiện truy vấn
@@ -24,7 +23,7 @@
   if($result-> num_rows > 0){
     //Đăng nhập thành công
     $_SESSION['tendangnhap'] = $_POST['tendangnhap'];
-    header("location: trangadmin.php");
+    header("location: pageadmin.php");
   }
   else{
     echo "Đăng nhập thất bại";

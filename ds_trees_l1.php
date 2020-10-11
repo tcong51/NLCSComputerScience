@@ -1,7 +1,7 @@
 <!DOCTYPE html>
  <html>
  <script>
- function notices(value){
+ 	function notices(value){
 	  var result = confirm("Do you want to continue?")
 		if(result)  {
 			var xmlhttp = new XMLHttpRequest();
@@ -10,13 +10,14 @@
 		 	document.getElementById("notices").innerHTML = this.responseText;
 	   			}
 	 		};
-	 	xmlhttp.open("GET",`detail_trees.php?id=${value}`,true);
+	 	xmlhttp.open("GET",`delete_trees.php?id=${value}`,true);
 	 	xmlhttp.send();
+		alert("Deleted");
 		} else {
-				alert("Bạn chưa xóa!");
+				alert("Not yet delete!");
 			   }
-	 
-   }
+	 location.reload();
+   	}
   </script>
 <head>
 <meta charset="utf8">
@@ -26,14 +27,14 @@
 </head>
 <body>
 <?php
-include "connect.php";
-echo "<form action=chitiet.php method=GET>";
+include "connect.php";  
+echo "<form action= method=GET>";
 echo '<table frame="border" border=4>';
 echo "<tr id='tr'><th>Tên cây </th><th>Lựa chọn</th>";
 foreach ($sql = $con->query("SELECT Mact,Tencay FROM db_trees WHERE Loaicay='Ăn quả' ") as $value){
     echo "<tr id='tr'>
     <td > ".$value['Tencay']."</td>
-    <td><h3><a href='#' onclick='notices(".$value['Mact'].")' >Xem chi tiết</a>||<a href =delete_trees.php?id=".$value['Mact'].">Xóa</a>||<a href=update_trees.php?id=".$value['Mact']." >Sửa</a></h3></td>
+    <td><h3><a href =detail_trees.php?id=".$value['Mact'].">Xem chi tiết</a>||<a href='#' onclick='notices(".$value['Mact'].")' >Xóa</a>||<a href=update_trees.php?id=".$value['Mact']." >Sửa</a></h3></td>
 		 </tr>"; 
     }
   echo "</table>";

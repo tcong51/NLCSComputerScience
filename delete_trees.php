@@ -6,25 +6,6 @@
 		</style>
 	</head>
 	<script>
-	//đang dở
-	// function notices(value){
-	//   var result = confirm("Do you want to continue?")
-	// 	if(result)  {
-	// 		var xmlhttp = new XMLHttpRequest();
-	//  		xmlhttp.onreadystatechange = function() {
-	//    		if (this.readyState == 4 && this.status == 200) {
-	// 	 	document.getElementById("notice").innerHTML = this.responseText;
-	//    			}
-	//  		};
-	//  	xmlhttp.open("GET",`detail_trees.php?id=${value}`,true);
-	//  	xmlhttp.send();
-		
-	// 	} else {
-	// 			alert("Bạn chưa xóa!");
-	// 			location.reload();
-	// 		   }
-			   
-   	// }
 	</script>
 	<body>
 		<marquee direction="right"><h1> Đã xóa sản phẩm !!!</h1></marquee>
@@ -44,8 +25,8 @@
 	 foreach ($sql = $con->query("SELECT Mact,Tencay FROM db_trees WHERE Loaicay='$loaicay_null' ") as $value){
 		 echo "<tr id='tr'>
 		 <td > ".$value['Tencay']."</td>
-		 <td><h3><a href='#' onclick='notices(".$value['Mact'].")' >Xem chi tiết</a>||<a href =delete_trees.php?id=".$value['Mact'].">Xóa</a>||<a href=update_trees.php?id=".$value['Mact']." >Sửa</a></h3></td>
-		 </tr>"; 
+		 <td><h3><a href =detail_trees.php?id=".$value['Mact'].">Xem chi tiết</a>||<a href='#' onclick='notices(".$value['Mact'].")' >Xóa</a>||<a href=update_trees.php?id=".$value['Mact']." >Sửa</a></h3></td>
+		</tr>"; 
 		 }
 	   echo "</table>";
 	   echo "</form>";
