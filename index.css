@@ -1,0 +1,87 @@
+*{
+    margin: auto;
+    padding: 0;
+}
+
+#wrapper{
+    width: 1280px;
+    border: 1px solid blue;
+}
+
+#header{
+    height: 200px;
+    width: 1280px;
+    background-image: url("/hinhanh/banner.jpg");
+    border: 1px solid red;
+}
+
+#menu{
+	margin: 0 auto;
+	padding: 0;
+	position: relative;
+    margin: auto;
+    border: 1px solid green;
+    display: inline-block;
+    float: right;
+}
+#menu ul{
+	list-style-type: none;
+	text-align: center;
+	margin-left: 0 auto;
+    padding: 0px;
+    padding: 0px;
+    margin: auto;
+}
+
+#menu ul li{
+	display: inline-table;
+	position: relative;
+	width: 177px;
+	list-style-type: none;
+	background: #333333;
+	padding: 0;
+}
+
+#menu ul li a{
+	text-decoration: none;
+    color: yellow;
+    display: block;
+    width: 251.9px;
+}
+
+#menu ul li ul{
+    display:none;
+    position: absolute;
+}
+
+#menu ul li:hover > ul{
+    display:block;
+}
+
+#menu ul li a:hover{
+    background-color:#d3d3d3;
+    color:black;
+}
+
+.content{
+    width: 1280px;
+    margin: 0 auto;
+    padding-top: 1em;
+}
+
+#left{
+    width:900px ;
+    height: 500px;
+    float: left;
+    background-color: orangered;
+}
+
+#right{
+    width: 380px ;
+    height: 500px;
+    background-color: blue;
+    float: right;
+}
+.clear{
+    clear: both;
+}
