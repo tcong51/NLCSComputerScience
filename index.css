@@ -27,7 +27,7 @@
 #header{
     height: 200px;
     width: 1280px;
-    background-image: url("/hinhanh/banner.jpg");
+    background-image: url("./hinhanh/banner.jpg");
     border: 1px solid red;
 }
 
