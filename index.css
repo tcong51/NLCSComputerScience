@@ -3,6 +3,22 @@
     padding: 0;
 }
 
+#footer {
+    background: rgb(146, 25, 25);color:white;
+    text-align: center;							
+}
+#login a{text-decoration: none;}
+#login { 
+    
+    position: relative;
+    list-style:none;
+    background-color: #3F8554;
+    text-align:center;
+    
+}   
+#login:hover{
+    background-color: rgb(29, 155, 128);
+}
 #wrapper{
     width: 1280px;
     border: 1px solid blue;
