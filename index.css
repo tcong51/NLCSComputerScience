@@ -38,7 +38,7 @@
     margin: auto;
     border: 1px solid green;
     display: inline-block;
-    float: right;
+    /* float: right; */
 }
 #menu ul{
 	list-style-type: none;
@@ -89,7 +89,7 @@
     width:900px ;
     /* height: 500px; */
     float: left;
-    background-color: orangered;
+    background-color: lightgray;
 }
 
 #right{
