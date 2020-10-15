@@ -13,7 +13,7 @@ else{
     $Cachchamsoc = $_GET['Cachchamsoc'];
     // $Loaicay = $_GET['Loaicay'];
     // $Cachchamsoc = $_GET['Cachchamsoc'];
-    // $Motacay = $_GET['Motacay'];
+    // $Motacay = $_GET[s'Motacay'];
     $con = new mysqli('localhost', 'root', '', 'database_trees');
     //require 'connect.php';
     $con->set_charset('utf8');
