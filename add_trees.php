@@ -6,7 +6,7 @@
 <head>
     <title>Thêm cây</title>
     <meta charset="utf8">
-    <link rel="stylesheet" href="add_trees.css">
+    <link href="css/add_trees.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <?php 
@@ -25,18 +25,21 @@
 		<table width="400" cellspacing="0" cellpadding="1" border="0" align="center">
 			
 			<tr>
-				<th style="width: 200px;" align="left"> Tên cây </th>
-				<td><input type = "text" name="Tencay" style="width: 700px;"><br>
+				<th style="width: 200px;" align="left"><td> Tên cây</td> </th>
+				<td></td>
+				<td><input type = "text" name="Tencay" style="width: 700px;" class="input"><br>
 			</td></tr>
 			<tr>
-				<th align="left"> Đặc điểm </th>
+				<th align="left"> <td>Đặc điểm </td></th>
+				<td></td>
 				<!-- <td><input type="text" name="Dacdiem" style="width: 300px;"><br> -->
-				<td><textarea rows="5" cols="20" placeholder="Đây là vùng nhập text" name="Dacdiem" style="width: 700px;height: 200px;"></textarea><br>
+				<td><textarea rows="5" cols="20" placeholder="Đây là vùng nhập text" class="input" name="Dacdiem" style="width: 700px;height: 200px;"></textarea><br>
             </td></tr>
 			<tr>
-			<td> Loại cây </td>
+			<th><td> Loại cây </td></th>
+			<td></td>
 			<td>
-				<select name="Loaicay"> 
+				<select name="Loaicay" class="input"> 
 					<option name="cayanqua"> Ăn quả </option>
 					<option name="caykieng"> Kiểng </option>
 					<option name="caydayleo"> Dây leo </option>
@@ -47,23 +50,31 @@
 			</td>	
  			</tr>
             <tr>
- 				<th align="left"> Cách chăm sóc </th>
+				 <th align="left"><td> Cách chăm sóc </td> </th>
+				 <td></td>
 				<!-- <td><input type="text" name="Cachchamsoc" style="width: 300px;"><br> -->
-				<td><textarea rows="5" cols="20" placeholder="Đây là vùng nhập text" name="Cachchamsoc" style="width: 700px;height: 200px;"></textarea><br>
+				<td><textarea rows="5" cols="20" placeholder="Đây là vùng nhập text" class="input" name="Cachchamsoc" style="width: 700px;height: 200px;"></textarea><br>
             </td></tr>
 			<tr>
-				<th align="left"> Hình ảnh </th>
+				<th align="left"><td> Hình ảnh </td></th>
+				<td></td>
 				<td><input type="file" name="Hinh" style="width: 700px;"><br>
             </td></tr>
             <tr>
-				<th style="width: 200px;" align="left"> Mô tả cây </th>
-				<td><textarea rows="5" cols="20" placeholder="Đây là vùng nhập text" name="Motacay" style="width: 700px;height: 200px;"></textarea><br>
-			</td></tr>
-			<tr>
+				<th style="width: 200px;" align="left"><td> Mô tả cây</td> </th>
 				<td></td>
+				<td><textarea rows="5" cols="20" placeholder="Đây là vùng nhập text" class="input" name="Motacay" style="width: 700px;height: 200px;"></textarea><br>
+			</td>
+			</tr>
+
+			<tr >
 				<td>
-					<input type="submit" value="Thêm" style="width: 150px;">
-					<input type="reset" value="Reset" style="width: 150px;">
+				</td>
+				
+				<td>
+				<input  type="submit" class="input" value="Thêm" style="width: 150px;">
+				</td>
+				<td><input  type="reset" class="input" value="Reset" style="width: 150px;">
 				</td>
 			</tr>
 		</table>
