@@ -33,13 +33,15 @@
             <div id = "left">
                 <a>Nội dung bên trái</a>
                 <?php
-                $result =mysqli_query($connect,"SELECT * FROM db_trees ");
+                $con = new mysqli('localhost', 'root', '', 'database_trees');
+                $con -> set_charset('utf8');
+                $result =mysqli_query($con,"SELECT * FROM db_trees");
                 if ($result) {
                     while($row = mysqli_fetch_array($result)) { ?>
              
                         <div class="noidungbentrai" >
-                            <img style="width: 100%; height: 250px" src=<?php echo $row['Hinh']?>>
-                            <br><?php echo $row['Tencay']?><br> Đặc điểm :<?php echo $row['Dacdiem']; ?>
+                            <img style="width: 50%; height: 50%" src=<?php echo $row['Hinh']?>>
+                            <br><?php echo $row['Tencay']?><br> Đặc điểm:<?php echo $row['Dacdiem']; ?>
                         </div>
                     <?php
                     }
