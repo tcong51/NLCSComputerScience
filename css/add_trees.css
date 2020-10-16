@@ -7,18 +7,16 @@ body{
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
-    padding:0;
+    padding:100px;
     margin:0; 
     font-family: 'Roboto Condensed', sans-serif;
      font-size: 100%;
+    color:white;
     }  
 .input{
-    border-radius: 15px 15px 15px;
+    border-radius: 15px 15px 15px; 
+   
 }
-.sr{
+.input1:hover{background-color:greenyellow;}
 
-    padding:50px 20px 300px;
-    width: 
-    100%;
-    margin: 0 auto;
-}
+

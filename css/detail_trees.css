@@ -1,0 +1,23 @@
+p {font-size:20px;
+    text-decoration: none;
+color: white;
+text-align: center;
+margin-bot: 100px;
+border-top:5px solid white;}
+#color {color:black;
+}
+table, th, td{
+margin :auto 0;
+border:none;
+}
+table{
+border-collapse:none;
+}
+#td {
+    line-height: 2.5;
+width:1000px;
+padding:5px ;
+}
+#h1{
+    text-align:center;
+}

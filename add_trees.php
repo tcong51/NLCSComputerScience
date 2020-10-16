@@ -18,25 +18,25 @@
     }
 	?>
     <div class="btn">
-        <button onclick="window.location.href='ds_trees.php'">Danh sách cây</button>
+        <button class="input1" onclick="window.location.href='ds_trees.php'" style="width:300px;height:50px">Danh sách cây</button>
 	</div>
     <form action="input_addtrees.php" method="POST" enctype="multipart/form-data">
         <h1 align="center"  >Thêm cây </h1>
-		<table width="400" cellspacing="0" cellpadding="1" border="0" align="center">
+		<table width="1000" cellspacing="0" cellpadding="1" border="0" align="center">
 			
 			<tr>
-				<th style="width: 200px;" align="left"><td> Tên cây</td> </th>
+				<th > </th><td style="width: 500px;"> Tên cây</td>
 				<td></td>
 				<td><input type = "text" name="Tencay" style="width: 700px;" class="input"><br>
 			</td></tr>
 			<tr>
-				<th align="left"> <td>Đặc điểm </td></th>
+				<th style="width: 500px;height:50px" align="left"> </th><td>Đặc điểm </td>
 				<td></td>
 				<!-- <td><input type="text" name="Dacdiem" style="width: 300px;"><br> -->
 				<td><textarea rows="5" cols="20" placeholder="Đây là vùng nhập text" class="input" name="Dacdiem" style="width: 700px;height: 200px;"></textarea><br>
             </td></tr>
 			<tr>
-			<th><td> Loại cây </td></th>
+			<th style="width: 500px;height:50px" align="left"><td> Loại cây </td></th>
 			<td></td>
 			<td>
 				<select name="Loaicay" class="input"> 
@@ -50,33 +50,43 @@
 			</td>	
  			</tr>
             <tr>
-				 <th align="left"><td> Cách chăm sóc </td> </th>
+				 <th style="width: 500px;height:50px" align="left"> </th><td> Cách chăm sóc </td>
 				 <td></td>
 				<!-- <td><input type="text" name="Cachchamsoc" style="width: 300px;"><br> -->
 				<td><textarea rows="5" cols="20" placeholder="Đây là vùng nhập text" class="input" name="Cachchamsoc" style="width: 700px;height: 200px;"></textarea><br>
             </td></tr>
 			<tr>
-				<th align="left"><td> Hình ảnh </td></th>
+				<th style="width: 500px;height:50px" align="left"></th>
+				<td> Hình ảnh </td>
 				<td></td>
 				<td><input type="file" name="Hinh" style="width: 700px;"><br>
             </td></tr>
             <tr>
-				<th style="width: 200px;" align="left"><td> Mô tả cây</td> </th>
+				<th style="width: 500px;height:50px" align="left"><td > Mô tả cây</td> </th>
 				<td></td>
 				<td><textarea rows="5" cols="20" placeholder="Đây là vùng nhập text" class="input" name="Motacay" style="width: 700px;height: 200px;"></textarea><br>
 			</td>
 			</tr>
+			<tr>
+				<td>
 
-			<tr >
-				<td>
-				</td>
+			</td>
+			<td>
+
+			</td>
+				<th style="width: 500px;height:50px"  align="left"><td ><input  type="reset" class="input1" value="Reset" style="width: 350px;height: 50px;">
+				<input  type="submit" class="input1" value="Thêm" style="width: 350px;height: 50px;"></td></th>
 				
-				<td>
-				<input  type="submit" class="input" value="Thêm" style="width: 150px;">
-				</td>
-				<td><input  type="reset" class="input" value="Reset" style="width: 150px;">
+				
+			</tr>
+			<tr >
+				<td >
+				
+						  
+
 				</td>
 			</tr>
+		
 		</table>
 	</form>
 

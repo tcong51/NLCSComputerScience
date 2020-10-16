@@ -1,36 +1,34 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
+<title>ADMIN</title>
 <style>
-.button{
-    margin: auto;
-    /* display: block; */
-    height: 100px;
-    position: relative;
-    top: 10vh;
-    border-radius: 20px;
-    background-color: bisque
-    padding: 12px 28px;
-    }
+  
 </style>
+<link href="css/ds_trees.css" rel="stylesheet" type="text/css" media="all"/>
 </head>
 <body>
-<div class="button">
-            <button onclick="window.location.href='ds_trees_l1.php'"  style="height="500"; width="600"" >Cây ăn quả</button>
+<!--header start here-->
+<div class="header">
+		<div class="header-main">
+        <table  >
+                      <h1>DANH SÁCH  LOẠI CÂY </h1>
+                      <th class="but"><button style="height:50px;width:200px" onclick="window.location.href='ds_trees_l1.php'"  style="height="500"; width="600"" >Cây Ăn Quả</button></th>
+                      <th class="but"><button style="height:50px;width:200px" onclick="window.location.href='ds_trees_l2.php'">Cây Kiểng</button></th>
+                      <th class="but"><button style="height:50px;width:200px" onclick="window.location.href='ds_trees_l3.php'">Cây Dây Leo</button></th>
+                      <th class="but"><button style="height:50px;width:200px" onclick="window.location.href='ds_trees_l4.php'">Cây Thảo Dược</button></th>
+                      <th class="but"><button style="height:50px;width:200px" onclick="window.location.href='ds_trees_l5.php'">Cây Thân Gỗ</button></th>
+                      
+               
+    </table>         
+
+    
+    
 </div>
-<div class="button">
-            <button onclick="window.location.href='ds_trees_l2.php'">Cây kiểng</button>
+<!--header end here-->
+<div class="copyright">
+	<p>© 2020 Admin.</p>
 </div>
-<div class="button">
-            <button onclick="window.location.href='ds_trees_l3.php'">Cây dây leo</button>
-</div>
-<div class="button">
-            <button onclick="window.location.href='ds_trees_l4.php'">Cây thảo dược</button>
-</div>
-<div class="button">
-            <button onclick="window.location.href='ds_trees_l5.php'">Cây thân gỗ</button>
-</div>
+<!--footer end here-->
 </body>
 </html>
-<?php
-?>
