@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf8">
 </head>
+<style>
+    #link{text-align:center;}
+    </style>
 <!-- <link href="css/ds_trees.css" rel="stylesheet" type="text/css" /> -->
 <link rel="stylesheet" href="testindex.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -64,7 +67,7 @@ include "connect.php";
 echo "<table >" ;
 foreach ($sql = $con->query("SELECT * FROM db_trees WHERE Loaicay='Thân gỗ' ") as $value){
     echo "<tr id='tr'>
-    <td ><a href =detail_trees.php?id=".$value['Mact']."><img src='".$value['Hinh']."'height='200' width='200'>Xem chi tiết</a></td>
+    <td id='link'><a href =detail_trees.php?id=".$value['Mact']."><img src='".$value['Hinh']."'height='200' width='200'>Xem chi tiết</a></td>
     <td style='width:700px'><h3>".$value['Tencay']."</h3></br> ".$value['Dacdiem']."...</td>
     </tr>";
     echo '</br>';
