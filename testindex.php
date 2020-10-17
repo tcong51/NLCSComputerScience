@@ -17,11 +17,11 @@
         <div id="menu">
             <div class="topnav">
                 <a class="active" href="#">Trang chủ</a>
-                <a href="#">Cây ăn quả</a>
-                <a href="#">Cây kiểng</a>
-                <a href="#">Cây dây leo</a>
-                <a href="#">Cây thân gỗ</a>
-                <a href="#">Cây thảo dược</a>
+                <a href="ds_trees_l1_homepage.php">Cây ăn quả</a>
+                <a href="ds_trees_l2_homepage.php">Cây kiểng</a>
+                <a href="ds_trees_l3_homepage.php">Cây dây leo</a>
+                <a href="ds_trees_l4_homepage.php">Cây thân gỗ</a>
+                <a href="ds_trees_l5_homepage.php">Cây thảo dược</a>
                 <div class="search-container">
                     <form action="/action_page.php">
                     <input type="text" placeholder="Tìm kiếm.." name="search">
@@ -58,7 +58,7 @@
                  
                         <div class="col-3 mt-3" >
                                 <img style="width: 100%; height: 250px" src=<?php echo $row['Hinh']?>>
-                                <br><a href= "#" > <?php echo $row['Tencay']?> </a>
+                                <br><a href= "<?php echo 'detail_trees.php?id='.$row['Mact'].' '?>" > <?php echo $row['Tencay']?> </a>
                         </div>
                 <?php
                         }
