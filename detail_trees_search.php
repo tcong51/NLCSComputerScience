@@ -3,10 +3,7 @@
 <head>
 <meta charset="utf8">
 </head>
-<style>
-    #link{text-align:center;}
-    </style>
-<!-- <link href="css/ds_trees.css" rel="stylesheet" type="text/css" /> -->
+<link href="css/detail_trees.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="testindex.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
@@ -35,7 +32,6 @@
 	}
 	
 	activateTimer();
-	
     const showResult=(value)=>{
    // document.getElementById("keyup").innerHTML = value;
                 if (value.length==0) {
@@ -63,6 +59,7 @@
                 xmlhttp.send();
   }
 
+}	
 
 </script>
 <body>
@@ -70,7 +67,7 @@
         <div id="header"><img id="Img" name="Img" src="./hinhanh/banner.jpg" height="300" width="300"  onmouseout="activateTimer()" /></div>
         <div id="menu">
             <div class="topnav">
-            <a class="active" href="testindex.php">Trang chủ</a>
+                <a class="active" href="testindex.php">Trang chủ</a>
                 <a href="ds_trees_l1_homepage.php">Cây ăn quả</a>
                 <a href="ds_trees_l2_homepage.php">Cây kiểng</a>
                 <a href="ds_trees_l3_homepage.php">Cây dây leo</a>
@@ -86,26 +83,47 @@
             </div>
 
     </div>
-    <div id="content">
-        <h2>DANH SÁCH CÂY ĂN QUẢ</h2>
-    </div>
-    <?php
-include "connect.php";  
 
-echo "<table >" ;
-foreach ($sql = $con->query("SELECT * FROM db_trees WHERE Loaicay='Dây leo' ") as $value){
+<?php 
+$tencay=$_GET['tencay'];
+ echo $tencay;
+include "connect.php";
+$data = $con->query("SELECT Tencay,Dacdiem,Loaicay,Cachchamsoc,Hinh,Motacay FROM db_trees WHERE Tencay='$tencay'");
+$data = $data->fetch_assoc();
+ echo "<form action= method=GET>";
+	echo '<table frame="border" border=4  >';
+	echo "<tr id='h1'> <td><h1>".$data['Tencay']."</h1></td></tr>";
     echo "<tr id='tr'>
-    <td id='link'><a href =detail_trees.php?id=".$value['Mact']."><img src='".$value['Hinh']."'height='200' width='200'>Xem chi tiết</a></td>
-    <td style='width:700px'><h3>".$value['Tencay']."</h3></br> ".$value['Dacdiem']."...</td>
-    </tr>";
-    echo '</br>';
-    echo '</br>';
-    }
-  echo "</table>";
- 
-  
+       <td> <h2>Đặc điểm</h2></td>
+        </tr>";
+    echo "<tr id='tr'>
+        <td id='td'>".$data['Dacdiem']."</td>
+        </tr>";
+    echo "<tr id='tr'>
+        <td id='td'><img src='".$data['Hinh']."'height='300' width='300'></td>
+        </tr>";	
+    echo "<tr id='tr'>
+        <td> <h2>Cách chăm sóc</h2></td>
+         </tr>";   
+    echo "<tr id='tr'>
+        <td id='td'>".$data['Cachchamsoc']."</td>
+        </tr>";	
+    echo "<tr id='tr'>
+        <td> <h2>Tổng kết</h2></td>
+         </tr>";
+    echo "<tr id='tr'>
+        <td id='td'>".$data['Motacay']."</td>
+        </tr>";
+       
+		
+	echo "</table>";
+	echo "</form>";
+
+
+
 $con->close();
- ?>
+
+?>
 
 
 </body>

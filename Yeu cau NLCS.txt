@@ -1,0 +1,5 @@
+- Reponsive(chưa reponsive)
+- Tìm kiếm page (30% chưa css, chưa thêm các trang as trang chủ, )
+- Div quảng cáo
+- Chỉnh CSS
+- Trang index hiển thị cây. thêm column lượt xem (Hiển thị số lượt cây được xem nhiều)

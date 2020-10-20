@@ -35,6 +35,33 @@
 	}
 	
 	activateTimer();
+    const showResult=(value)=>{
+   // document.getElementById("keyup").innerHTML = value;
+                if (value.length==0) {
+                  document.getElementById("show").innerHTML="";
+                  document.getElementById("show").style.border="0px";
+                  
+                  return;
+                }
+                document.getElementById("show").style.color="white";
+                let xmlhttp;
+                
+                if(window.XMLHttpRequest){
+                    xmlhttp = new XMLHttpRequest();
+                }
+                else{
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                
+                xmlhttp.onreadystatechange=()=>{
+                    if(xmlhttp.readyState==4 && xmlhttp.status==200){
+                       document.getElementById("show").innerHTML = xmlhttp.responseText;
+                    }
+                }
+                xmlhttp.open("GET", `show.php?id=`+value ,true);
+                xmlhttp.send();
+  }
+
 	
 
 </script>
@@ -43,17 +70,18 @@
         <div id="header"><img id="Img" name="Img" src="./hinhanh/banner.jpg" height="300" width="300"  onmouseout="activateTimer()" /></div>
         <div id="menu">
             <div class="topnav">
-                <a class="active" href="#">Trang chủ</a>
+            <a class="active" href="testindex.php">Trang chủ</a>
                 <a href="ds_trees_l1_homepage.php">Cây ăn quả</a>
                 <a href="ds_trees_l2_homepage.php">Cây kiểng</a>
                 <a href="ds_trees_l3_homepage.php">Cây dây leo</a>
                 <a href="ds_trees_l4_homepage.php">Cây thân gỗ</a>
                 <a href="ds_trees_l5_homepage.php">Cây thảo dược</a>
                 <div class="search-container">
-                    <form action="/action_page.php">
-                    <input type="text" placeholder="Tìm kiếm.." name="search">
+                <form action="search_page.php" method ="GET" onsubmit="return signup()">
+                    <input type="text" placeholder="Tìm kiếm.." name="search" onkeyup="showResult(this.value)">
                     <button type="submit"><i class="fa fa-search"></i></i></button>
-                    </form>
+                     <div id="show" onclick="showss(this.value)"></div> 
+                     </form>
                 </div>
             </div>
 

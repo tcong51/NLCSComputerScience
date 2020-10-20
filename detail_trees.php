@@ -33,24 +33,52 @@
 	
 	activateTimer();
 	
+    const showResult=(value)=>{
+   // document.getElementById("keyup").innerHTML = value;
+                if (value.length==0) {
+                  document.getElementById("show").innerHTML="";
+                  document.getElementById("show").style.border="0px";
+                  
+                  return;
+                }
+                document.getElementById("show").style.color="white";
+                let xmlhttp;
+                
+                if(window.XMLHttpRequest){
+                    xmlhttp = new XMLHttpRequest();
+                }
+                else{
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                
+                xmlhttp.onreadystatechange=()=>{
+                    if(xmlhttp.readyState==4 && xmlhttp.status==200){
+                       document.getElementById("show").innerHTML = xmlhttp.responseText;
+                    }
+                }
+                xmlhttp.open("GET", `show.php?id=`+value ,true);
+                xmlhttp.send();
+  }
 
+}
 </script>
 <body>
 <div id="wrapper">
         <div id="header"><img id="Img" name="Img" src="./hinhanh/banner.jpg" height="300" width="300"  onmouseout="activateTimer()" /></div>
         <div id="menu">
             <div class="topnav">
-                <a class="active" href="#">Trang chủ</a>
-                <a href="#">Cây ăn quả</a>
-                <a href="#">Cây kiểng</a>
-                <a href="#">Cây dây leo</a>
-                <a href="#">Cây thân gỗ</a>
-                <a href="#">Cây thảo dược</a>
+                <a class="active" href="testindex.php">Trang chủ</a>
+                <a href="ds_trees_l1_homepage.php">Cây ăn quả</a>
+                <a href="ds_trees_l2_homepage.php">Cây kiểng</a>
+                <a href="ds_trees_l3_homepage.php">Cây dây leo</a>
+                <a href="ds_trees_l4_homepage.php">Cây thân gỗ</a>
+                <a href="ds_trees_l5_homepage.php">Cây thảo dược</a>
                 <div class="search-container">
-                    <form action="/action_page.php">
-                    <input type="text" placeholder="Tìm kiếm.." name="search">
+                <form action="search_page.php" method ="GET" onsubmit="return signup()">
+                    <input type="text" placeholder="Tìm kiếm.." name="search" onkeyup="showResult(this.value)">
                     <button type="submit"><i class="fa fa-search"></i></i></button>
-                    </form>
+                     <div id="show" onclick="showss(this.value)"></div> 
+                     </form>
                 </div>
             </div>
 
@@ -58,13 +86,13 @@
 
 <?php 
 $mact=$_GET['id'];
-// echo $mact;
+//  echo $mact;
 include "connect.php";
 $data = $con->query("SELECT Tencay,Dacdiem,Loaicay,Cachchamsoc,Hinh,Motacay FROM db_trees WHERE Mact='$mact'");
 $data = $data->fetch_assoc();
  echo "<form action= method=GET>";
 	echo '<table frame="border" border=4  >';
-	echo "<tr id='h1'> <td><h1>Chi tiết cây</h1></td></tr>";
+	echo "<tr id='h1'> <td><h1>".$data['Tencay']."</h1></td></tr>";
     echo "<tr id='tr'>
        <td> <h2>Đặc điểm</h2></td>
         </tr>";
