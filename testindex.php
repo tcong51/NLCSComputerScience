@@ -133,9 +133,9 @@ function signup(){
                 <?php
                 $con = new mysqli('localhost', 'root', '', 'database_trees');
                 $con -> set_charset('utf8');
-                $Tencay[]="";
-                $Luottruycap[]="";
-                $Luottruycap_dxx[]="";
+                $Tencay=[];
+                $Luottruycap=[];
+                $Luottruycap_dxx=[];
                 // $result =mysqli_query($con,"SELECT * FROM db_trees ");
                 
                 foreach ($sql = $con->query("SELECT * FROM db_trees") as $value){
@@ -144,15 +144,15 @@ function signup(){
                     }
                 rsort($Luottruycap); 
                 $i=0;
-                while($i<7){
+                while($i<4){
                         
                         array_push($Luottruycap_dxx,$Luottruycap[$i]);
                     
                     $i++;
                 }
-                
+              
                 foreach($Luottruycap_dxx as $value){
-                   
+                    // echo $value;
                     $sql = $con->query("SELECT Mact FROM db_trees WHERE Luottruycap='$value'");
                     $sql = $sql->fetch_assoc();
                     $tree1= $sql['Mact'];
