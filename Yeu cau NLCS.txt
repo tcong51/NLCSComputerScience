@@ -1,5 +1,16 @@
-- Reponsive(chưa reponsive)
+- Reponsive(chưa reponsive)!!!
+
+
 - Tìm kiếm page (30% chưa css, chưa thêm các trang as trang chủ, )
-- Div quảng cáo
+(Cần tìm theo chữ có dấu)!!!
+
+- Div quảng cáo(MAI)
+
+
 - Chỉnh CSS
+
+
 - Trang index hiển thị cây. thêm column lượt xem (Hiển thị số lượt cây được xem nhiều)
+(Đã xong)(Bao nhiêu cây sửa while() "nếu là 8 thì $i<8)
+
+- Xem lại update!!!!!!!!!!(MAI)
