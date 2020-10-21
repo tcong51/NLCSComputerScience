@@ -86,10 +86,17 @@
 
 <?php 
 $mact=$_GET['id'];
+
 //  echo $mact;
 include "connect.php";
-$data = $con->query("SELECT Tencay,Dacdiem,Loaicay,Cachchamsoc,Hinh,Motacay FROM db_trees WHERE Mact='$mact'");
-$data = $data->fetch_assoc();
+// 
+// $sql = $con->query("SELECT * FROM db_trees WHERE Mact='$mact'");
+// $sql = $sql->fetch_assoc();
+// echo "<p>".$sql['Tencay']."</p>";
+// 
+
+    $data = $con->query("SELECT * FROM db_trees WHERE Mact='$mact'");
+    $data = $data->fetch_assoc();
  echo "<form action= method=GET>";
 	echo '<table frame="border" border=4  >';
 	echo "<tr id='h1'> <td><h1>".$data['Tencay']."</h1></td></tr>";
@@ -114,10 +121,26 @@ $data = $data->fetch_assoc();
     echo "<tr id='tr'>
         <td id='td'>".$data['Motacay']."</td>
         </tr>";
-       
-		
+          
+    
+    
 	echo "</table>";
-	echo "</form>";
+    echo "</form>";
+
+
+    $data = $con->query("SELECT * FROM db_trees WHERE Mact='$mact'");
+    $data = $data->fetch_assoc();
+ echo "<form action= method=GET>";
+	echo '<table frame="border" border=4  >';
+	echo "<tr id='h1'> <td><h1>".$data['Luottruycap']."</h1></td></tr>"; 
+	echo "</table>";
+    echo "</form>";
+    $luot=$data['Luottruycap'];
+    $luot=$luot+1;
+    $sql = $con->query("UPDATE db_trees SET Luottruycap='$luot' WHERE Mact ='$mact'");
+     
+
+   
 
 
 
