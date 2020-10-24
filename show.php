@@ -20,7 +20,7 @@ if ($q !== "") {
       if ($hint === "") {
         $sql = $con->query("SELECT Mact FROM db_trees WHERE Tencay='$name'");
         $sql = $sql->fetch_assoc();
-        $hint = "<a href=detail_trees.php?id=".$sql['Mact']."> ".$name." </a> </br>";
+        $hint = "<a href=detail_trees.php?id=".$sql['Mact']."> ".$name." </a> ";
             
       } 
     else {

@@ -61,6 +61,27 @@ const showResult=(value)=>{
 //                 xmlhttp.open("GET", `show.php?id=`+value ,true);
 //                 xmlhttp.send();
 // }
+function signup(){
+    var key= document.getElementById("search").value;
+    var ok=true;
+    if (key ==""  ){
+        alert("Vui lòng điền từ khóa !");
+    ok=false;
+
+	    }else if(key == null){
+            alert("Vui lòng điền từ khóa !");
+             ok=false; 
+                           }
+                      
+       
+	return ok;
+  
+    
+
+
+  
+	
+}
 </script>
  
 <style>
@@ -79,7 +100,7 @@ const showResult=(value)=>{
                 <a href="ds_trees_l5_homepage.php">Cây thảo dược</a>
                 <div class="search-container">
                     <form action="search_page.php" method ="GET" onsubmit="return signup()">
-                    <input type="text" placeholder="Tìm kiếm.." name="search" onkeyup="showResult(this.value)">
+                    <input type="text" placeholder="Tìm kiếm.." id="search" name="search" onkeyup="showResult(this.value)">
                     <button type="submit"><i class="fa fa-search"></i></i></button>
                      <div id="show" onclick="showss(this.value)"></div> 
                      </form>
@@ -112,20 +133,61 @@ const showResult=(value)=>{
                 <?php
                 $con = new mysqli('localhost', 'root', '', 'database_trees');
                 $con -> set_charset('utf8');
-                $result =mysqli_query($con,"SELECT * FROM db_trees ");
-                if ($result) {
-                    while($row = mysqli_fetch_array($result)) { ?>
-                 
-                        <div class="col-3 mt-3" >
-                                <img style="width: 100%; height: 250px" src=<?php echo $row['Hinh']?>>
-                                <br><a href= "<?php echo 'detail_trees.php?id='.$row['Mact'].' '?>" > <?php echo $row['Tencay']?> </a>
-                        </div>
-                <?php
-                        }
-                } else {
-                        // Code xử lý lỗi
-                        echo "Xảy ra lỗi khi truy vấn dữ liệu";
+                $Tencay=[];
+                $Luottruycap=[];
+                $Luottruycap_dxx=[];
+                // $result =mysqli_query($con,"SELECT * FROM db_trees ");
+                
+                foreach ($sql = $con->query("SELECT * FROM db_trees") as $value){
+                    array_push($Luottruycap,$value['Luottruycap']);
+                
+                    }
+                rsort($Luottruycap); 
+                $i=0;
+                while($i<4){
+                        
+                        array_push($Luottruycap_dxx,$Luottruycap[$i]);
+                    
+                    $i++;
                 }
+              
+                foreach($Luottruycap_dxx as $value){
+                    // echo $value;
+                    $sql = $con->query("SELECT Mact FROM db_trees WHERE Luottruycap='$value'");
+                    $sql = $sql->fetch_assoc();
+                    $tree1= $sql['Mact'];
+                    // echo $tree1;
+                    $sqlx = $con->query("SELECT * FROM db_trees WHERE Mact='$tree1'");
+                    $sqlx = $sqlx->fetch_assoc();
+                    
+                       echo " <div class='col-3 mt-3' >
+                                <img style='width: 100%; height: 250px' src='".$sqlx['Hinh']."'>
+                                <br><a href =detail_trees.php?id=".$sqlx['Mact'].">  ".$sqlx['Tencay']." </a>
+                        </div>";
+                }
+
+                   
+               
+                    // foreach ($sql = $con->query("SELECT * FROM db_trees") as $value){
+                    //     echo "<tr id='tr'>
+                    //     <td id='link'><a href =detail_trees.php?id=".$value['Mact']."><img src='".$value['Hinh']."'height='200' width='200'>Xem chi tiết</a></td>
+                    //     <td style='width:700px'><h3>".$value['Tencay']."</h3></br> ".$value['Dacdiem']."...</td>
+                    //     </tr>";
+                    //     echo '</br>';
+                    //     echo '</br>';
+                      
+                    //     }
+                        
+                        
+                
+                //         <div class="col-3 mt-3" >
+                //                 <img style="width: 100%; height: 250px" src=<?php echo $row['Hinh']>
+                //                 <br><a href= "php echo 'detail_trees.php?id='.$row['Mact'].' '" > <?php echo $row['Tencay'] </a>
+                //         </div>
+        
+                
+            
+            
                 ?>
     </div>
     <!-- <div id="footer">

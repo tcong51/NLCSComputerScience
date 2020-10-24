@@ -21,9 +21,12 @@
 	 	xmlhttp.open("GET",`input_update_dacdiem.php?id=${value}`,true);
 	 	xmlhttp.send();
 		alert("You have updated! ");
+        location.reload();
 		} else {
 				alert("You have not updated!");
+                location.reload();    
 			   }
+               
 	 
    	}
        function notices_cachchamsoc(value){
@@ -40,8 +43,10 @@
 		alert("You have updated! ");
 		} else {
 				alert("You have not updated!");
+                location.reload();
 			   }
-	 
+              
+               
    	}
        function notices_motacay(value){
 	  var result = confirm("Are you sure?")
@@ -57,9 +62,11 @@
 		alert("You have updated! ");
 		} else {
 				alert("You have not updated!");
+                location.reload();
 			   }
-	 
+               
    	}
+
     </script>
     <body>
 
