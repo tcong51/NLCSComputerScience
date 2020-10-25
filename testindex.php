@@ -144,7 +144,7 @@ function signup(){
                     }
                 rsort($Luottruycap); 
                 $i=0;
-                while($i<4){
+                while($i<6){
                         
                         array_push($Luottruycap_dxx,$Luottruycap[$i]);
                     
@@ -164,6 +164,7 @@ function signup(){
                                 <img style='width: 100%; height: 250px' src='".$sqlx['Hinh']."'>
                                 <br><a href =detail_trees.php?id=".$sqlx['Mact'].">  ".$sqlx['Tencay']." </a>
                         </div>";
+
                 }
                 
                 

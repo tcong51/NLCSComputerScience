@@ -74,7 +74,9 @@ echo "Từ khóa : $search";
                         '<td>'."<a href=detail_trees.php?id=".$sql['Mact']."> Link-truy-cập </a>".'</td>'.
                     '</tr >'.
                     
-                '</table>';}
+				'</table>';
+			echo "</br>";
+				}
 					 
 			// Dùng câu lênh like trong sql và sứ dụng toán tử % của php để tìm kiếm dữ liệu chính xác hơn.
 			//$data = $connect->query("SELECT * FROM caytrong WHERE tencay='$search' "); 
