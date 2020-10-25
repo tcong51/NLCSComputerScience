@@ -165,9 +165,9 @@ function signup(){
                                 <br><a href =detail_trees.php?id=".$sqlx['Mact'].">  ".$sqlx['Tencay']." </a>
                         </div>";
                 }
+                
+                
 
-                   
-               
                     // foreach ($sql = $con->query("SELECT * FROM db_trees") as $value){
                     //     echo "<tr id='tr'>
                     //     <td id='link'><a href =detail_trees.php?id=".$value['Mact']."><img src='".$value['Hinh']."'height='200' width='200'>Xem chi tiết</a></td>

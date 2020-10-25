@@ -4,13 +4,19 @@
 - Tìm kiếm page (30% chưa css, chưa thêm các trang as trang chủ, )
 (Cần tìm theo chữ có dấu)!!!
 
-- Div quảng cáo(MAI)
+- Div quảng cáo(MAI)https://hocwebgiare.com/layout_blog_detail.php?blogcat_keyword=Jquery&id=23&fb_comment_id=1753742411414888_1946748985447562
 
 
 - Chỉnh CSS
 
 
-- Trang index hiển thị cây. thêm column lượt xem (Hiển thị số lượt cây được xem nhiều)
-(Đã xong)(Bao nhiêu cây sửa while() "nếu là 8 thì $i<8)
+
 
 - Xem lại update!!!!!!!!!!(MAI)
+Từ trang update hiện tại,, script xhtml ra 1 trang update second chỉ lấy id từ value:: chỗ else
+
+
+
+
+- Trang index hiển thị cây. thêm column lượt xem (Hiển thị số lượt cây được xem nhiều)
+(Đã xong)(Bao nhiêu cây sửa while() "nếu là 8 thì $i<8)

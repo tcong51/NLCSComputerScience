@@ -132,7 +132,7 @@ include "connect.php";
     $data = $data->fetch_assoc();
  echo "<form action= method=GET>";
 	echo '<table frame="border" border=4  >';
-	echo "<tr id='h1'> <td><h1>".$data['Luottruycap']."</h1></td></tr>"; 
+	// echo "<tr id='h1'> <td><h1>".$data['Luottruycap']."</h1></td></tr>"; 
 	echo "</table>";
     echo "</form>";
     $luot=$data['Luottruycap'];

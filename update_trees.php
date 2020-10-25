@@ -50,7 +50,7 @@
    	}
        function notices_motacay(value){
 	  var result = confirm("Are you sure?")
-		if(result)  {
+		if(!result)  {
 			var xmlhttp = new XMLHttpRequest();
 	 		xmlhttp.onreadystatechange = function() {
 	   		if (this.readyState == 4 && this.status == 200) {
@@ -59,6 +59,8 @@
 	 		};
 	 	xmlhttp.open("GET",`input_update_motacay.php?id=${value}`,true);
 	 	xmlhttp.send();
+            
+
 		alert("You have updated! ");
 		} else {
 				alert("You have not updated!");
