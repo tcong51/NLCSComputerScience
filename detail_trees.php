@@ -97,7 +97,6 @@ include "connect.php";
 $data = $con->query("SELECT Tencay,Dacdiem,Loaicay,Cachchamsoc,Hinh,Motacay FROM db_trees WHERE Mact='$mact'");
 $data = $data->fetch_assoc();
 	echo '<center>'.'<table frame="border" border=4 >'.'</center>';
-=======
 // 
 // $sql = $con->query("SELECT * FROM db_trees WHERE Mact='$mact'");
 // $sql = $sql->fetch_assoc();
