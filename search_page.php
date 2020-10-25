@@ -1,4 +1,39 @@
-<?php 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SEARCH PAGE</title>
+    <meta charset="utf8">
+	<link rel="stylesheet" href="searchpage.css">
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+       <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header"></div>
+        <div id="menu">
+            <div class="topnav">
+                <a class="active" href="testindex.php">Trang chủ</a>
+                <a href="ds_trees_l1_homepage.php">Cây ăn quả</a>
+                <a href="ds_trees_l2_homepage.php">Cây kiểng</a>
+                <a href="ds_trees_l3_homepage.php">Cây dây leo</a>
+                <a href="ds_trees_l4_homepage.php">Cây thân gỗ</a>
+                <a href="ds_trees_l5_homepage.php">Cây thảo dược</a>
+                <div class="search-container">
+                    <form action="search_page.php" method ="GET" onsubmit="return signup()">
+                    <input type="text" placeholder="Tìm kiếm.." name="search" onkeyup="showResult(this.value)">
+                    <button type="submit"><i class="fa fa-search"></i></i></button>
+                     <div id="show" onclick="showss(this.value)"></div> 
+                     </form>
+                    
+                   
+                  
+                   
+                </div>
+            </div>
+
+	</div>
+	<div id="content">
+	<?php 
 $search=$_GET['search'];
 //$search_change = strtolower($search);
 
@@ -28,11 +63,14 @@ echo "Từ khóa : $search";
 					 
 				foreach($b as $name1){
                     
-                    $sql = $con->query("SELECT Mact FROM db_trees WHERE Tencay='$name1'");
-                    $sql = $sql->fetch_assoc();
-                    echo '<table frame="border" border=4 >'.
+                    $sql = $con->query("SELECT * FROM db_trees WHERE Tencay='$name1'");
+					$sql = $sql->fetch_assoc();
+					
+                    echo '<table frame="border" border=1 align = "center">'.
                     '<tr id="tr">'.
-                        '<td>'.$name1.'</td>'.
+						
+						'<td><img src='.$sql['Hinh'].'></td>'.
+						'<td id="name" align = "center">'.$name1.'</td>'.
                         '<td>'."<a href=detail_trees.php?id=".$sql['Mact']."> Link-truy-cập </a>".'</td>'.
                     '</tr >'.
                     
@@ -48,3 +86,7 @@ echo "Từ khóa : $search";
 	$con->close();
 
 ?>
+</div>  
+</body>
+
+</html>

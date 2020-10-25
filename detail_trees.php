@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="utf8">
 </head>
+<style>
+    #link{text-align:center;}
+    </style>
 <link href="css/detail_trees.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="testindex.css">
+<link rel="stylesheet" href="detail_trees.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-       <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+       <!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> -->
        <script>
-	var IMAGE_PATHS = [];
-	IMAGE_PATHS[0] = "./hinhanh/banner.jpg";
-	IMAGE_PATHS[1] = "./hinhanh/banner2.jpg";
-	IMAGE_PATHS[2] = "./hinhanh/banner3.png";
+	// var IMAGE_PATHS = [];
+	// IMAGE_PATHS[0] = "./hinhanh/banner.jpg";
+	// IMAGE_PATHS[1] = "./hinhanh/banner2.jpg";
+	// IMAGE_PATHS[2] = "./hinhanh/banner3.png";
 	
 	
 	
-	let index = 0;
-	let intervalTimer;
+	// let index = 0;
+	// let intervalTimer;
 	
-	function slideShow(){
-		index++;
-		if(index > IMAGE_PATHS.length - 1) index = 0;
+	// function slideShow(){
+	// 	index++;
+	// 	if(index > IMAGE_PATHS.length - 1) index = 0;
 		
-		let Img = document.getElementById("Img");
-		Img.setAttribute("src", IMAGE_PATHS[index]);
+	// 	let Img = document.getElementById("Img");
+	// 	Img.setAttribute("src", IMAGE_PATHS[index]);
 		
-	}
+	// }
 	
-	function activateTimer(){
-		intervalTimer = setInterval(slideShow, 3000);
-	}
+	// function activateTimer(){
+	// 	intervalTimer = setInterval(slideShow, 3000);
+	// }
 	
-	activateTimer();
+	// activateTimer();
 	
     const showResult=(value)=>{
    // document.getElementById("keyup").innerHTML = value;
@@ -64,7 +68,7 @@
 </script>
 <body>
 <div id="wrapper">
-        <div id="header"><img id="Img" name="Img" src="./hinhanh/banner.jpg" height="300" width="300"  onmouseout="activateTimer()" /></div>
+        <div id="header"></div>
         <div id="menu">
             <div class="topnav">
                 <a class="active" href="testindex.php">Trang chủ</a>
@@ -83,12 +87,17 @@
             </div>
 
     </div>
-
+<div id="hienthi-caytrong">
 <?php 
 $mact=$_GET['id'];
 
 //  echo $mact;
 include "connect.php";
+<<<<<<< HEAD
+$data = $con->query("SELECT Tencay,Dacdiem,Loaicay,Cachchamsoc,Hinh,Motacay FROM db_trees WHERE Mact='$mact'");
+$data = $data->fetch_assoc();
+	echo '<center>'.'<table frame="border" border=4 >'.'</center>';
+=======
 // 
 // $sql = $con->query("SELECT * FROM db_trees WHERE Mact='$mact'");
 // $sql = $sql->fetch_assoc();
@@ -99,6 +108,7 @@ include "connect.php";
     $data = $data->fetch_assoc();
  echo "<form action= method=GET>";
 	echo '<table frame="border" border=4  >';
+>>>>>>> 8cb5e292653e1e9e002da00f738e3a227128e729
 	echo "<tr id='h1'> <td><h1>".$data['Tencay']."</h1></td></tr>";
     echo "<tr id='tr'>
        <td> <h2>Đặc điểm</h2></td>
@@ -107,7 +117,7 @@ include "connect.php";
         <td id='td'>".$data['Dacdiem']."</td>
         </tr>";
     echo "<tr id='tr'>
-        <td id='td'><img src='".$data['Hinh']."'height='300' width='300'></td>
+        <td id='td'><center><img src='".$data['Hinh']."'></center></td>
         </tr>";	
     echo "<tr id='tr'>
         <td> <h2>Cách chăm sóc</h2></td>
@@ -147,7 +157,6 @@ include "connect.php";
 $con->close();
 
 ?>
-
-
+</div>
 </body>
 </html>

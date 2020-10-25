@@ -127,7 +127,7 @@ function signup(){
             </div>
             <div class ="clear"></div>
     </div>
-    <div id="banh" >
+    <div id="hienthi" >
         <div class="col-12">
             <div class="row" >
                 <?php
