@@ -71,7 +71,7 @@
         <div id="header"></div>
         <div id="menu">
             <div class="topnav">
-                <a class="active" href="testindex.php">Trang chủ</a>
+                <a class="active" href="index.php">Trang chủ</a>
                 <a href="ds_trees_l1_homepage.php">Cây ăn quả</a>
                 <a href="ds_trees_l2_homepage.php">Cây kiểng</a>
                 <a href="ds_trees_l3_homepage.php">Cây dây leo</a>
@@ -90,19 +90,12 @@
 <div id="hienthi-caytrong">
 <?php 
 $mact=$_GET['id'];
-
 //  echo $mact;
 include "connect.php";
 
 $data = $con->query("SELECT Tencay,Dacdiem,Loaicay,Cachchamsoc,Hinh,Motacay FROM db_trees WHERE Mact='$mact'");
 $data = $data->fetch_assoc();
 	echo '<center>'.'<table frame="border" border=4 >'.'</center>';
-// 
-// $sql = $con->query("SELECT * FROM db_trees WHERE Mact='$mact'");
-// $sql = $sql->fetch_assoc();
-// echo "<p>".$sql['Tencay']."</p>";
-// 
-
     $data = $con->query("SELECT * FROM db_trees WHERE Mact='$mact'");
     $data = $data->fetch_assoc();
  echo "<form action= method=GET>";
@@ -137,22 +130,15 @@ $data = $data->fetch_assoc();
     echo "</form>";
 
 
-    $data = $con->query("SELECT * FROM db_trees WHERE Mact='$mact'");
-    $data = $data->fetch_assoc();
- echo "<form action= method=GET>";
-	echo '<table frame="border" border=4  >';
-	// echo "<tr id='h1'> <td><h1>".$data['Luottruycap']."</h1></td></tr>"; 
-	echo "</table>";
-    echo "</form>";
+    // $data = $con->query("SELECT * FROM db_trees WHERE Mact='$mact'");
+    // $data = $data->fetch_assoc();
+    // echo "<form action= method=GET>";
+	//     echo '<table frame="border" border=4  >';
+	//     echo "</table>";
+    //     echo "</form>";
     $luot=$data['Luottruycap'];
     $luot=$luot+1;
     $sql = $con->query("UPDATE db_trees SET Luottruycap='$luot' WHERE Mact ='$mact'");
-     
-
-   
-
-
-
 $con->close();
 
 ?>

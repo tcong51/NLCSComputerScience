@@ -15,7 +15,10 @@
     background-color: #3F8554;
     text-align:center;
     
-}   
+} 
+#show{
+  margin: 0 auto;
+}  
 #login:hover{
     background-color: rgb(29, 155, 128);
 }

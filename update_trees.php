@@ -11,6 +11,7 @@
     <script>
     function notices_dacdiem(value){
 	  var result = confirm("Are you sure?")
+      ok=true;
 		if(result)  {
 			var xmlhttp = new XMLHttpRequest();
 	 		xmlhttp.onreadystatechange = function() {
@@ -21,12 +22,16 @@
 	 	xmlhttp.open("GET",`input_update_dacdiem.php?id=${value}`,true);
 	 	xmlhttp.send();
 		alert("You have updated! ");
-        location.reload();
+        ok=true;
+        
 		} else {
-				alert("You have not updated!");
-                location.reload();    
+				
+                
+                
+		        alert("You not updated! "); 
+                window.location.reload();   
 			   }
-               
+                   
 	 
    	}
        function notices_cachchamsoc(value){
@@ -50,7 +55,8 @@
    	}
        function notices_motacay(value){
 	  var result = confirm("Are you sure?")
-		if(!result)  {
+      
+		if(result)  {
 			var xmlhttp = new XMLHttpRequest();
 	 		xmlhttp.onreadystatechange = function() {
 	   		if (this.readyState == 4 && this.status == 200) {
@@ -63,12 +69,12 @@
 
 		alert("You have updated! ");
 		} else {
-				alert("You have not updated!");
-                location.reload();
+                     alert("You have not updated!");
+                    
 			   }
-               
+                   
    	}
-
+       
     </script>
     <body>
 

@@ -71,7 +71,7 @@
         <div id="header"></div>
         <div id="menu">
             <div class="topnav">
-            <a class="active" href="testindex.php">Trang chủ</a>
+            <a class="active" href="index.php">Trang chủ</a>
                 <a href="ds_trees_l1_homepage.php">Cây ăn quả</a>
                 <a href="ds_trees_l2_homepage.php">Cây kiểng</a>
                 <a href="ds_trees_l3_homepage.php">Cây dây leo</a>
@@ -81,8 +81,9 @@
                 <form action="search_page.php" method ="GET" onsubmit="return signup()">
                     <input type="text" placeholder="Tìm kiếm.." name="search" onkeyup="showResult(this.value)">
                     <button type="submit"><i class="fa fa-search"></i></i></button>
-                     <div id="show" ></div> 
+                     
                      </form>
+                     <div id="show" ></div> 
                 </div>
             </div>
 

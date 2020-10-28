@@ -6,6 +6,7 @@
     <meta charset="utf8">
     <link rel="stylesheet" href="testindex.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    
        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 </head>
 <script>
@@ -83,16 +84,53 @@ function signup(){
 	
 }
 </script>
- 
-<style>
+<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 
+<link rel="stylesheet" href="responsive.css">
+<style>
+* {
+  box-sizing: border-box;
+}
+.menu {
+  float:left;
+  width:20%;
+  text-align:center;
+}
+.menu a {
+  background-color:#e5e5e5;
+  padding:8px;
+  margin-top:7px;
+  display:block;
+  width:100%;
+  color:black;
+}
+.main {
+  float:left;
+  width:60%;
+  padding:0 20px;
+}
+.right {
+  background-color:#e5e5e5;
+  float:left;
+  width:20%;
+  padding:15px;
+  margin-top:7px;
+  text-align:center;
+}
+
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width:100%;
+  }
+}
 </style>
 <body>
-    <div id="wrapper">
+    <div id="wrapper" >
         <div id="header"></div>
         <div id="menu">
             <div class="topnav">
-                <a class="active" href="testindex.php">Trang chủ</a>
+                <a class="active" href="index.php">Trang chủ</a>
                 <a href="ds_trees_l1_homepage.php">Cây ăn quả</a>
                 <a href="ds_trees_l2_homepage.php">Cây kiểng</a>
                 <a href="ds_trees_l3_homepage.php">Cây dây leo</a>
@@ -102,10 +140,10 @@ function signup(){
                     <form action="search_page.php" method ="GET" onsubmit="return signup()">
                     <input type="text" placeholder="Tìm kiếm.." id="search" name="search" onkeyup="showResult(this.value)">
                     <button type="submit"><i class="fa fa-search"></i></i></button>
-                     <div id="show" onclick="showss(this.value)"></div> 
+                     
                      </form>
                     
-                   
+                   <div id="show" onclick="showss(this.value)"></div> 
                   
                    
                 </div>
