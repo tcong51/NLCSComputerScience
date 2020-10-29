@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf8">
 </head>
+<title>TRA CỨU THÔNG TIN CÂY TRỒNG</title>
 <style>
     #link{text-align:center;}
     </style>
@@ -62,18 +63,7 @@
                 xmlhttp.send();
   }
 
-  function signup(){
-    var key= document.getElementById("search").value;
-    var ok=true;
-    if (key ==""  ){
-        alert("Vui lòng điền từ khóa !");
-    ok=false;
-	    }else if(key == null){
-            alert("Vui lòng điền từ khóa !");
-             ok=false; 
-                           }
-	return ok;
-}		
+	
 
 </script>
 <!-- QUANG CAO -->
@@ -87,7 +77,7 @@
         <div id="header"></div>
         <div id="menu">
             <div class="topnav">
-            <a class="active" href="index.php">Trang chủ</a>
+            <a class="active" href="testindex.php">Trang chủ</a>
                 <a href="ds_trees_l1_homepage.php">Cây ăn quả</a>
                 <a href="ds_trees_l2_homepage.php">Cây kiểng</a>
                 <a href="ds_trees_l3_homepage.php">Cây dây leo</a>
@@ -95,11 +85,10 @@
                 <a href="ds_trees_l5_homepage.php">Cây thảo dược</a>
                 <div class="search-container">
                 <form action="search_page.php" method ="GET" onsubmit="return signup()">
-                    <input type="text" placeholder="Tìm kiếm.." id="search" name="search" onkeyup="showResult(this.value)">
+                    <input type="text" placeholder="Tìm kiếm.." name="search" onkeyup="showResult(this.value)">
                     <button type="submit"><i class="fa fa-search"></i></i></button>
-                     
-                     </form>
                      <div id="show" onclick="showss(this.value)"></div> 
+                     </form>
                 </div>
             </div>
 

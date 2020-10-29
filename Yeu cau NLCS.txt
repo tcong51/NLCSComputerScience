@@ -4,7 +4,7 @@
 			-----------------------------
 ------------------------------------------------------------------------------------
 NEW NOTE::
-=>"Nếu để 8 cây, 12 cây miễn là 4 cây 1 hàng thì bình thường còn sửa thành 6 ,10,.. thì hiển thị không đẹp nha! Có thì xem lại
+=>"Nếu để 8 cây, 12 cây miễn là 4 cây 1 hàng thì bình thường còn sửa thành 6 ,10,.. thì hiển thị không đẹp nha! Có thì xem lại (Done)
 =>"Trang search_page.php background cho dài thêm tí vừa ,trải dài xuống (Hình trong mục NEED FIX - search_trees.php
 => Mấy trang liên kết từ Danh mục cây cũng vậy á... (Hình xem - NEED FIX danhmuc.png)
 => Rảnh làm footer cho trang nó lăn đc nha... ý là lăn chuột đc á...(...)
