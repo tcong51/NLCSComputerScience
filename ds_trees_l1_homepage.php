@@ -77,7 +77,13 @@
 }	
 
 </script>
+<!-- QUANG CAO -->
+<link href="css/ads.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/BannerFloat.js"></script>
+
+<!-- -->
 <body>
+
 <div id="wrapper">
         <div id="header"></div>
         <div id="menu">
@@ -99,6 +105,16 @@
             </div>
 
     </div>
+    <!-- QUANG CAO -->
+<div class="adfloat" id="divBannerFloatLeft">
+ <p><a href="http://hocwebgiare.com/" target="_blank"><img src="http://hocwebgiare.com/images/left_banner.png" alt=""></a>
+ </p>
+</div>
+<div class="adfloat" id="divBannerFloatRight">
+ <p><a href="http://hocwebgiare.com/" target="_blank"><img src="http://hocwebgiare.com/images/right_banner.jpg" alt=""></a>
+ </p>
+</div>
+<!-- -->
     <div id="ten-content">
         <h2><center>DANH SÁCH CÂY ĂN QUẢ</center></h2>
     </div>

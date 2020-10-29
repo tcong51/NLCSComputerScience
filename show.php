@@ -1,15 +1,15 @@
 <?php 
-$a[]="";
+// $a[]="";
 include "connect.php";
-foreach ($sql = $con->query("SELECT Tencay FROM db_trees") as $value){
+// foreach ($sql = $con->query("SELECT Tencay FROM db_trees") as $value){
 
-  array_push($a,$value['Tencay']);
+//   array_push($a,$value['Tencay']);
  //ajax <a> xem chi tiet truyền tham số id thẳng
-    }
+    // }
 //Tìm từ khóa::
 $key = $_GET['id'];
 //echo $q;
-$hint = "";
+// $hint = "";
 $sql = $con->query("SELECT * FROM db_trees WHERE Tencay REGEXP '$key' ORDER BY Mact DESC ");
 foreach($sql as $value){
     echo"<a href =detail_trees.php?id=".$value['Mact'].">".$value['Tencay']."</a></br>";
