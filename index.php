@@ -1,6 +1,11 @@
 <!--Đây là trang chủ-->
 <!DOCTYPE html>
 <html>
+<!-- QUANG CAO -->
+<link href="css/ads.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/BannerFloat.js"></script>
+
+<!-- -->
 <head>
     <title>TRA CỨU THÔNG TIN CÂY TRỒNG</title>
     <meta charset="utf8">
@@ -88,44 +93,10 @@ function signup(){
 
 <link rel="stylesheet" href="responsive.css">
 <style>
-* {
-  box-sizing: border-box;
-}
-.menu {
-  float:left;
-  width:20%;
-  text-align:center;
-}
-.menu a {
-  background-color:#e5e5e5;
-  padding:8px;
-  margin-top:7px;
-  display:block;
-  width:100%;
-  color:black;
-}
-.main {
-  float:left;
-  width:60%;
-  padding:0 20px;
-}
-.right {
-  background-color:#e5e5e5;
-  float:left;
-  width:20%;
-  padding:15px;
-  margin-top:7px;
-  text-align:center;
-}
 
-@media only screen and (max-width:620px) {
-  /* For mobile phones: */
-  .menu, .main, .right {
-    width:100%;
-  }
-}
 </style>
 <body>
+
     <div id="wrapper" >
         <div id="header"></div>
         <div id="menu">
@@ -150,6 +121,16 @@ function signup(){
             </div>
 
     </div>
+    <!-- QUANG CAO -->
+<div class="adfloat" id="divBannerFloatLeft">
+ <p><a href="http://hocwebgiare.com/" target="_blank"><img src="http://hocwebgiare.com/images/left_banner.png" alt=""></a>
+ </p>
+</div>
+<div class="adfloat" id="divBannerFloatRight">
+ <p><a href="http://hocwebgiare.com/" target="_blank"><img src="http://hocwebgiare.com/images/right_banner.jpg" alt=""></a>
+ </p>
+</div>
+<!-- -->
     <div class="content">
             <div id = "left">
                 <br><a>CHÀO MỪNG BẠN ĐẾN VỚI TREES DICTIONARY </a><br>
