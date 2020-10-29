@@ -1,2 +1,2 @@
 # NienLuanCS
-#  Cần tạo thư mục chứa image
+# XEM TRONG YEUCAU CÁC MỤC CHƯA LÀM 
