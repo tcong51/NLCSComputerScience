@@ -73,20 +73,11 @@ function signup(){
     if (key ==""  ){
         alert("Vui lòng điền từ khóa !");
     ok=false;
-
 	    }else if(key == null){
             alert("Vui lòng điền từ khóa !");
              ok=false; 
                            }
-                      
-       
 	return ok;
-  
-    
-
-
-  
-	
 }
 </script>
 <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=yes">
