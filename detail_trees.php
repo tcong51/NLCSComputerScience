@@ -92,6 +92,8 @@
             </div>
 
     </div>
+    </br>
+    </br>
       <!-- QUANG CAO -->
 <div class="adfloat" id="divBannerFloatLeft">
  <p><a href="http://hocwebgiare.com/" target="_blank"><img src="http://hocwebgiare.com/images/left_banner.png" alt=""></a>

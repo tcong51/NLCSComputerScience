@@ -1,14 +1,6 @@
 - Reponsive(chưa reponsive)!!!
-
-
-
-
--DIv quảng cáo chưa làm trên các trang liên kết từ trang chủ.(30s)
-
-
+-DIv quảng cáo chưa làm trên các trang liên kết từ trang chủ.(30s)(DONE)
 - Chỉnh CSS
-
-
 			-----------------------------
 ------------------------------------------------------------------------------------
 NEW NOTE::
