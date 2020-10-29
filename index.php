@@ -154,7 +154,7 @@ function signup(){
                     }
                 rsort($Luottruycap); 
                 $i=0;
-                while($i<6){
+                while($i<8){
                         
                         array_push($Luottruycap_dxx,$Luottruycap[$i]);
                     
@@ -201,8 +201,8 @@ function signup(){
             
                 ?>
     </div>
-    <!-- <div id="footer">
+    <div id="footer">
             <h3>WEB THÔNG TIN CÂY TRỒNG</h3>
-    </div> -->
+    </div>
 </body>
 </html>

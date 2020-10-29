@@ -5,7 +5,7 @@
     <meta charset="utf8">
 	<link rel="stylesheet" href="searchpage.css">
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-       <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+       <!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> -->
 </head>
 <script>
 	// var IMAGE_PATHS = [];
@@ -132,16 +132,23 @@ echo "Từ khóa : $search";
                     $sql = $con->query("SELECT * FROM db_trees WHERE Tencay='$name1'");
 					$sql = $sql->fetch_assoc();
 					
-                    echo '<table frame="border" border=1 align = "center">'.
-                    '<tr id="tr">'.
+            //         echo '<table frame="border" border=1 align = "center">'.
+            //         '<tr id="tr">'.
 						
-						'<td><img src='.$sql['Hinh'].'></td>'.
-						'<td id="name" align = "center">'.$name1.'</td>'.
-                        '<td>'."<a href=detail_trees.php?id=".$sql['Mact']."> Link-truy-cập </a>".'</td>'.
-                    '</tr >'.
+			// 			'<td><img src='.$sql['Hinh'].'></td>'.
+			// 			'<td id="name" align = "center">'.$name1.'</td>'.
+            //             '<td>'."<a href=detail_trees.php?id=".$sql['Mact']."> Link-truy-cập </a>".'</td>'.
+            //         '</tr >'.
                     
-				'</table>';
-			echo "</br>";
+			// 	'</table>';
+			// echo "</br>";
+					
+				echo "<tr id='tr'>
+				<td><img src='".$sql['Hinh']."'></td>
+				<td style='width:150px'><h3>".$sql['Tencay']."</h3> ".$sql['Dacdiem']."...<a href =detail_trees.php?id=".$sql['Mact']."> [Xem chi tiết]</a></td>
+				</tr>";
+				echo '</br>';
+				echo '</br>';
 				}
 					 
 			// Dùng câu lênh like trong sql và sứ dụng toán tử % của php để tìm kiếm dữ liệu chính xác hơn.
