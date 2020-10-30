@@ -14,7 +14,7 @@
 	 	xmlhttp.send();
 		alert("Deleted");
 		} else {
-				alert("Not yet delete!");
+				alert("Đã hủy!");
 			   }
 	 location.reload();
    	}
@@ -44,7 +44,7 @@ foreach ($sql = $con->query("SELECT Mact,Tencay FROM db_trees WHERE Loaicay='Dâ
     <td > ".$value['Tencay']."</td>
     <td><h3><a href =detail_trees.php?id=".$value['Mact'].">Xem chi tiết</a></h3></td>
 	<td><h3><a href='#' onclick='notices(".$value['Mact'].")' >Xóa</a></h3></td>	
-	<td><h3><a href=update_trees.php?id=".$value['Mact']." >Sửa</a></td>
+	<td><h3><a href=update_trees.php?Mact=".$value['Mact']." >Sửa</a></td>
 	</tr>"; 
     }
   echo "</table>";

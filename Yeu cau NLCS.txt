@@ -1,9 +1,37 @@
+
+
+
+
+
+------------------------------NEW::::=-----------------------------------------------------
+
 - Reponsive(chưa reponsive)!!!
--DIv quảng cáo chưa làm trên các trang liên kết từ trang chủ.(30s)(DONE)
+
+
+- Tìm kiếm không dấu lẫn có dấu.
+
+
 - Chỉnh CSS
+
+
+=> Trang xem chi tiết của AD chưa có trở về. 2 trang còn lại tương tự...!!!(Ds_tree_l1,2,3,4,5)
+
+
+
+=>Xem lại update!script chưa ổn !! nếu arlet hủy..(Làm tương tự ds_tree_l5 ..50%....)
+->định tách update thành 3 trang dac diem , mo ta, cach cham soc ,,, cho nó thực tế hơn, next tới lun vẫn đơn giản ,chiều nói.
+
+
+-> Màu chữ đặc điểm trong các page ad.  
+	
+	
+	
+	
 			-----------------------------
 ------------------------------------------------------------------------------------
-NEW NOTE::
+DONE
+
+
 =>"Nếu để 8 cây, 12 cây miễn là 4 cây 1 hàng thì bình thường còn sửa thành 6 ,10,.. thì hiển thị không đẹp nha! Có thì xem lại(DONE)
 =>"Trang search_page.php background cho dài thêm tí vừa ,trải dài xuống (Hình trong mục NEED FIX - search_trees.php(DONE)
 => Mấy trang liên kết từ Danh mục cây cũng vậy á... (Hình xem - NEED FIX danhmuc.png)(DONE)
@@ -11,7 +39,7 @@ NEW NOTE::
 =>
 =>{Chưa chèn script kiểm tra ô tìm kiếm nếu rỗng)!!!(DONE)
 =
-=> Trang xem chi tiết của AD chưa có trở về. 2 trang còn lại tương tự...!!!
+
 
 
 
@@ -20,11 +48,13 @@ NEW NOTE::
 
 
 
-=>Xem lại update!script chưa ổn !! nếu arlet hủy..
+
 
 
 ??Tạm thời có nhiêu vui lòng check github/Yeu cau NLCS mỗi ngày.??
 
+
+-DIv quảng cáo chưa làm trên các trang liên kết từ trang chủ.(30s)(DONE)
 :::::::::::::::::::::::::::::::::::::::::::::::::ĐÃ XONG::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 - Tìm kiếm page (30% chưa css, chưa thêm các trang as trang chủ, )
 (Cần tìm theo chữ có dấu)!!!(Đã xong)
