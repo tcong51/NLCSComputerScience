@@ -8,32 +8,21 @@
         <meta charset="utf8">
         <link href="css/update_trees.css" rel="stylesheet" type="text/css" />
     </head>
+
     <script>
-    function notices_dacdiem(value){
-	  var result = confirm("Are you sure?")
-      ok=true;
-		if(result)  {
-			var xmlhttp = new XMLHttpRequest();
-	 		xmlhttp.onreadystatechange = function() {
-	   		if (this.readyState == 4 && this.status == 200) {
-		 	document.getElementById("notices").innerHTML = this.responseText;
-	   			}
-	 		};
-	 	xmlhttp.open("GET",`input_update_dacdiem.php?id=${value}`,true);
-	 	xmlhttp.send();
-		alert("You have updated! ");
-        ok=true;
-        
-		} else {
-				
-                
-                
-		        alert("You not updated! "); 
-                window.location.reload();   
-			   }
-                   
-	 
-   	}
+    function signup(){
+    var key= document.getElementById("search").value;
+    var ok=true;
+    if (key ==""  ){
+        alert("Vui lòng điền từ khóa !");
+    ok=false;
+	    }else if(key == null){
+            alert("Vui lòng điền từ khóa !");
+             ok=false; 
+                           }
+	return ok;
+}
+    
        function notices_cachchamsoc(value){
 	  var result = confirm("Are you sure?")
 		if(result)  {
@@ -55,7 +44,7 @@
    	}
        function notices_motacay(value){
 	  var result = confirm("Are you sure?")
-      
+        
 		if(result)  {
 			var xmlhttp = new XMLHttpRequest();
 	 		xmlhttp.onreadystatechange = function() {
@@ -74,7 +63,43 @@
 			   }
                    
    	}
-       
+    //    setcookie("$id", value, time()+20);
+       function notices_dacdiem(value){
+        
+        
+	  var result = confirm("Are you sure?")
+      ok=true;
+		if(result)  {
+		// 	var xmlhttp = new XMLHttpRequest();
+	 	// 	xmlhttp.onreadystatechange = function() {
+	   	// 	if (this.readyState == 4 && this.status == 200) {
+		//  	document.getElementById("notices").innerHTML = this.responseText;
+	   	// 		}
+	 	// 	};
+	 	// xmlhttp.open("GET",`input_update_dacdiem.php?id=`,true);
+	 	// xmlhttp.send();
+		alert("You have updated! ");
+        ok=true;
+        
+		} else {
+            // setcookie("nani", value, time()+15);
+           
+            alert("You not updated! "); 
+		     ok=false;    
+             var x = location.href; 
+             alert(x); 
+                let action = document.getElementById("form");
+                    action.setAttribute("action", `update_trees.php`);
+                   
+                  location.reload(x)
+			   }
+              
+              
+     return ok; 
+        }
+                 
+              
+   	
     </script>
     <body>
 
@@ -117,7 +142,7 @@ else{
     echo '<br>';
     echo '<h1 >Đặc điểm</h1>';
     echo '<br>';
-    echo '<form action=input_update_dacdiem.php method="GET" >';
+    echo '<form  action=input_update_dacdiem.php method="GET"  onsubmit="return signup()" id=form>';
     echo '<table width="1500" cellspacing="0" cellpadding="1" border="2" align="center">' ;
     echo '<input type="hidden" name="Mact" value='.$data['Mact'].'>';
     echo "<tr>
@@ -127,7 +152,7 @@ else{
     </tr>";
     echo "<tr>
         <td><h2>Điền nội dung cần sửa</h2></td>
-        <td><textarea rows='5' cols='0' placeholder='Đây là vùng nhập text' name='Dacdiem' style='width: 1000px;height: 200px;'></textarea></td>
+        <td><textarea rows='5' cols='0' id='search' placeholder='Đây là vùng nhập text' name='Dacdiem' style='width: 1000px;height: 200px;'></textarea></td>
 
     </tr>";
     echo "<tr>
