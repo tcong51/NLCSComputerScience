@@ -40,3 +40,9 @@ body{
   #location{color:black;
     padding-top: 2px;
   } 
+
+  #button{
+    display: inline;
+    position: relative;
+    top: 25vh;
+  }

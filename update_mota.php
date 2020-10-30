@@ -13,8 +13,8 @@
 
 
 
-    function signup_dacdiem(){
-    var key= document.getElementById("search_dacdiem").value;
+function signup_mota(){
+    var key= document.getElementById("search_mota").value;
     var ok=true;
     if (key ==""  ){
         alert("Vui lòng điền từ khóa !");
@@ -26,9 +26,8 @@
 	return ok;
 }
 
-
-    
-       function notices_cachchamsoc(value){
+ 
+       function notices_motacay(value){
 	  var result = confirm("Are you sure?")
       ok=true;
 		if(result)  {
@@ -38,58 +37,27 @@
 		//  	document.getElementById("notices").innerHTML = this.responseText;
 	   	// 		}
 	 	// 	};
-	 	// xmlhttp.open("GET",`input_update_cachchamsoc.php?id=${value}`,true);
+	 	// xmlhttp.open("GET",`input_update_motacay.php?id=${value}`,true);
 	 	// xmlhttp.send();
-         ok=true;
+            
+
 		alert("You have updated! ");
+        ok=true;
 		} else {
             alert("You not updated! "); 
 		     ok=false;    
-                let action = document.getElementById("form_ccs");
-                    action.setAttribute("action", `update_trees.php`);
+                let action = document.getElementById("form_mt");
+                    action.setAttribute("action", `update_mota.php`);
                    
-                  window.location.reload(`update_trees.php?id=${value}`)
+                  window.location.reload(`update_mota.php?id=${value}`)
 			   }
               
               
      return ok;
-              
-               
-   	}
-      
-    
-       function notices_dacdiem(value){
-        
-        
-	  var result = confirm("Are you sure?")
-      ok=true;
-		if(result)  {
-		// 	var xmlhttp = new XMLHttpRequest();
-	 	// 	xmlhttp.onreadystatechange = function() {
-	   	// 	if (this.readyState == 4 && this.status == 200) {
-		//  	document.getElementById("notices").innerHTML = this.responseText;
-	   	// 		}
-	 	// 	};
-	 	// xmlhttp.open("GET",`input_update_dacdiem.php?id=`,true);
-	 	// xmlhttp.send();
-		alert("You have updated! ");
-        ok=true;
-        
-		} else {
-            alert("You not updated! "); 
-		     ok=false;    
-                let action = document.getElementById("form_dd");
-                    action.setAttribute("action", `update_dacdiem.php`);
                    
-                  window.location.reload(`update_dacdiem.php?id=${value}`)
-			   }
-              
-              
-     return ok; 
-        }
-                 
-              
-   	
+   	}
+    //    setcookie("$id", value, time()+20);
+
     </script>
     <body>
     <div class="btn">
@@ -126,37 +94,27 @@
     // echo '<input type="hidden" name="Mact" value='.$data['Mact'].'>';
     // echo '<img src='.$data['Hinh'].' alt="hinhsanpham" width = "25%">'.'<br>';
     // echo '<input type="file" name="Hinh">';
-    /*Update - Đặc điểm*/
-
-
-    echo '<div class="body">';
+ 
+    /*Update - Mô tả*/
     echo '<hr>';
     echo '<hr>';
-    echo '<br>';
-    echo '<br>';
-    echo '<h1 >Đặc điểm</h1>';
-    echo '<br>';
-    echo '<form  action=input_update_dacdiem.php method="GET"  onsubmit="return signup()" id=form_dd>';
-    echo '<table width="1280" cellspacing="0" cellpadding="1" border="2" align="center" style="background: azure;">' ;
+    echo '<h1>Mô tả</h1>';
+    echo '<form action=input_update_motacay.php method="GET" onsubmit="return signup()" id=form_mt>';
+    echo '<table width="1280px" cellspacing="0" cellpadding="1" border="2" align="center" style="background: azure;">' ;
     echo '<input type="hidden" name="Mact" value='.$data['Mact'].'>';
     echo "<tr>
         <td><h2 style='width: 200px;' >Nội dung hiện tại</h2></td>
-        <td id='location' style='width: 1300px;'>".$data['Dacdiem']."</td>;
+        <td id='location' style='width: 1300px;'>".$data['Motacay']."</td>;
         
     </tr>";
     echo "<tr>
         <td><h2>Điền nội dung cần sửa</h2></td>
-        <td><textarea rows='5' cols='0' id='search_dacdiem' placeholder='Đây là vùng nhập text' name='Dacdiem' style='width: 1070px;height: 200px;'></textarea></td>
+        <td><textarea rows='5' cols='0' id='search_mota' placeholder='Đây là vùng nhập text' name='Motacay' style='width: 1070px;height: 200px;'></textarea></td>
 
     </tr>";
     echo "<tr>
-        <td colspan='2' ><center><input type='submit' value=' Xác nhận ' onclick=notices_dacdiem(".$data['Mact'].") style='width:200px;height: 30px;' ></center></td>
+        <td colspan='2' ><center><input type='submit' value=' Xác nhận ' onclick=notices_motacay(".$data['Mact'].") style='width:200px;height: 30px;' ></center></td>
     </tr>";
-   
-    echo '</table>';
-    echo '</form>';
-    echo '</br>';
-    
    
     echo '</table>';
     echo '</form>';
