@@ -1,15 +1,11 @@
 <?php 
-// $a[]="";
-include "connect.php";
-// foreach ($sql = $con->query("SELECT Tencay FROM db_trees") as $value){
 
-//   array_push($a,$value['Tencay']);
- //ajax <a> xem chi tiet truyền tham số id thẳng
-    // }
+include "connect.php";
+
 //Tìm từ khóa::
 $key = $_GET['id'];
-//echo $q;
-// $hint = "";
+//echo $key;
+$q = $_GET['id'];
 $sql = $con->query("SELECT * FROM db_trees WHERE Tencay REGEXP '$key' ORDER BY Mact DESC ");
 foreach($sql as $value){
     echo"<a href =detail_trees.php?id=".$value['Mact'].">".$value['Tencay']."</a></br>";
@@ -19,9 +15,13 @@ foreach($sql as $value){
 
 }
 echo "</br>";
+// $a[]="";
+// foreach ($sql = $con->query("SELECT Tencay FROM db_trees") as $value){
 
-
-
+//   array_push($a,$value['Tencay']);
+// //  ajax <a> xem chi tiet truyền tham số id thẳng
+//     }
+// $hint = "";
 // // lookup all hints from array if $q is different from ""
 // if ($q !== "") {
 //   //$q = strtolower($q);
@@ -49,7 +49,7 @@ echo "</br>";
 
 
 // }
-// Output "no suggestion" if no hint was found or output correct values
+// // Output "no suggestion" if no hint was found or output correct values
 // echo $hint === "" ? "Không tìm thấy" : $hint;
 $con->close();
 ?>
