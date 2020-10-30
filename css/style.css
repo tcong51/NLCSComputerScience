@@ -24,7 +24,7 @@ img{max-width:100%;}
 /*end reset*/
 
 body{
-background: url(../images/background.jpg)no-repeat;
+background: url(../images/background.jpg);
 background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -109,9 +109,7 @@ span.hed-white {
     border-radius: 50%;
     margin: 0 auto;
 }
-.header-left-bottom {
 
-}
 .header-left-bottom h3 {
   font-size: 16px;
   font-weight: 400;
@@ -382,7 +380,6 @@ span.sin-color {
   list-style: none;
   display: inline-block;
   vertical-align: middle;
-      float: right;
 }
 .strip-left ul.botm-strip-icon li {
   display: inline-block;

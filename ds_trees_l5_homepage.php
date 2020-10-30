@@ -136,6 +136,7 @@ foreach ($sql = $con->query("SELECT * FROM db_trees WHERE Loaicay='Thảo dượ
 $con->close();
  ?>
 </div>
-
+<div id="footer">
+    </div>
 </body>
 </html>

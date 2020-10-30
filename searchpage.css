@@ -1,6 +1,6 @@
-img{
-  width: 150px;
-  height: 150px;
+td img{
+  width: 250px;
+  height: 250px;
 }
 
 #name{
@@ -13,8 +13,9 @@ img{
 }
 
 #footer {
-  background: rgb(146, 25, 25);color:white;
-  text-align: center;							
+  width: 1280px;
+  height: 150px;			
+  background-image: url("./hinhanh/footer.jpg");								
 }
 #login a{text-decoration: none;}
 #login { 
@@ -116,4 +117,12 @@ background: #ccc;
 
 #content{
   background-color: gainsboro;
+}
+
+#ten-content{
+  background-color: lightgray;
+}
+
+td{
+  padding-left: 15px;
 }

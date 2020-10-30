@@ -13,8 +13,9 @@ td img{
 }
 
 #footer {
-    background: rgb(146, 25, 25);color:white;
-    text-align: center;							
+  width: 1280px;
+  height: 150px;			
+  background-image: url("./hinhanh/footer.jpg");			
 }
 #login a{text-decoration: none;}
 #login { 

@@ -30,14 +30,7 @@
 <body>
 <div class="header">
 		<div class="header-main">
-        <table  >
                       <h1>DANH SÁCH CÂY DÂY LEO </h1>
-					  <hr>
-               
-    </table>         
-
-    
-    
 </div>
 <!--header end here-->
 
@@ -62,7 +55,6 @@ $con->close();
  <div id="Update"></div>
  <div id="Delete"></div>
  <div class="copyright">
- <hr>
 	<p>© 2020 Admin.</p>
 </div>
 </body>

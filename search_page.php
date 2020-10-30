@@ -144,8 +144,7 @@ echo "Từ khóa : $search";
 			// echo "</br>";
 					
 				echo "<tr id='tr'>
-				<td><img src='".$sql['Hinh']."'></td>
-				<td style='width:150px'><h3>".$sql['Tencay']."</h3> ".$sql['Dacdiem']."...<a href =detail_trees.php?id=".$sql['Mact']."> [Xem chi tiết]</a></td>
+				<td><h3>".$sql['Tencay']."</h3> ".$sql['Dacdiem']."...<a href =detail_trees.php?id=".$sql['Mact']."> [Xem chi tiết]</a></td>
 				</tr>";
 				echo '</br>';
 				echo '</br>';
@@ -163,5 +162,6 @@ echo "Từ khóa : $search";
 ?>
 </div>  
 </body>
-
+<div id="footer">
+    </div>
 </html>

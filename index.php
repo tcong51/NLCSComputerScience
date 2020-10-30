@@ -7,12 +7,12 @@
 
 <!-- -->
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>TRA CỨU THÔNG TIN CÂY TRỒNG</title>
     <meta charset="utf8">
     <link rel="stylesheet" href="testindex.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    
-       <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 </head>
 <script>
 const showResult=(value)=>{
@@ -172,7 +172,7 @@ function signup(){
                     
                        echo " <div class='col-3 mt-3' >
                                 <img style='width: 100%; height: 250px' src='".$sqlx['Hinh']."'>
-                                <br><a href =detail_trees.php?id=".$sqlx['Mact'].">  ".$sqlx['Tencay']." </a>
+                                <br><center><a href =detail_trees.php?id=".$sqlx['Mact'].">  ".$sqlx['Tencay']." </a></center>
                         </div>";
 
                 }
@@ -202,7 +202,6 @@ function signup(){
                 ?>
     </div>
     <div id="footer">
-            <h3>WEB THÔNG TIN CÂY TRỒNG</h3>
     </div>
 </body>
 </html>

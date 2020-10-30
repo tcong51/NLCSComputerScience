@@ -157,6 +157,8 @@ $data = $data->fetch_assoc();
 $con->close();
 
 ?>
+<div id="footer">
+    </div>
 </div>
 </body>
 </html>
