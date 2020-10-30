@@ -47,6 +47,7 @@ else{
     echo '<marquee><h1 >Đã sửa thành công</h1></marquee>';
     echo'<br>';
     echo' <h2 class="copyright"><a href =detail_trees.php?id='.$data['Mact'].'>Quay về xem chi tiết</a></h2>';
+    echo' <h2 class="copyright"><a href =ds_trees.php.>Quay về danh sách cây</a></h2>';
     $con->query($sql);
     $con->close();
 ?>
