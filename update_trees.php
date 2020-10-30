@@ -52,15 +52,17 @@ function signup_cachchamsoc(){
     
        function notices_cachchamsoc(value){
 	  var result = confirm("Are you sure?")
+      ok=true;
 		if(result)  {
-			var xmlhttp = new XMLHttpRequest();
-	 		xmlhttp.onreadystatechange = function() {
-	   		if (this.readyState == 4 && this.status == 200) {
-		 	document.getElementById("notices").innerHTML = this.responseText;
-	   			}
-	 		};
-	 	xmlhttp.open("GET",`input_update_cachchamsoc.php?id=${value}`,true);
-	 	xmlhttp.send();
+		// 	var xmlhttp = new XMLHttpRequest();
+	 	// 	xmlhttp.onreadystatechange = function() {
+	   	// 	if (this.readyState == 4 && this.status == 200) {
+		//  	document.getElementById("notices").innerHTML = this.responseText;
+	   	// 		}
+	 	// 	};
+	 	// xmlhttp.open("GET",`input_update_cachchamsoc.php?id=${value}`,true);
+	 	// xmlhttp.send();
+         ok=true;
 		alert("You have updated! ");
 		} else {
             alert("You not updated! "); 

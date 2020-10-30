@@ -3,6 +3,9 @@
 
 
 
+
+
+
 ------------------------------NEW::::=-----------------------------------------------------
 
 - Reponsive(chưa reponsive)!!!
@@ -19,8 +22,6 @@
 
 
 =>Xem lại update!script chưa ổn !! nếu arlet hủy..(Làm tương tự ds_tree_l5 ..50%....)
-->định tách update thành 3 trang dac diem , mo ta, cach cham soc ,,, cho nó thực tế hơn, next tới lun vẫn đơn giản ,chiều nói.
-
 
 -> Màu chữ đặc điểm trong các page ad.  
 	

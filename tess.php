@@ -144,63 +144,27 @@ function signup(){
                 <?php
                 $con = new mysqli('localhost', 'root', '', 'database_trees');
                 $con -> set_charset('utf8');
-                $Tencay=[];
-                $Luottruycap=[];
-                $Luottruycap_dxx=[];
-                // $result =mysqli_query($con,"SELECT * FROM db_trees ");
-                
-                foreach ($sql = $con->query("SELECT * FROM db_trees") as $value){
-                    array_push($Luottruycap,$value['Luottruycap']);
-                
-                    }
-                rsort($Luottruycap); 
-                $i=0;
-                while($i<8){
-                        
-                        array_push($Luottruycap_dxx,$Luottruycap[$i]);
-                    
-                    $i++;
+                function convert_vi_to_en($str) {
+                    $str = preg_replace("/(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ)/", "a", $str);
+                    $str = preg_replace("/(è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ)/", "e", $str);
+                    $str = preg_replace("/(ì|í|ị|ỉ|ĩ)/", "i", $str);
+                    $str = preg_replace("/(ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ)/", "o", $str);
+                    $str = preg_replace("/(ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ)/", "u", $str);
+                    $str = preg_replace("/(ỳ|ý|ỵ|ỷ|ỹ)/", "y", $str);
+                    $str = preg_replace("/(đ)/", "d", $str);
+                    $str = preg_replace("/(À|Á|Ạ|Ả|Ã|Â|Ầ|Ấ|Ậ|Ẩ|Ẫ|Ă|Ằ|Ắ|Ặ|Ẳ|Ẵ)/", "A", $str);
+                    $str = preg_replace("/(È|É|Ẹ|Ẻ|Ẽ|Ê|Ề|Ế|Ệ|Ể|Ễ)/", "E", $str);
+                    $str = preg_replace("/(Ì|Í|Ị|Ỉ|Ĩ)/", "I", $str);
+                    $str = preg_replace("/(Ò|Ó|Ọ|Ỏ|Õ|Ô|Ồ|Ố|Ộ|Ổ|Ỗ|Ơ|Ờ|Ớ|Ợ|Ở|Ỡ)/", "O", $str);
+                    $str = preg_replace("/(Ù|Ú|Ụ|Ủ|Ũ|Ư|Ừ|Ứ|Ự|Ử|Ữ)/", "U", $str);
+                    $str = preg_replace("/(Ỳ|Ý|Ỵ|Ỷ|Ỹ)/", "Y", $str);
+                    $str = preg_replace("/(Đ)/", "D", $str);
+                    //$str = str_replace(" ", "-", str_replace("&*#39;","",$str));
+                    return $str;
                 }
-              
-                foreach($Luottruycap_dxx as $value){
-                    // echo $value;
-                    $sql = $con->query("SELECT Mact FROM db_trees WHERE Luottruycap='$value'");
-                    $sql = $sql->fetch_assoc();
-                    $tree1= $sql['Mact'];
-                    // echo $tree1;
-                    $sqlx = $con->query("SELECT * FROM db_trees WHERE Mact='$tree1'");
-                    $sqlx = $sqlx->fetch_assoc();
-                    
-                       echo " <div class='col-3 mt-3' >
-                                <img style='width: 100%; height: 250px' src='".$sqlx['Hinh']."'>
-                                <br><center><a href =detail_trees.php?id=".$sqlx['Mact'].">  ".$sqlx['Tencay']." </a></center>
-                        </div>";
 
-                }
-                
-                
-
-                    // foreach ($sql = $con->query("SELECT * FROM db_trees") as $value){
-                    //     echo "<tr id='tr'>
-                    //     <td id='link'><a href =detail_trees.php?id=".$value['Mact']."><img src='".$value['Hinh']."'height='200' width='200'>Xem chi tiết</a></td>
-                    //     <td style='width:700px'><h3>".$value['Tencay']."</h3></br> ".$value['Dacdiem']."...</td>
-                    //     </tr>";
-                    //     echo '</br>';
-                    //     echo '</br>';
-                      
-                    //     }
-                        
-                        
-                
-                //         <div class="col-3 mt-3" >
-                //                 <img style="width: 100%; height: 250px" src=<?php echo $row['Hinh']>
-                //                 <br><a href= "php echo 'detail_trees.php?id='.$row['Mact'].' '" > <?php echo $row['Tencay'] </a>
-                //         </div>
-        
-                
-            
-            
-                ?>
+                echo (convert_vi_to_en("Kiệt"));
+               ?>
     </div>
     <div id="footer">
     </div>
