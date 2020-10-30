@@ -11,6 +11,9 @@
 <!--header start here-->
 <div class="header">
 		<div class="header-main">
+        <div class="btn">
+		    <button class="input1" onclick="window.location.href='pageadmin.php'" style="width:120px;height:50px">PAGE ADMIN</button>
+	    </div>
         <table  >
                       <h1>DANH SÁCH  LOẠI CÂY </h1>
                       <th class="but"><button style="height:50px;width:200px" onclick="window.location.href='ds_trees_l1.php'"  style="height="500"; width="600"" >Cây Ăn Quả</button></th>

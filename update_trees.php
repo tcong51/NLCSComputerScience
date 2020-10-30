@@ -142,7 +142,11 @@ function signup_cachchamsoc(){
    	
     </script>
     <body>
-
+    <div class="btn">
+    <input type="button" value="Back" onclick="history.go(-1);" style="width: 120px;height: 50px;">
+        <br>
+    <button class="input1" onclick="window.location.href='ds_trees.php'" style="width:120px;height:50px;position: absolute;">Danh sách cây</button>
+        </div>
 
     <div class="header">
 		<div class="header-main">
@@ -156,9 +160,9 @@ function signup_cachchamsoc(){
     if(isset($_SESSION['tendangnhap'])){
         $tendangnhap = $_SESSION['tendangnhap'];
     }
-else{
-    header("location:loginadmin.html");
-}
+    else{
+        header("location:loginadmin.html");
+    }
     $mact = $_GET['Mact'];
     $con = new mysqli('localhost', 'root', '', 'database_trees');
     //require 'connect.php';
@@ -183,7 +187,7 @@ else{
     echo '<h1 >Đặc điểm</h1>';
     echo '<br>';
     echo '<form  action=input_update_dacdiem.php method="GET"  onsubmit="return signup()" id=form_dd>';
-    echo '<table width="1500" cellspacing="0" cellpadding="1" border="2" align="center">' ;
+    echo '<table width="1280" cellspacing="0" cellpadding="1" border="2" align="center" style="background: azure;">' ;
     echo '<input type="hidden" name="Mact" value='.$data['Mact'].'>';
     echo "<tr>
         <td><h2 style='width: 200px;' >Nội dung hiện tại</h2></td>
@@ -192,11 +196,11 @@ else{
     </tr>";
     echo "<tr>
         <td><h2>Điền nội dung cần sửa</h2></td>
-        <td><textarea rows='5' cols='0' id='search_dacdiem' placeholder='Đây là vùng nhập text' name='Dacdiem' style='width: 1000px;height: 200px;'></textarea></td>
+        <td><textarea rows='5' cols='0' id='search_dacdiem' placeholder='Đây là vùng nhập text' name='Dacdiem' style='width: 1070px;height: 200px;'></textarea></td>
 
     </tr>";
     echo "<tr>
-        <td colspan='2' ><input type='submit' value=' Xác nhận ' onclick=notices_dacdiem(".$data['Mact'].") style='width:200px;height: 30px;' ></td>
+        <td colspan='2' ><center><input type='submit' value=' Xác nhận ' onclick=notices_dacdiem(".$data['Mact'].") style='width:200px;height: 30px;' ></center></td>
     </tr>";
    
     echo '</table>';
@@ -210,13 +214,10 @@ else{
     /*Update - Cách chăm sóc*/
     echo '<hr>';
     echo '<hr>';
-    echo '<br>';
-    echo '<br>';
     echo '<h1>Cách chăm sóc</h1>';
-    echo '<br>';
     echo '<div class="form">';
     echo '<form action=input_update_cachchamsoc.php method="GET" onsubmit="return signup()" id=form_ccs >';
-    echo '<table width="1500" cellspacing="0" cellpadding="1" border="2" align="center">' ;
+    echo '<table width="1280" cellspacing="0" cellpadding="1" border="2" align="center" style="background: azure;">' ;
     echo '<input type="hidden" name="Mact" value='.$data['Mact'].'>';
     echo "<tr class='tr'>
         <td><h2 style='width: 200px;' >Nội dung hiện tại</h2></td>
@@ -225,11 +226,11 @@ else{
     </tr>";
     echo "<tr class='tr'>
         <td><h2>Điền nội dung cần sửa</h2></td>
-        <td><textarea rows='5' cols='0' id='search_cachchamsoc' placeholder='Đây là vùng nhập text' name='Cachchamsoc' style='width: 1000px;height: 200px;'></textarea></td>
+        <td><textarea rows='5' cols='0' id='search_cachchamsoc' placeholder='Đây là vùng nhập text' name='Cachchamsoc' style='width: 1070px;height: 200px;'></textarea></td>
 
     </tr>";
     echo "<tr>
-        <td colspan='2' ><input type='submit' value=' Xác nhận ' onclick=notices_cachchamsoc(".$data['Mact'].") style='width:200px;height: 30px;' ></td>
+        <td colspan='2' ><center><input type='submit' value=' Xác nhận ' onclick=notices_cachchamsoc(".$data['Mact'].") style='width:200px;height: 30px;' ></center></td>
     </tr>";
    
     echo '</table>';
@@ -237,18 +238,13 @@ else{
     echo '</div>';
     echo '</br>';
     echo '</br>';
-    echo '</br>';
-    echo '</br>';
     
     /*Update - Mô tả*/
     echo '<hr>';
     echo '<hr>';
-    echo '<br>';
-    echo '<br>';
     echo '<h1>Mô tả</h1>';
-    echo '<br>';
     echo '<form action=input_update_motacay.php method="GET" onsubmit="return signup()" id=form_mt>';
-    echo '<table width="1500" cellspacing="0" cellpadding="1" border="2" align="center">' ;
+    echo '<table width="1280px" cellspacing="0" cellpadding="1" border="2" align="center" style="background: azure;">' ;
     echo '<input type="hidden" name="Mact" value='.$data['Mact'].'>';
     echo "<tr>
         <td><h2 style='width: 200px;' >Nội dung hiện tại</h2></td>
@@ -257,11 +253,11 @@ else{
     </tr>";
     echo "<tr>
         <td><h2>Điền nội dung cần sửa</h2></td>
-        <td><textarea rows='5' cols='0' id='search_mota' placeholder='Đây là vùng nhập text' name='Motacay' style='width: 1000px;height: 200px;'></textarea></td>
+        <td><textarea rows='5' cols='0' id='search_mota' placeholder='Đây là vùng nhập text' name='Motacay' style='width: 1070px;height: 200px;'></textarea></td>
 
     </tr>";
     echo "<tr>
-        <td colspan='2' ><input type='submit' value=' Xác nhận ' onclick=notices_motacay(".$data['Mact'].") style='width:200px;height: 30px;' ></td>
+        <td colspan='2' ><center><input type='submit' value=' Xác nhận ' onclick=notices_motacay(".$data['Mact'].") style='width:200px;height: 30px;' ></center></td>
     </tr>";
    
     echo '</table>';

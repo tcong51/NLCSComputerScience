@@ -11,44 +11,28 @@
 - Reponsive(chưa reponsive)!!!
 
 
-- Tìm kiếm không dấu lẫn có dấu.
 
 
-- Chỉnh CSS
+-DIv quảng cáo chưa làm trên các trang liên kết từ trang chủ.(30s)
 
-
-=> Trang xem chi tiết của AD chưa có trở về. 2 trang còn lại tương tự...!!!(Ds_tree_l1,2,3,4,5)
 
 
 
 =>Xem lại update!script chưa ổn !! nếu arlet hủy..(Làm tương tự ds_tree_l5 ..50%....)
 
--> Màu chữ đặc điểm trong các page ad.  
-	
-	
-	
-	
 			-----------------------------
 ------------------------------------------------------------------------------------
-DONE
-
-
-=>"Nếu để 8 cây, 12 cây miễn là 4 cây 1 hàng thì bình thường còn sửa thành 6 ,10,.. thì hiển thị không đẹp nha! Có thì xem lại(DONE)
-=>"Trang search_page.php background cho dài thêm tí vừa ,trải dài xuống (Hình trong mục NEED FIX - search_trees.php(DONE)
-=> Mấy trang liên kết từ Danh mục cây cũng vậy á... (Hình xem - NEED FIX danhmuc.png)(DONE)
-=> Rảnh làm footer cho trang nó lăn đc nha... ý là lăn chuột đc á...(...)
+NEW NOTE::
+=>"Nếu để 8 cây, 12 cây miễn là 4 cây 1 hàng thì bình thường còn sửa thành 6 ,10,.. thì hiển thị không đẹp nha! Có thì xem lại (Done)
+=>"Trang search_page.php background cho dài thêm tí vừa ,trải dài xuống (Hình trong mục NEED FIX - search_trees.php) (Done)
+=> Mấy trang liên kết từ Danh mục cây cũng vậy á... (Hình xem - NEED FIX danhmuc.png) (done)
+=> Rảnh làm footer cho trang nó lăn đc nha... ý là lăn chuột đc á...(...) (done)
 =>
 =>{Chưa chèn script kiểm tra ô tìm kiếm nếu rỗng)!!!(DONE)
 =
-
-
-
-
-=>Vẫn chưa CSS background của những page of admin!! Check,please!!!
-
-
-
-
+=> Trang xem chi tiết của AD chưa có trở về. 2 trang còn lại tương tự...!!!
+=>Vẫn chưa CSS background của những page of admin!! Check,please!!! (DOne)
+=>Xem lại update!script chưa ổn !! nếu arlet hủy..
 
 
 

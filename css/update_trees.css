@@ -1,5 +1,3 @@
-.body{text-align: center;
-}
 body{
     background: url(../images/background.jpg)no-repeat;
     background-attachment: fixed;
@@ -16,7 +14,7 @@ body{
     h1{margin: 0 auto;
         text-align: center;
         padding: 50px;
-    color: white;}   
+    color:black;}   
     .copyright {
         padding: 300px 0px;
         text-align: center;
@@ -36,8 +34,9 @@ body{
           text-decoration:none;
       }
   h2{
-    color: white;
+    color: black;
+    text-align: center;
   }
-  #location{color:white;
+  #location{color:black;
     padding-top: 2px;
   } 

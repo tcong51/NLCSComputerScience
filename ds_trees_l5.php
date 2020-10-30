@@ -28,6 +28,9 @@
 	<link href="css/ds_trees.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+<div class="btn">
+		    <button class="input1" onclick="window.location.href='ds_trees.php'" style="width:120px;height:50px">Danh sách cây</button>
+	    </div>
 <div class="header">
 		<div class="header-main">
                       <h1>DANH SÁCH CÂY THÂN GỖ </h1>
@@ -43,7 +46,7 @@ echo "<tr id='tr'><th>Tên Cây </th><th colspan=3>Thao Tác</th></tr>";
 foreach ($sql = $con->query("SELECT Mact,Tencay FROM db_trees WHERE Loaicay='Thân gỗ' ") as $value){
     echo "<tr id='tr'>
     <td > ".$value['Tencay']."</td>
-    <td><h3><a href =detail_trees.php?id=".$value['Mact'].">Xem chi tiết</a></h3></td>
+    <td><h3><a href =detail_trees_admin.php?id=".$value['Mact'].">Xem chi tiết</a></h3></td>
 	<td><h3><a href='#' onclick='notices(".$value['Mact'].")' >Xóa</a></h3></td>	
 	<td><h3><a href=update_trees.php?Mact=".$value['Mact']." >Sửa</a></td>
 	</tr>"; 

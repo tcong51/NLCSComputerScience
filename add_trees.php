@@ -17,9 +17,13 @@
 		header("location:loginadmin.html");
     }
 	?>
+	
     <div class="btn">
+		<button class="input1" onclick="window.location.href='pageadmin.php'" style="width:300px;height:50px">PAGE ADMIN</button>
+		<br>
         <button class="input1" onclick="window.location.href='ds_trees.php'" style="width:300px;height:50px">Danh sách cây</button>
 	</div>
+	
     <form action="input_addtrees.php" method="POST" enctype="multipart/form-data">
         <h1 align="center"  >Thêm cây </h1>
 		<table width="1000" cellspacing="0" cellpadding="1" border="0" align="center">

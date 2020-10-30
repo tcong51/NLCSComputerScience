@@ -32,7 +32,9 @@ td img{
 #wrapper{
     width: 1280px;
     /* border: 1px solid blue; */
+    background-color: #d3d3d3;
 }
+
 
 #header{
     height: 200px;
@@ -125,4 +127,10 @@ body {
 
 td{
     padding-left: 15px;
+}
+
+#btn{
+  display: none;
+  position: absolute;
+  top: 10px;
 }

@@ -11,12 +11,11 @@ body{
     margin:0; 
     font-family: 'Roboto Condensed', sans-serif;
      font-size: 100%;
-    color:white;
+    color:black;
     }  
-.input{
-    border-radius: 15px 15px 15px; 
-   
-}
 .input1:hover{background-color:greenyellow;}
 
 
+#btn{
+    display: inline-block;
+}
