@@ -1,9 +1,17 @@
+
+
+
+
+
+------------------------------NEW::::=-----------------------------------------------------
+
 - Reponsive(chưa reponsive)!!!
 
 
 
 
 -DIv quảng cáo chưa làm trên các trang liên kết từ trang chủ.(30s)
+
 
 
 - Chỉnh CSS
@@ -24,8 +32,11 @@ NEW NOTE::
 =>Xem lại update!script chưa ổn !! nếu arlet hủy..
 
 
+
 ??Tạm thời có nhiêu vui lòng check github/Yeu cau NLCS mỗi ngày.??
 
+
+-DIv quảng cáo chưa làm trên các trang liên kết từ trang chủ.(30s)(DONE)
 :::::::::::::::::::::::::::::::::::::::::::::::::ĐÃ XONG::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 - Tìm kiếm page (30% chưa css, chưa thêm các trang as trang chủ, )
 (Cần tìm theo chữ có dấu)!!!(Đã xong)

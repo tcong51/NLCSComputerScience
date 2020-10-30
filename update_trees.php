@@ -10,8 +10,35 @@
     </head>
 
     <script>
-    function signup(){
-    var key= document.getElementById("search").value;
+
+
+
+    function signup_dacdiem(){
+    var key= document.getElementById("search_dacdiem").value;
+    var ok=true;
+    if (key ==""  ){
+        alert("Vui lòng điền từ khóa !");
+    ok=false;
+	    }else if(key == null){
+            alert("Vui lòng điền từ khóa !");
+             ok=false; 
+                           }
+	return ok;
+}
+function signup_mota(){
+    var key= document.getElementById("search_mota").value;
+    var ok=true;
+    if (key ==""  ){
+        alert("Vui lòng điền từ khóa !");
+    ok=false;
+	    }else if(key == null){
+            alert("Vui lòng điền từ khóa !");
+             ok=false; 
+                           }
+	return ok;
+}
+function signup_cachchamsoc(){
+    var key= document.getElementById("search_cachchamsoc").value;
     var ok=true;
     if (key ==""  ){
         alert("Vui lòng điền từ khóa !");
@@ -36,31 +63,46 @@
 	 	xmlhttp.send();
 		alert("You have updated! ");
 		} else {
-				alert("You have not updated!");
-                location.reload();
+            alert("You not updated! "); 
+		     ok=false;    
+                let action = document.getElementById("form_ccs");
+                    action.setAttribute("action", `update_trees.php`);
+                   
+                  window.location.reload(`update_trees.php?id=${value}`)
 			   }
+              
+              
+     return ok;
               
                
    	}
        function notices_motacay(value){
 	  var result = confirm("Are you sure?")
-        
+      ok=true;
 		if(result)  {
-			var xmlhttp = new XMLHttpRequest();
-	 		xmlhttp.onreadystatechange = function() {
-	   		if (this.readyState == 4 && this.status == 200) {
-		 	document.getElementById("notices").innerHTML = this.responseText;
-	   			}
-	 		};
-	 	xmlhttp.open("GET",`input_update_motacay.php?id=${value}`,true);
-	 	xmlhttp.send();
+		// 	var xmlhttp = new XMLHttpRequest();
+	 	// 	xmlhttp.onreadystatechange = function() {
+	   	// 	if (this.readyState == 4 && this.status == 200) {
+		//  	document.getElementById("notices").innerHTML = this.responseText;
+	   	// 		}
+	 	// 	};
+	 	// xmlhttp.open("GET",`input_update_motacay.php?id=${value}`,true);
+	 	// xmlhttp.send();
             
 
 		alert("You have updated! ");
+        ok=true;
 		} else {
-                     alert("You have not updated!");
-                    
+            alert("You not updated! "); 
+		     ok=false;    
+                let action = document.getElementById("form_mt");
+                    action.setAttribute("action", `update_trees.php`);
+                   
+                  window.location.reload(`update_trees.php?id=${value}`)
 			   }
+              
+              
+     return ok;
                    
    	}
     //    setcookie("$id", value, time()+20);
@@ -82,16 +124,12 @@
         ok=true;
         
 		} else {
-            // setcookie("nani", value, time()+15);
-           
             alert("You not updated! "); 
 		     ok=false;    
-             var x = location.href; 
-             alert(x); 
-                let action = document.getElementById("form");
+                let action = document.getElementById("form_dd");
                     action.setAttribute("action", `update_trees.php`);
                    
-                  location.reload(x)
+                  window.location.reload(`update_trees.php?id=${value}`)
 			   }
               
               
@@ -119,7 +157,7 @@
 else{
     header("location:loginadmin.html");
 }
-    $mact = $_GET['id'];
+    $mact = $_GET['Mact'];
     $con = new mysqli('localhost', 'root', '', 'database_trees');
     //require 'connect.php';
     $con->set_charset('utf8');
@@ -142,7 +180,7 @@ else{
     echo '<br>';
     echo '<h1 >Đặc điểm</h1>';
     echo '<br>';
-    echo '<form  action=input_update_dacdiem.php method="GET"  onsubmit="return signup()" id=form>';
+    echo '<form  action=input_update_dacdiem.php method="GET"  onsubmit="return signup()" id=form_dd>';
     echo '<table width="1500" cellspacing="0" cellpadding="1" border="2" align="center">' ;
     echo '<input type="hidden" name="Mact" value='.$data['Mact'].'>';
     echo "<tr>
@@ -152,7 +190,7 @@ else{
     </tr>";
     echo "<tr>
         <td><h2>Điền nội dung cần sửa</h2></td>
-        <td><textarea rows='5' cols='0' id='search' placeholder='Đây là vùng nhập text' name='Dacdiem' style='width: 1000px;height: 200px;'></textarea></td>
+        <td><textarea rows='5' cols='0' id='search_dacdiem' placeholder='Đây là vùng nhập text' name='Dacdiem' style='width: 1000px;height: 200px;'></textarea></td>
 
     </tr>";
     echo "<tr>
@@ -175,7 +213,7 @@ else{
     echo '<h1>Cách chăm sóc</h1>';
     echo '<br>';
     echo '<div class="form">';
-    echo '<form action=input_update_cachchamsoc.php method="GET"  >';
+    echo '<form action=input_update_cachchamsoc.php method="GET" onsubmit="return signup()" id=form_ccs >';
     echo '<table width="1500" cellspacing="0" cellpadding="1" border="2" align="center">' ;
     echo '<input type="hidden" name="Mact" value='.$data['Mact'].'>';
     echo "<tr class='tr'>
@@ -185,7 +223,7 @@ else{
     </tr>";
     echo "<tr class='tr'>
         <td><h2>Điền nội dung cần sửa</h2></td>
-        <td><textarea rows='5' cols='0' placeholder='Đây là vùng nhập text' name='Cachchamsoc' style='width: 1000px;height: 200px;'></textarea></td>
+        <td><textarea rows='5' cols='0' id='search_cachchamsoc' placeholder='Đây là vùng nhập text' name='Cachchamsoc' style='width: 1000px;height: 200px;'></textarea></td>
 
     </tr>";
     echo "<tr>
@@ -207,7 +245,7 @@ else{
     echo '<br>';
     echo '<h1>Mô tả</h1>';
     echo '<br>';
-    echo '<form action=input_update_motacay.php method="GET" >';
+    echo '<form action=input_update_motacay.php method="GET" onsubmit="return signup()" id=form_mt>';
     echo '<table width="1500" cellspacing="0" cellpadding="1" border="2" align="center">' ;
     echo '<input type="hidden" name="Mact" value='.$data['Mact'].'>';
     echo "<tr>
@@ -217,7 +255,7 @@ else{
     </tr>";
     echo "<tr>
         <td><h2>Điền nội dung cần sửa</h2></td>
-        <td><textarea rows='5' cols='0' placeholder='Đây là vùng nhập text' name='Motacay' style='width: 1000px;height: 200px;'></textarea></td>
+        <td><textarea rows='5' cols='0' id='search_mota' placeholder='Đây là vùng nhập text' name='Motacay' style='width: 1000px;height: 200px;'></textarea></td>
 
     </tr>";
     echo "<tr>
