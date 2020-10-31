@@ -136,7 +136,7 @@
     echo '<br>';
     echo '<h1 >Đặc điểm</h1>';
     echo '<br>';
-    echo '<form  action=input_update_dacdiem.php method="GET"  onsubmit="return signup()" id=form_dd>';
+    echo '<form  action=input_update_dacdiem.php method="GET"  onsubmit="return signup_dacdiem()" id=form_dd>';
     echo '<table width="1280" cellspacing="0" cellpadding="1" border="2" align="center" style="background: azure;">' ;
     echo '<input type="hidden" name="Mact" value='.$data['Mact'].'>';
     echo "<tr>

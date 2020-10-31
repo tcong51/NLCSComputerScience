@@ -99,7 +99,7 @@ function signup_mota(){
     echo '<hr>';
     echo '<hr>';
     echo '<h1>Mô tả</h1>';
-    echo '<form action=input_update_motacay.php method="GET" onsubmit="return signup()" id=form_mt>';
+    echo '<form action=input_update_motacay.php method="GET" onsubmit="return signup_mota()" id=form_mt>';
     echo '<table width="1280px" cellspacing="0" cellpadding="1" border="2" align="center" style="background: azure;">' ;
     echo '<input type="hidden" name="Mact" value='.$data['Mact'].'>';
     echo "<tr>

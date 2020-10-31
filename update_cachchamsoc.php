@@ -31,13 +31,13 @@ function signup_cachchamsoc(){
        function notices_cachchamsoc(value){
 	  var result = confirm("Are you sure?")
 		if(result)  {
-			var xmlhttp = new XMLHttpRequest();
-	 		xmlhttp.onreadystatechange = function() {
-	   		if (this.readyState == 4 && this.status == 200) {
-		 	document.getElementById("notices").innerHTML = this.responseText;
-	   			}
-	 		};
-	 	xmlhttp.open("GET",`input_update_cachchamsoc.php?id=${value}`,true);
+		// 	var xmlhttp = new XMLHttpRequest();
+	 	// 	xmlhttp.onreadystatechange = function() {
+	   	// 	if (this.readyState == 4 && this.status == 200) {
+		//  	document.getElementById("notices").innerHTML = this.responseText;
+	   	// 		}
+	 	// 	};
+	 	// xmlhttp.open("GET",`input_update_cachchamsoc.php?id=${value}`,true);
 	 	xmlhttp.send();
 		alert("You have updated! ");
 		} else {
@@ -97,7 +97,7 @@ function signup_cachchamsoc(){
     echo '<hr>';
     echo '<h1>Cách chăm sóc</h1>';
     echo '<div class="form">';
-    echo '<form action=input_update_cachchamsoc.php method="GET" onsubmit="return signup()" id=form_ccs >';
+    echo '<form action=input_update_cachchamsoc.php method="GET" onsubmit="return signup_cachchamsoc()" id=form_ccs >';
     echo '<table width="1280" cellspacing="0" cellpadding="1" border="2" align="center" style="background: azure;">' ;
     echo '<input type="hidden" name="Mact" value='.$data['Mact'].'>';
     echo "<tr class='tr'>
