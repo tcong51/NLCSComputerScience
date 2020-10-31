@@ -155,7 +155,7 @@ function signup(){
                     }
                 rsort($Luottruycap); 
                 $i=0;
-                while($i<8){
+                while($i<6){
                         
                         array_push($Luottruycap_dxx,$Luottruycap[$i]);
                     

@@ -31,6 +31,15 @@
 <div class="btn">
 		    <button class="input1" onclick="window.location.href='ds_trees.php'" style="width:120px;height:50px">Danh sách cây</button>
 	    </div>
+		<div class="search-container">
+                    <form action="search_page_admin.php" method ="GET" onsubmit="return signup()">
+                    <input type="text" placeholder="Tìm kiếm.." id="search" name="search" >
+                    <button type="submit"><i class="fa fa-search"></i></i></button>
+                     
+                     </form>
+                  
+                   
+                </div>
 <div class="header">
 		<div class="header-main">
                       <h1>DANH SÁCH CÂY THÂN GỖ </h1>

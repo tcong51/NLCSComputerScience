@@ -7,11 +7,6 @@
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
        <!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> -->
 </head>
-<!-- QUANG CAO -->
-<link href="css/ads.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="js/BannerFloat.js"></script>
-
-<!-- -->
 <script>
 	// var IMAGE_PATHS = [];
 	// IMAGE_PATHS[0] = "./hinhanh/banner.jpg";
@@ -90,8 +85,8 @@
                 <a href="ds_trees_l4_homepage.php">Cây thân gỗ</a>
                 <a href="ds_trees_l5_homepage.php">Cây thảo dược</a>
                 <div class="search-container">
-                    <form action="search_page.php" method ="GET" onsubmit="return signup()">
-                    	<input type="text" placeholder="Tìm kiếm.." id="search" name="search" onkeyup="showResult(this.value)">
+                    <form action="search_page_admin.php" method ="GET" onsubmit="return signup()">
+                    	<input type="text" placeholder="Tìm kiếm.." id="search" name="search" >
                     <button type="submit"><i class="fa fa-search"></i></i></button>
                      <div id="show" onclick="showss(this.value)"></div> 
                      </form>
@@ -103,16 +98,6 @@
             </div>
 
 	</div>
-	<!-- QUANG CAO -->
-<div class="adfloat" id="divBannerFloatLeft">
- <p><a href="http://hocwebgiare.com/" target="_blank"><img src="http://hocwebgiare.com/images/left_banner.png" alt=""></a>
- </p>
-</div>
-<div class="adfloat" id="divBannerFloatRight">
- <p><a href="http://hocwebgiare.com/" target="_blank"><img src="http://hocwebgiare.com/images/right_banner.jpg" alt=""></a>
- </p>
-</div>
-<!-- -->
 	<div id="content">
 	<?php 
 	include "connect.php";
@@ -173,7 +158,7 @@ if ($key !== "") {
 		$sql = $sql->fetch_assoc();
 		//  "<a href=detail_trees.php?id=".$sql['Mact']."> ".$sql['Tencay']." </a></br>";
 	$hint =	
-				"<h3>".$sql['Tencay']."</h3> ".$sql['Dacdiem']."...<a href =detail_trees.php?id=".$sql['Mact']."> [Xem chi tiết]</a></td>
+				"<h3>".$sql['Tencay']."</h3> ".$sql['Dacdiem']."...<a href =tree.php?id=".$sql['Mact']."> [Cập nhật]</a></td>
 				</br>
 				</br>";
 				
@@ -182,7 +167,7 @@ if ($key !== "") {
         $sql = $con->query("SELECT * FROM db_trees WHERE Mact ='$key1'");
 		$sql = $sql->fetch_assoc();
        
-		$hint .="<h3>".$sql['Tencay']."</h3> ".$sql['Dacdiem']."...<a href =detail_trees.php?id=".$sql['Mact']."> [Xem chi tiết]</a></td>
+		$hint .="<h3>".$sql['Tencay']."</h3> ".$sql['Dacdiem']."...<a href=tree.php?id=".$sql['Mact']."> [Cập nhật]</a></td>
 		</br>
 		</br>";
 		// "<a href=detail_trees.php?id=".$sql['Mact']."> ".$sql['Tencay']." </a></br>";

@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <style>
+  /* #id{display : none ;
+    
+  } */
+  #lid{text_align:left;}
+  </style>
+  </head>
+  <body>
+  
 <?php 
 function convert_vi_to_en($str) {
       $str = preg_replace("/(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ)/", "a", $str);
@@ -51,28 +63,34 @@ $hint = "";
 if ($key !== "") {
   //$q = strtolower($q);
   $len=strlen($key);
+
   foreach($c as $key1=>$name) {
+    
     if (stristr($name,$key )) {
       // echo $key1;
       if ($hint === "") {
 		$sql = $con->query("SELECT * FROM db_trees WHERE Mact ='$key1'");
 		$sql = $sql->fetch_assoc();
-        $hint = "<a href=detail_trees.php?id=".$sql['Mact']."> ".$sql['Tencay']." </a></br>";
+        $hint = "<a href=detail_trees.php?id=".$sql['Mact']."> ".$sql['Tencay']." </a></br></br>";
       }
        else {
         $sql = $con->query("SELECT * FROM db_trees WHERE Mact ='$key1'");
 		$sql = $sql->fetch_assoc();
        
-        $hint .="<a href=detail_trees.php?id=".$sql['Mact']."> ".$sql['Tencay']." </a></br>";
+        $hint .="</br><a href=detail_trees.php?id=".$sql['Mact']." id='lid' > ".$sql['Tencay']." </a></br></br>";
       }
      
      
     }
+    
   }
 
 
 }
+
 // Output "no suggestion" if no hint was found or output correct values
 echo $hint === "" ? "Không tìm thấy" : $hint;
 $con->close();
 ?>
+<body>
+</hmtl>

@@ -64,7 +64,19 @@
                 xmlhttp.send();
   }
 
-}
+  function signup(){
+    var key= document.getElementById("search").value;
+    var ok=true;
+    if (key ==""  ){
+        alert("Vui lòng điền từ khóa !");
+    ok=false;
+	    }else if(key == null){
+            alert("Vui lòng điền từ khóa !");
+             ok=false; 
+                           }
+	return ok;
+}	
+
 </script>
 <!-- QUANG CAO -->
 <link href="css/ads.css" rel="stylesheet" type="text/css">
@@ -84,10 +96,11 @@
                 <a href="ds_trees_l5_homepage.php">Cây thảo dược</a>
                 <div class="search-container">
                 <form action="search_page.php" method ="GET" onsubmit="return signup()">
-                    <input type="text" placeholder="Tìm kiếm.." name="search" onkeyup="showResult(this.value)">
+                    <input type="text" placeholder="Tìm kiếm.." id="search" name="search" onkeyup="showResult(this.value)">
                     <button type="submit"><i class="fa fa-search"></i></i></button>
-                     <div id="show" onclick="showss(this.value)"></div> 
+                     
                      </form>
+                     <div id="show" onclick="showss(this.value)"></div> 
                 </div>
             </div>
 

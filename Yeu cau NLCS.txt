@@ -3,9 +3,13 @@
 
 
 
+MỚI
 
+1. chỉnh update_trees.php 3 cái sửa cho hàng ngang
+2.ds_trees_l1,2,3,4,5 luôn thì chỉnh cái thanh tìm kiếm lại dùm, k hiện đc cái kín tìm kiếm. với đưa nó về bên phải dùm luôn nha
+3. dùm nút back từ trang search_page_admin.php về trang "ds_trees.php" dùm t cái nha!!
 
-
+LÀM Từng bước.
 ------------------------------NEW::::=-----------------------------------------------------
 
 - Reponsive(chưa reponsive)!!!
@@ -13,12 +17,11 @@
 
 
 
--DIv quảng cáo chưa làm trên các trang liên kết từ trang chủ.(30s)
+-DIv quảng cáo chưa làm trên các trang liên kết từ trang chủ.(30s)(search_page,)(DONE)
 
 
 
-
-=>Xem lại update!script chưa ổn !! nếu arlet hủy..(Làm tương tự ds_tree_l5 ..50%....)
+=>Xem lại update!script chưa ổn !! nếu arlet hủy..(Làm tương tự ds_tree_l5 ..50%....)(DONE)
 
 			-----------------------------
 ------------------------------------------------------------------------------------
@@ -30,9 +33,9 @@ NEW NOTE::
 =>
 =>{Chưa chèn script kiểm tra ô tìm kiếm nếu rỗng)!!!(DONE)
 =
-=> Trang xem chi tiết của AD chưa có trở về. 2 trang còn lại tương tự...!!!
+=> Trang xem chi tiết của AD chưa có trở về. 2 trang còn lại tương tự...!!!(DONE)
 =>Vẫn chưa CSS background của những page of admin!! Check,please!!! (DOne)
-=>Xem lại update!script chưa ổn !! nếu arlet hủy..
+=>Xem lại update!script chưa ổn !! nếu arlet hủy..(DONE)
 
 
 

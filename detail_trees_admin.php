@@ -64,7 +64,7 @@
                 xmlhttp.send();
   }
 
-}
+
 </script>
 <!-- QUANG CAO -->
 <link href="css/ads.css" rel="stylesheet" type="text/css">
@@ -87,8 +87,8 @@
                 <a href="ds_trees_l4.php">Cây thân gỗ</a>
                 <a href="ds_trees_l5.php">Cây thảo dược</a>
                 <div class="search-container">
-                <form action="search_page.php" method ="GET" onsubmit="return signup()">
-                    <input type="text" placeholder="Tìm kiếm.." name="search" onkeyup="showResult(this.value)">
+                <form action="search_page_admin.php" method ="GET" onsubmit="return signup()">
+                    <input type="text" placeholder="Tìm kiếm.." name="search" >
                     <button type="submit"><i class="fa fa-search"></i></i></button>
                      <div id="show" onclick="showss(this.value)"></div> 
                      </form>

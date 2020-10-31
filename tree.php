@@ -42,16 +42,18 @@
                 </div>
 <div class="header">
 		<div class="header-main">
-                      <h1>DANH SÁCH CÂY ĂN QUẢ </h1>
+                      <h1>CHI TIẾT CÂY </h1>
 </div>
 <!--header end here-->
 
 <?php
+$word=$_GET['id'];
+// echo $word;
 include "connect.php";  
 echo "<form action= method=GET>";
 echo '<table width="1000" cellspacing="0" cellpadding="1" border="2" align="center">' ;
 echo "<tr id='tr'><th>Tên Cây </th><th colspan=3>Thao Tác</th></tr>";
-foreach ($sql = $con->query("SELECT Mact,Tencay FROM db_trees WHERE Loaicay='Ăn quả' ") as $value){
+foreach ($sql = $con->query("SELECT Mact,Tencay FROM db_trees WHERE Mact='$word' ") as $value){
     echo "<tr id='tr'>
     <td > ".$value['Tencay']."</td>
     <td><h3><a href =detail_trees_admin.php?id=".$value['Mact'].">Xem chi tiết</a></h3></td>
