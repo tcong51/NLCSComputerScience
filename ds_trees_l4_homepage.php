@@ -76,7 +76,7 @@
         <div id="header"></div>
         <div id="menu">
             <div class="topnav">
-            <a class="active" href="testindex.php">Trang chủ</a>
+            <a class="active" href="index.php">Trang chủ</a>
                 <a href="ds_trees_l1_homepage.php">Cây ăn quả</a>
                 <a href="ds_trees_l2_homepage.php">Cây kiểng</a>
                 <a href="ds_trees_l3_homepage.php">Cây dây leo</a>
