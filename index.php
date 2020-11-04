@@ -142,8 +142,8 @@ function signup(){
         <div class="col-12">
             <div class="row" >
                 <?php
-                $con = new mysqli('localhost', 'root', '', 'database_trees');
-                $con -> set_charset('utf8');
+                include "connect.php";
+
                 $Tencay=[];
                 $Luottruycap=[];
                 $Luottruycap_dxx=[];
@@ -155,7 +155,7 @@ function signup(){
                     }
                 rsort($Luottruycap); 
                 $i=0;
-                while($i<6){
+                while($i<8){
                         
                         array_push($Luottruycap_dxx,$Luottruycap[$i]);
                     

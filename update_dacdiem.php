@@ -114,21 +114,10 @@
         header("location:loginadmin.html");
     }
     $mact = $_GET['Mact'];
-    $con = new mysqli('localhost', 'root', '', 'database_trees');
-    //require 'connect.php';
-    $con->set_charset('utf8');
+    include "connect.php";
+
     $data = $con->query("SELECT Mact, Tencay, Dacdiem, Loaicay, Cachchamsoc, Hinh, Motacay FROM db_trees WHERE Mact = '$mact'");
     $data = $data->fetch_assoc();
-
-
-    /* Update hình ảnh cần kiểm tra nếu cần */
-    // echo '<form action=input_update_hinh.php method="GET">';
-    // echo '<input type="hidden" name="Mact" value='.$data['Mact'].'>';
-    // echo '<img src='.$data['Hinh'].' alt="hinhsanpham" width = "25%">'.'<br>';
-    // echo '<input type="file" name="Hinh">';
-    /*Update - Đặc điểm*/
-
-
     echo '<div class="body">';
     echo '<hr>';
     echo '<hr>';

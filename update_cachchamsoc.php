@@ -78,9 +78,8 @@ function signup_cachchamsoc(){
         header("location:loginadmin.html");
     }
     $mact = $_GET['Mact'];
-    $con = new mysqli('localhost', 'root', '', 'database_trees');
-    //require 'connect.php';
-    $con->set_charset('utf8');
+    include "connect.php";
+
     $data = $con->query("SELECT Mact, Tencay, Dacdiem, Loaicay, Cachchamsoc, Hinh, Motacay FROM db_trees WHERE Mact = '$mact'");
     $data = $data->fetch_assoc();
 
