@@ -74,6 +74,9 @@
 }	
 </script>
 <body>
+	<div id ="button-back">
+		<input type="button" value="Back" onclick="history.go(-1);" style="width: 120px;height: 50px;">
+	</div>
     <div id="wrapper">
         <div id="header"></div>
         <div id="menu">

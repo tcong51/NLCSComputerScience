@@ -52,3 +52,11 @@ color: #fff;
   color:#ff3366;
   text-decoration:none;
 }
+
+#search-bar{
+  display: inline-block;
+  /* border: solid red; */
+  position: relative;
+  left: 170vh;
+  bottom: 2vw;
+}
