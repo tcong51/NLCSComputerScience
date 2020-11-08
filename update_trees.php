@@ -173,9 +173,11 @@ function signup_cachchamsoc(){
     $data = $data->fetch_assoc();
     
     echo "<div id='button'>
-    // <center><button><a href='update_dacdiem.php?Mact=".$data['Mact']."' style='width:300px;height:100px;font-size: 30px;text-decoration: none;'>Sửa đặc điểm</a></button></center>
-    <center><button><a href='update_cachchamsoc.php?Mact=".$data['Mact']."' style='width:300px;height:100px;font-size: 30px;text-decoration: none;'>Sửa cách chăm sóc</a></button></center>
-    <center><button><a href='update_mota.php?Mact=".$data['Mact']."' style='width:300px;height:100px;font-size: 30px;text-decoration: none;'>Sửa mô tả</a></button></center>
+    <center>
+    <th><button><a href='update_dacdiem.php?Mact=".$data['Mact']."' style='width:300px;height:100px;font-size: 30px;text-decoration: none;'>Sửa đặc điểm</a></th>
+    <th><button><a href='update_cachchamsoc.php?Mact=".$data['Mact']."' style='width:300px;height:100px;font-size: 30px;text-decoration: none;'>Sửa cách chăm sóc</a></th>
+    <th><button><a href='update_mota.php?Mact=".$data['Mact']."' style='width:300px;height:100px;font-size: 30px;text-decoration: none;'>Sửa mô tả</a></th>
+    </center>
     </div>";
     
 ?>
