@@ -59,7 +59,7 @@ else{
 ?>
     <h2><button  onclick="window.location.href='ds_trees.php'" style="height:50px;width:200px">Danh sách cây </button>
     <button onclick="window.location.href='add_trees.php'" style="height:50px;width:200px">Tiếp tục thêm cây</button></h2>
-    
+
 </div>
 <!--header end here-->
 <hr>
