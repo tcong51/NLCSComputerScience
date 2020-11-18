@@ -1,4 +1,15 @@
 <!DOCTYPE html>
+<?php
+	session_start();
+?>
+<?php 
+	if(isset($_SESSION['tendangnhap'])){
+			$tendangnhap = $_SESSION['tendangnhap'];
+		}
+	else{
+		header("location:loginadmin.html");
+    }
+?>
 <html>
 <head>
 

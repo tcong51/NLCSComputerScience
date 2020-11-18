@@ -9,9 +9,9 @@ responsive
 
 MỚI
 
-1. chỉnh update_trees.php 3 cái sửa cho hàng ngang
-2.ds_trees_l1,2,3,4,5 luôn thì chỉnh cái thanh tìm kiếm lại dùm, k hiện đc cái kín tìm kiếm. với đưa nó về bên phải dùm luôn nha
-3. dùm nút back từ trang search_page_admin.php về trang "ds_trees.php" dùm t cái nha!!
+1. chỉnh update_trees.php 3 cái sửa cho hàng ngang (Done)
+2.ds_trees_l1,2,3,4,5 luôn thì chỉnh cái thanh tìm kiếm lại dùm, k hiện đc cái kín tìm kiếm. với đưa nó về bên phải dùm luôn nha(Done)
+3. dùm nút back từ trang search_page_admin.php về trang "ds_trees.php" dùm t cái nha!! 
 
 LÀM Từng bước.
 ------------------------------NEW::::=-----------------------------------------------------
