@@ -19,10 +19,6 @@
 
     <script>
 
-
-
-
-
 function signup_cachchamsoc(){
     var key= document.getElementById("search_cachchamsoc").value;
     var ok=true;

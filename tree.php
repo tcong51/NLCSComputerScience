@@ -1,4 +1,15 @@
 <!DOCTYPE html>
+<?php
+	session_start();
+?>
+<?php 
+	if(isset($_SESSION['tendangnhap'])){
+			$tendangnhap = $_SESSION['tendangnhap'];
+		}
+	else{
+		header("location:loginadmin.html");
+    }
+?>
  <html>
  <script>
  	function notices(value){
@@ -26,12 +37,13 @@
 	.null{display : none ;}
 	</style>
 	<link href="css/ds_trees.css" rel="stylesheet" type="text/css" />
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
 	<div class="btn">
 		    <button class="input1" onclick="window.location.href='ds_trees.php'" style="width:120px;height:50px">Danh sách cây</button>
 	    </div>
-		<div class="search-container">
+		<div id="search-bar">
                     <form action="search_page_admin.php" method ="GET" onsubmit="return signup()">
                     <input type="text" placeholder="Tìm kiếm.." id="search" name="search" >
                     <button type="submit"><i class="fa fa-search"></i></i></button>
