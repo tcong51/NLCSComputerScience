@@ -6,7 +6,10 @@
 <head>
     <title>Thêm cây</title>
     <meta charset="utf8">
-    <link href="css/add_trees.css" rel="stylesheet" type="text/css" />
+	<link href="css/add_trees.css" rel="stylesheet" type="text/css" />
+	<style>
+		#ds{color:white;}
+		</style>
 </head>
 <body>
 <?php 
@@ -25,7 +28,7 @@
 	</div>
 	
     <form action="input_addtrees.php" method="POST" enctype="multipart/form-data">
-        <h1 align="center"  >Thêm cây </h1>
+        <h1 align="center" id='ds'  >Thêm cây </h1>
 		<table width="1000" cellspacing="0" cellpadding="1" border="0" align="center">
 			
 			<tr>

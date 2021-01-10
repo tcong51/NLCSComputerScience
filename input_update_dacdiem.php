@@ -38,7 +38,7 @@ else{
     // $Loaicay = $_GET['Loaicay'];
     // $Cachchamsoc = $_GET['Cachchamsoc'];
     // $Motacay = $_GET['Motacay'];
-    $con = new mysqli('localhost', 'root', '', 'database_trees');
+    include "connect.php";
     //require 'connect.php';
     $con->set_charset('utf8');
     $sql = "UPDATE db_trees SET Dacdiem ='$dacdiem' WHERE Mact = '$mact'";

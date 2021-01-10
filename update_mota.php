@@ -39,14 +39,7 @@ function signup_mota(){
 	  var result = confirm("Are you sure?")
       ok=true;
 		if(result)  {
-		// 	var xmlhttp = new XMLHttpRequest();
-	 	// 	xmlhttp.onreadystatechange = function() {
-	   	// 	if (this.readyState == 4 && this.status == 200) {
-		//  	document.getElementById("notices").innerHTML = this.responseText;
-	   	// 		}
-	 	// 	};
-	 	// xmlhttp.open("GET",`input_update_motacay.php?id=${value}`,true);
-	 	// xmlhttp.send();
+		
             
 
 		alert("You have updated! ");

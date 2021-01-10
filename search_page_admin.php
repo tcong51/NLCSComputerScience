@@ -160,16 +160,21 @@ echo "</br>";
 		   // Kết nối sql
 		   $hint = "";
 // lookup all hints from array if $q is different from ""
+$i =1;
 if ($key !== "") {
   //$q = strtolower($q);
   $len=strlen($key);
   $dem=0;
+
   foreach($c as $key1=>$name) {
+	 
     if (stristr($name,$key )) {
-      // echo $key1;
+	  // echo $key1;
+	  
       if ($hint === "") {
 		$sql = $con->query("SELECT * FROM db_trees WHERE Mact ='$key1'");
 		$sql = $sql->fetch_assoc();
+		
 		//  "<a href=detail_trees.php?id=".$sql['Mact']."> ".$sql['Tencay']." </a></br>";
 	$hint =	
 				"<h3>".$sql['Tencay']."</h3> ".$sql['Dacdiem']."...<a href =tree.php?id=".$sql['Mact']."> [Cập nhật]</a></td>
@@ -186,9 +191,10 @@ if ($key !== "") {
 		</br>";
 		// "<a href=detail_trees.php?id=".$sql['Mact']."> ".$sql['Tencay']." </a></br>";
       }
-     
-      $dem++;
-    }
+	
+      $dem++; 
+	}
+
    
   }
 
@@ -200,6 +206,7 @@ echo " Khoảng $dem kết quả tìm kiếm cho với từ khóa '$search' :";
 	echo "</br>";
 // Output "no suggestion" if no hint was found or output correct values
 echo $hint === "" ? "Không tìm thấy" : $hint;
+
 $con->close();
 
 ?>

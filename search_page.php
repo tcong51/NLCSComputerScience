@@ -169,6 +169,7 @@ if ($key !== "") {
     if (stristr($name,$key )) {
       // echo $key1;
       if ($hint === "") {
+		
 		$sql = $con->query("SELECT * FROM db_trees WHERE Mact ='$key1'");
 		$sql = $sql->fetch_assoc();
 		//  "<a href=detail_trees.php?id=".$sql['Mact']."> ".$sql['Tencay']." </a></br>";
@@ -176,7 +177,7 @@ if ($key !== "") {
 				"<h3>".$sql['Tencay']."</h3> ".$sql['Dacdiem']."...<a href =detail_trees.php?id=".$sql['Mact']."> [Xem chi tiết]</a></td>
 				</br>
 				</br>";
-				
+		
       }
        else {
         $sql = $con->query("SELECT * FROM db_trees WHERE Mact ='$key1'");
