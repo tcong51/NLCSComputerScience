@@ -36,7 +36,6 @@
 	// }
 	
 	// activateTimer();
-	
     const showResult=(value)=>{
    // document.getElementById("keyup").innerHTML = value;
                 if (value.length==0) {
@@ -64,6 +63,18 @@
                 xmlhttp.send();
   }
 
+  function signup(){
+    var key= document.getElementById("search").value;
+    var ok=true;
+    if (key ==""  ){
+        alert("Vui lòng điền từ khóa !");
+    ok=false;
+	    }else if(key == null){
+            alert("Vui lòng điền từ khóa !");
+             ok=false; 
+                           }
+	return ok;
+}	
 
 </script>
 <!-- QUANG CAO -->
@@ -71,23 +82,26 @@
 <script type="text/javascript" src="js/BannerFloat.js"></script>
 
 <!-- -->
+
 <body>
+
 <div id="wrapper">
         <div id="header"></div>
         <div id="menu">
             <div class="topnav">
+            <ul id = "drnav">
             <a class="active" href="index.php">Trang chủ</a>
-                <a href="ds_trees_l1_homepage.php">Cây ăn quả</a>
-                <a href="ds_trees_l2_homepage.php">Cây kiểng</a>
-                <a href="ds_trees_l3_homepage.php">Cây dây leo</a>
-                <a href="ds_trees_l4_homepage.php">Cây thân gỗ</a>
-                <a href="ds_trees_l5_homepage.php">Cây thảo dược</a>
+            <a href="#">Danh mục</a>
+            <a href="">Môi trường sống</a>
+            </ul>
+            
                 <div class="search-container">
                 <form action="search_page.php" method ="GET" onsubmit="return signup()">
-                    <input type="text" placeholder="Tìm kiếm.." name="search" onkeyup="showResult(this.value)">
+                    <input type="text" placeholder="Tìm kiếm.." id="search" name="search" onkeyup="showResult(this.value)">
                     <button type="submit"><i class="fa fa-search"></i></i></button>
-                     <div id="show" onclick="showss(this.value)"></div> 
+                     
                      </form>
+                     <div id="show" onclick="showss(this.value)"></div> 
                 </div>
             </div>
 
@@ -103,19 +117,29 @@
 </div>
 <!-- -->
     <div id="ten-content">
-        <h2><center>DANH SÁCH CÂY DÂY LEO</center></h2>
+        <h2><center>DANH SÁCH CÂY <?php
+						$types =$_GET['id'];
+						include "connect.php";  
+						$sql = $con->query("SELECT DISTINCT * FROM db_trees WHERE Types='$types'");
+						$sql = $sql->fetch_assoc();
+						$str = mb_strtoupper($sql['Loaicay'],'UTF-8');
+						echo $str;
+						$con->close();?></center></h2>
     </div>
     <div id="content">
     <?php
+    $types = $_GET['id'];
+    
 include "connect.php";  
 
 echo "<table >" ;
-foreach ($sql = $con->query("SELECT * FROM db_trees WHERE Loaicay='Dây leo' ") as $value){
+
+foreach ($sql = $con->query("SELECT DISTINCT * FROM db_trees WHERE Types='$types' ") as $value){
     echo "<tr id='tr'>
+    
     <td id='link' ><img src='".$value['Hinh']."'></td>
     <td style='width:700px'><h3>".$value['Tencay']."</h3></br> ".$value['Dacdiem']."...<a href =detail_trees.php?id=".$value['Mact']."> [Xem chi tiết]</a></td>
     </tr>";
-    echo '</br>';
     echo '</br>';
     }
   echo "</table>";

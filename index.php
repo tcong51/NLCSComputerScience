@@ -42,32 +42,7 @@ const showResult=(value)=>{
                 xmlhttp.open("GET", `show.php?id=`+value ,true);
                 xmlhttp.send();
   }
-// function showss(value){
-    
-//     if (value.length==0) {
-//                   document.getElementById("show").innerHTML="";
-//                   document.getElementById("show").style.border="0px";
-                  
-//                   return;
-//                 }
-//                 document.getElementById("show").style.color="white";
-//                 let xmlhttp;
-                
-//                 if(window.XMLHttpRequest){
-//                     xmlhttp = new XMLHttpRequest();
-//                 }
-//                 else{
-//                     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-//                 }
-                
-//                 xmlhttp.onreadystatechange=()=>{
-//                     if(xmlhttp.readyState==4 && xmlhttp.status==200){
-//                        document.getElementById("show").innerHTML = xmlhttp.responseText;
-//                     }
-//                 }
-//                 xmlhttp.open("GET", `show.php?id=`+value ,true);
-//                 xmlhttp.send();
-// }
+
 function signup(){
     var key= document.getElementById("search").value;
     var ok=true;
@@ -94,11 +69,21 @@ function signup(){
         <div id="menu">
             <div class="topnav">
                 <a class="active" href="index.php">Trang chủ</a>
-                <a href="ds_trees_l1_homepage.php">Cây ăn quả</a>
+                <?php
+                    include "connect.php";
+                    echo "<form action= method=GET>";
+                   foreach($sql = $con->query("SELECT DISTINCT Loaicay,Types FROM db_trees") as $value){
+                    
+                    echo "<a href =ds_trees_homepage.php?id=".$value['Types'].">".$value['Loaicay']."</a>";
+                    
+                   }
+                   echo "</form>";
+                ?>
+                <!-- <a href="ds_trees_l1_homepage.php">Cây ăn quả</a>
                 <a href="ds_trees_l2_homepage.php">Cây kiểng</a>
                 <a href="ds_trees_l3_homepage.php">Cây dây leo</a>
                 <a href="ds_trees_l4_homepage.php">Cây thân gỗ</a>
-                <a href="ds_trees_l5_homepage.php">Cây thảo dược</a>
+                <a href="ds_trees_l5_homepage.php">Cây thảo dược</a> -->
                 <div class="search-container">
                     <form action="search_page.php" method ="GET" onsubmit="return signup()">
                     <input type="text" placeholder="Tìm kiếm.." id="search" name="search" onkeyup="showResult(this.value)">

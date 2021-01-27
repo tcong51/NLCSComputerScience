@@ -27,11 +27,17 @@
 	    </div>
         <table  >
                       <h1>DANH SÁCH  LOẠI CÂY </h1>
-                      <th class="but"><button style="height:50px;width:200px" onclick="window.location.href='ds_trees_l1.php'"  style="height="500"; width="600"" >Cây Ăn Quả</button></th>
-                      <th class="but"><button style="height:50px;width:200px" onclick="window.location.href='ds_trees_l2.php'">Cây Kiểng</button></th>
-                      <th class="but"><button style="height:50px;width:200px" onclick="window.location.href='ds_trees_l3.php'">Cây Dây Leo</button></th>
-                      <th class="but"><button style="height:50px;width:200px" onclick="window.location.href='ds_trees_l4.php'">Cây Thảo Dược</button></th>
-                      <th class="but"><button style="height:50px;width:200px" onclick="window.location.href='ds_trees_l5.php'">Cây Thân Gỗ</button></th>
+                      <?php
+                    include "connect.php";
+                    echo "<form action= method=GET>";
+                   foreach($sql = $con->query("SELECT DISTINCT Loaicay,Types FROM db_trees") as $value){
+                    
+                    // echo "<a href =ds_trees_homepage.php?id=".$value['Types'].">".$value['Loaicay']."</a>";
+                    echo "<th class=\"but\"><button ><a href =ds_trees_admin.php?id=".$value['Types']." style=\"text-decoration: none\">".$value['Loaicay']."</a></button></th>";
+                   }
+                   echo "</form>";
+                    ?>
+                      
                       
                
     </table>         

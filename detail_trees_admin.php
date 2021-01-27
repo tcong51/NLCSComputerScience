@@ -23,30 +23,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
        <!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> -->
        <script>
-	// var IMAGE_PATHS = [];
-	// IMAGE_PATHS[0] = "./hinhanh/banner.jpg";
-	// IMAGE_PATHS[1] = "./hinhanh/banner2.jpg";
-	// IMAGE_PATHS[2] = "./hinhanh/banner3.png";
-	
-	
-	
-	// let index = 0;
-	// let intervalTimer;
-	
-	// function slideShow(){
-	// 	index++;
-	// 	if(index > IMAGE_PATHS.length - 1) index = 0;
-		
-	// 	let Img = document.getElementById("Img");
-	// 	Img.setAttribute("src", IMAGE_PATHS[index]);
-		
-	// }
-	
-	// function activateTimer(){
-	// 	intervalTimer = setInterval(slideShow, 3000);
-	// }
-	
-	// activateTimer();
+
 	
     const showResult=(value)=>{
    // document.getElementById("keyup").innerHTML = value;
@@ -92,11 +69,16 @@
         <div id="menu">
             <div class="topnav">
                 <a class="active" href="pageadmin.php">Admin page</a>
-                <a href="ds_trees_l1.php">Cây ăn quả</a>
-                <a href="ds_trees_l2.php">Cây kiểng</a>
-                <a href="ds_trees_l3.php">Cây dây leo</a>
-                <a href="ds_trees_l4.php">Cây thân gỗ</a>
-                <a href="ds_trees_l5.php">Cây thảo dược</a>
+                <?php
+                    include "connect.php";
+                    echo "<form action= method=GET>";
+                   foreach($sql = $con->query("SELECT DISTINCT Loaicay,Types FROM db_trees") as $value){
+                    
+                    echo "<a  href =ds_trees_admin.php?id=".$value['Types'].">".$value['Loaicay']."</a>";
+                    
+                   }
+                   echo "</form>";
+                ?>
                 <div class="search-container">
                 <form action="search_page_admin.php" method ="GET" onsubmit="return signup()">
                     <input type="text" placeholder="Tìm kiếm.." name="search" >
