@@ -96,34 +96,34 @@
     </div>
 
 <?php 
-$tencay=$_GET['tencay'];
- echo $tencay;
+$TreeName=$_GET['TreeName'];
+ echo $TreeName;
 include "connect.php";
-$data = $con->query("SELECT Tencay,Dacdiem,Loaicay,Cachchamsoc,Hinh,Motacay FROM db_trees WHERE Tencay='$tencay'");
+$data = $con->query("SELECT TreeName,Characteristics,Species,HowToCare,Avatar,Describe FROM db_trees WHERE TreeName='$TreeName'");
 $data = $data->fetch_assoc();
  echo "<form action= method=GET>";
 	echo '<table frame="border" border=4  >';
-	echo "<tr id='h1'> <td><h1>".$data['Tencay']."</h1></td></tr>";
+	echo "<tr id='h1'> <td><h1>".$data['TreeName']."</h1></td></tr>";
     echo "<tr id='tr'>
        <td> <h2>Đặc điểm</h2></td>
         </tr>";
     echo "<tr id='tr'>
-        <td id='td'>".$data['Dacdiem']."</td>
+        <td id='td'>".$data['Characteristics']."</td>
         </tr>";
     echo "<tr id='tr'>
-        <td id='td'><img src='".$data['Hinh']."'height='300' width='300'></td>
+        <td id='td'><img src='".$data['Avatar']."'height='300' width='300'></td>
         </tr>";	
     echo "<tr id='tr'>
         <td> <h2>Cách chăm sóc</h2></td>
          </tr>";   
     echo "<tr id='tr'>
-        <td id='td'>".$data['Cachchamsoc']."</td>
+        <td id='td'>".$data['HowToCare']."</td>
         </tr>";	
     echo "<tr id='tr'>
         <td> <h2>Tổng kết</h2></td>
          </tr>";
     echo "<tr id='tr'>
-        <td id='td'>".$data['Motacay']."</td>
+        <td id='td'>".$data['Describe']."</td>
         </tr>";
        
 		

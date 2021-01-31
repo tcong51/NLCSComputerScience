@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE HTML>
 <?php
 	session_start();
@@ -34,21 +33,18 @@
 else{
     header("location:loginadmin.html");
 }
-    $Mact = $_GET['Mact'];
-    // $Tencay = $_GET['Tencay'];
-    $Motacay = $_GET['Motacay'];
-    // $Loaicay = $_GET['Loaicay'];
-    // $Cachchamsoc = $_GET['Cachchamsoc'];
-    // $Motacay = $_GET['Motacay'];
+    $Code = $_GET['Code'];
+    $HowToCare = $_GET['HowToCare'];
     include "connect.php";
     //require 'connect.php';
     $con->set_charset('utf8');
-    $sql = "UPDATE db_trees SET Motacay ='$Motacay' WHERE Mact = '$Mact'";
-    $data = $con->query("SELECT Mact FROM db_trees WHERE Mact = '$Mact'");
+    $sql = "UPDATE db_trees SET HowToCare ='$HowToCare' WHERE Code = '$Code'";
+    
+    $data = $con->query("SELECT Code FROM db_trees WHERE Code = '$Code'");
     $data = $data->fetch_assoc();
     echo '<marquee><h1 >Đã sửa thành công</h1></marquee>';
     echo'<br>';
-    echo' <h2 class="copyright"><a href =detail_trees.php?id='.$data['Mact'].'>Quay về xem chi tiết</a></h2>';
+    echo' <h2 class="copyright"><a href =detail_trees.php?id='.$data['Code'].'>Quay về xem chi tiết</a></h2>';
     $con->query($sql);
     $con->close();
 ?>

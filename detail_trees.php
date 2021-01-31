@@ -84,17 +84,82 @@
 <script type="text/javascript" src="js/BannerFloat.js"></script>
 
 <!-- -->
+<style>
+.dropbtn {
+  background-color: 		#87cefa;
+  color: white;
+  padding: 14px;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: 	#b0c4de;
+/* min-width : tùy thuộc vào bao nhiêu loại cây, chưa fix hoàn chỉnh. */
+  min-width: 462px ;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  /* padding: 12px 16px; */
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: rgb(29, 155, 128)}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: rgb(29, 155, 128);
+
+}
+</style>
 <body>
 <div id="wrapper">
         <div id="header"></div>
         <div id="menu">
             <div class="topnav">
-                <a class="active" href="index.php">Trang chủ</a>
-                <a href="ds_trees_l1_homepage.php">Cây ăn quả</a>
-                <a href="ds_trees_l2_homepage.php">Cây kiểng</a>
-                <a href="ds_trees_l3_homepage.php">Cây dây leo</a>
-                <a href="ds_trees_l4_homepage.php">Cây thân gỗ</a>
-                <a href="ds_trees_l5_homepage.php">Cây thảo dược</a>
+            <a class="active" href="index.php">Trang chủ</a>
+            <ul id = "drnav">
+            <div class="dropdown">
+              
+            <button class="dropbtn">Danh Mục</button>
+            <div class="dropdown-content">
+
+                <?php
+                    include "connect.php";
+                    echo "<form action= method=GET>";
+                   foreach($sql = $con->query("SELECT DISTINCT Species,Types FROM db_trees") as $value){
+                    
+                    echo "<a href =ds_trees_homepage.php?id=".$value['Types'].">".$value['Species']."</a>";
+                    
+                   }
+                   echo "</form>";
+                ?>
+                </div>
+            </div>
+
+            <div class="dropdown">
+            <button class="dropbtn">Khác</button>
+            </div>
+            
+            </ul>
+
+            
+            
+            
                 <div class="search-container">
                 <form action="search_page.php" method ="GET" onsubmit="return signup()">
                     <input type="text" placeholder="Tìm kiếm.." id="search" name="search" onkeyup="showResult(this.value)">
@@ -120,39 +185,39 @@
 <!-- -->
 <div id="hienthi-caytrong">
 <?php 
-$mact=$_GET['id'];
-//  echo $mact;
+$Code=$_GET['id'];
+//  echo $Code;
 include "connect.php";
 
-$data = $con->query("SELECT Tencay,Dacdiem,Loaicay,Cachchamsoc,Hinh,Motacay FROM db_trees WHERE Mact='$mact'");
+$data = $con->query("SELECT * FROM db_trees WHERE Code='$Code'");
 $data = $data->fetch_assoc();
 	echo '<center>'.'<table frame="border" border=4 >'.'</center>';
-    $data = $con->query("SELECT * FROM db_trees WHERE Mact='$mact'");
+    $data = $con->query("SELECT * FROM db_trees WHERE Code='$Code'");
     $data = $data->fetch_assoc();
  echo "<form action= method=GET>";
 	echo '<table frame="border" border=4  >';
 
-	echo "<tr id='h1'> <td><h1>".$data['Tencay']."</h1></td></tr>";
+	echo "<tr id='h1'> <td><h1>".$data['TreeName']."</h1></td></tr>";
     echo "<tr id='tr'>
        <td> <h2>Đặc điểm</h2></td>
         </tr>";
     echo "<tr id='tr'>
-        <td id='td'>".$data['Dacdiem']."</td>
+        <td id='td'>".$data['Characteristics']."</td>
         </tr>";
     echo "<tr id='tr'>
-        <td id='td'><center><img src='".$data['Hinh']."'></center></td>
+        <td id='td'><center><img src='".$data['Avatar']."'></center></td>
         </tr>";	
     echo "<tr id='tr'>
         <td> <h2>Cách chăm sóc</h2></td>
          </tr>";   
     echo "<tr id='tr'>
-        <td id='td'>".$data['Cachchamsoc']."</td>
+        <td id='td'>".$data['HowToCare']."</td>
         </tr>";	
     echo "<tr id='tr'>
         <td> <h2>Tổng kết</h2></td>
          </tr>";
     echo "<tr id='tr'>
-        <td id='td'>".$data['Motacay']."</td>
+        <td id='td'>".$data['Describe']."</td>
         </tr>";
           
     
@@ -161,15 +226,15 @@ $data = $data->fetch_assoc();
     echo "</form>";
 
 
-    // $data = $con->query("SELECT * FROM db_trees WHERE Mact='$mact'");
+    // $data = $con->query("SELECT * FROM db_trees WHERE Code='$Code'");
     // $data = $data->fetch_assoc();
     // echo "<form action= method=GET>";
 	//     echo '<table frame="border" border=4  >';
 	//     echo "</table>";
     //     echo "</form>";
-    $luot=$data['Luottruycap'];
+    $luot=$data['NumberAccess'];
     $luot=$luot+1;
-    $sql = $con->query("UPDATE db_trees SET Luottruycap='$luot' WHERE Mact ='$mact'");
+    $sql = $con->query("UPDATE db_trees SET NumberAccess='$luot' WHERE Code ='$Code'");
 $con->close();
 
 ?>

@@ -78,27 +78,89 @@
 	return ok;
 }	
 </script>
+<style>
+.dropbtn {
+  background-color: 		#87cefa;
+  color: white;
+  padding: 14px;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: 	#b0c4de;
+/* min-width : tùy thuộc vào bao nhiêu loại cây, chưa fix hoàn chỉnh. */
+  min-width: 462px ;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  /* padding: 12px 16px; */
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: rgb(29, 155, 128)}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: rgb(29, 155, 128);
+
+}
+</style>
 <body>
     <div id="wrapper">
         <div id="header"></div>
         <div id="menu">
             <div class="topnav">
-                <a class="active" href="index.php">Trang chủ</a>
-                <a href="ds_trees_l1_homepage.php">Cây ăn quả</a>
-                <a href="ds_trees_l2_homepage.php">Cây kiểng</a>
-                <a href="ds_trees_l3_homepage.php">Cây dây leo</a>
-                <a href="ds_trees_l4_homepage.php">Cây thân gỗ</a>
-                <a href="ds_trees_l5_homepage.php">Cây thảo dược</a>
-                <div class="search-container">
-                    <form action="search_page.php" method ="GET" onsubmit="return signup()">
-                    	<input type="text" placeholder="Tìm kiếm.." id="search" name="search" onkeyup="showResult(this.value)">
-                    <button type="submit"><i class="fa fa-search"></i></i></button>
-                     <div id="show" onclick="showss(this.value)"></div> 
-                     </form>
+            <a class="active" href="index.php">Trang chủ</a>
+            <ul id = "drnav">
+            <div class="dropdown">
+              
+            <button class="dropbtn">Danh Mục</button>
+            <div class="dropdown-content">
+
+                <?php
+                    include "connect.php";
+                    echo "<form action= method=GET>";
+                   foreach($sql = $con->query("SELECT DISTINCT Species,Types FROM db_trees") as $value){
                     
-                   
-                  
-                   
+                    echo "<a href =ds_trees_homepage.php?id=".$value['Types'].">".$value['Species']."</a>";
+                    
+                   }
+                   echo "</form>";
+                ?>
+                </div>
+            </div>
+
+            <div class="dropdown">
+            <button class="dropbtn">Khác</button>
+            </div>
+            
+            </ul>
+
+            
+            
+            
+                <div class="search-container">
+                <form action="search_page.php" method ="GET" onsubmit="return signup()">
+                    <input type="text" placeholder="Tìm kiếm.." id="search" name="search" onkeyup="showResult(this.value)">
+                    <button type="submit"><i class="fa fa-search"></i></i></button>
+                     
+                     </form>
+                     <div id="show" onclick="showss(this.value)"></div> 
                 </div>
             </div>
 
@@ -138,12 +200,12 @@
 	}
 	foreach ($sql = $con->query("SELECT * FROM db_trees") as $value){
 
-		array_push($a,$value['Mact']);
+		array_push($a,$value['Code']);
 	   
 		  }
 		  foreach ($sql = $con->query("SELECT * FROM db_trees") as $value1){
 			  
-		array_push($b,strtolower(convert_vi_to_en($value1['Tencay'])));
+		array_push($b,strtolower(convert_vi_to_en($value1['TreeName'])));
 	  
 	  
 		  }
@@ -170,23 +232,23 @@ if ($key !== "") {
       // echo $key1;
       if ($hint === "") {
 		
-		$sql = $con->query("SELECT * FROM db_trees WHERE Mact ='$key1'");
+		$sql = $con->query("SELECT * FROM db_trees WHERE Code ='$key1'");
 		$sql = $sql->fetch_assoc();
-		//  "<a href=detail_trees.php?id=".$sql['Mact']."> ".$sql['Tencay']." </a></br>";
+		//  "<a href=detail_trees.php?id=".$sql['Code']."> ".$sql['TreeName']." </a></br>";
 	$hint =	
-				"<h3>".$sql['Tencay']."</h3> ".$sql['Dacdiem']."...<a href =detail_trees.php?id=".$sql['Mact']."> [Xem chi tiết]</a></td>
+				"<h3>".$sql['TreeName']."</h3> ".$sql['Characteristics']."...<a href =detail_trees.php?id=".$sql['Code']."> [Xem chi tiết]</a></td>
 				</br>
 				</br>";
 		
       }
        else {
-        $sql = $con->query("SELECT * FROM db_trees WHERE Mact ='$key1'");
+        $sql = $con->query("SELECT * FROM db_trees WHERE Code ='$key1'");
 		$sql = $sql->fetch_assoc();
        
-		$hint .="<h3>".$sql['Tencay']."</h3> ".$sql['Dacdiem']."...<a href =detail_trees.php?id=".$sql['Mact']."> [Xem chi tiết]</a></td>
+		$hint .="<h3>".$sql['TreeName']."</h3> ".$sql['Characteristics']."...<a href =detail_trees.php?id=".$sql['Code']."> [Xem chi tiết]</a></td>
 		</br>
 		</br>";
-		// "<a href=detail_trees.php?id=".$sql['Mact']."> ".$sql['Tencay']." </a></br>";
+		// "<a href=detail_trees.php?id=".$sql['Code']."> ".$sql['TreeName']." </a></br>";
       }
      
       $dem++;

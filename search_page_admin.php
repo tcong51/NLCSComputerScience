@@ -137,12 +137,12 @@
 	}
 	foreach ($sql = $con->query("SELECT * FROM db_trees") as $value){
 
-		array_push($a,$value['Mact']);
+		array_push($a,$value['Code']);
 	   
 		  }
 		  foreach ($sql = $con->query("SELECT * FROM db_trees") as $value1){
 			  
-		array_push($b,strtolower(convert_vi_to_en($value1['Tencay'])));
+		array_push($b,strtolower(convert_vi_to_en($value1['TreeName'])));
 	  
 	  
 		  }
@@ -172,24 +172,24 @@ if ($key !== "") {
 	  // echo $key1;
 	  
       if ($hint === "") {
-		$sql = $con->query("SELECT * FROM db_trees WHERE Mact ='$key1'");
+		$sql = $con->query("SELECT * FROM db_trees WHERE Code ='$key1'");
 		$sql = $sql->fetch_assoc();
 		
-		//  "<a href=detail_trees.php?id=".$sql['Mact']."> ".$sql['Tencay']." </a></br>";
+		//  "<a href=detail_trees.php?id=".$sql['Code']."> ".$sql['TreeName']." </a></br>";
 	$hint =	
-				"<h3>".$sql['Tencay']."</h3> ".$sql['Dacdiem']."...<a href =tree.php?id=".$sql['Mact']."> [Cập nhật]</a></td>
+				"<h3>".$sql['TreeName']."</h3> ".$sql['Characteristics']."...<a href =tree.php?id=".$sql['Code']."> [Cập nhật]</a></td>
 				</br>
 				</br>";
 				
       }
        else {
-        $sql = $con->query("SELECT * FROM db_trees WHERE Mact ='$key1'");
+        $sql = $con->query("SELECT * FROM db_trees WHERE Code ='$key1'");
 		$sql = $sql->fetch_assoc();
        
-		$hint .="<h3>".$sql['Tencay']."</h3> ".$sql['Dacdiem']."...<a href=tree.php?id=".$sql['Mact']."> [Cập nhật]</a></td>
+		$hint .="<h3>".$sql['TreeName']."</h3> ".$sql['Characteristics']."...<a href=tree.php?id=".$sql['Code']."> [Cập nhật]</a></td>
 		</br>
 		</br>";
-		// "<a href=detail_trees.php?id=".$sql['Mact']."> ".$sql['Tencay']." </a></br>";
+		// "<a href=detail_trees.php?id=".$sql['Code']."> ".$sql['TreeName']." </a></br>";
       }
 	
       $dem++; 

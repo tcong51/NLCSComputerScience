@@ -34,19 +34,19 @@
 			<tr>
 				<th > </th><td style="width: 500px;"> Tên cây</td>
 				<td></td>
-				<td><input type = "text" name="Tencay" style="width: 700px;" class="input"><br>
+				<td><input type = "text" name="TreeName" style="width: 700px;" class="input"><br>
 			</td></tr>
 			<tr>
 				<th style="width: 500px;height:50px" align="left"> </th><td>Đặc điểm </td>
 				<td></td>
-				<!-- <td><input type="text" name="Dacdiem" style="width: 300px;"><br> -->
-				<td><textarea rows="5" cols="20" placeholder="Đây là vùng nhập text" class="input" name="Dacdiem" style="width: 700px;height: 200px;"></textarea><br>
+				<!-- <td><input type="text" name="Characteristics" style="width: 300px;"><br> -->
+				<td><textarea rows="5" cols="20" placeholder="Đây là vùng nhập text" class="input" name="Characteristics" style="width: 700px;height: 200px;"></textarea><br>
             </td></tr>
 			<tr>
 			<th style="width: 500px;height:50px" align="left"><td> Loại cây </td></th>
 			<td></td>
 			<td>
-				<select name="Loaicay" class="input"> 
+				<select name="Species" class="input"> 
 					<option name="cayanqua"> Ăn quả </option>
 					<option name="caykieng"> Kiểng </option>
 					<option name="caydayleo"> Dây leo </option>
@@ -59,8 +59,8 @@
             <tr>
 				 <th style="width: 500px;height:50px" align="left"> </th><td> Cách chăm sóc </td>
 				 <td></td>
-				<!-- <td><input type="text" name="Cachchamsoc" style="width: 300px;"><br> -->
-				<td><textarea rows="5" cols="20" placeholder="Đây là vùng nhập text" class="input" name="Cachchamsoc" style="width: 700px;height: 200px;"></textarea><br>
+				
+				<td><textarea rows="5" cols="20" placeholder="Đây là vùng nhập text" class="input" name="HowToCare" style="width: 700px;height: 200px;"></textarea><br>
             </td></tr>
 			<tr>
 				<th style="width: 500px;height:50px" align="left"></th>
@@ -71,7 +71,7 @@
             <tr>
 				<th style="width: 500px;height:50px" align="left"><td > Mô tả cây</td> </th>
 				<td></td>
-				<td><textarea rows="5" cols="20" placeholder="Đây là vùng nhập text" class="input" name="Motacay" style="width: 700px;height: 200px;"></textarea><br>
+				<td><textarea rows="5" cols="20" placeholder="Đây là vùng nhập text" class="input" name="Describe" style="width: 700px;height: 200px;"></textarea><br>
 			</td>
 			</tr>
 			<tr>

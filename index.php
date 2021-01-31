@@ -60,7 +60,46 @@ function signup(){
 
 <link rel="stylesheet" href="responsive.css">
 <style>
+.dropbtn {
+  background-color: 		#87cefa;
+  color: white;
+  padding: 14px;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
 
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: 	#b0c4de;
+/* min-width : tùy thuộc vào bao nhiêu loại cây, chưa fix hoàn chỉnh. */
+  min-width: 462px ;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  /* padding: 12px 16px; */
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: rgb(29, 155, 128)}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: rgb(29, 155, 128);
+
+}
 </style>
 <body>
 
@@ -68,32 +107,42 @@ function signup(){
         <div id="header"></div>
         <div id="menu">
             <div class="topnav">
-                <a class="active" href="index.php">Trang chủ</a>
+            <a class="active" href="index.php">Trang chủ</a>
+            <ul id = "drnav">
+            <div class="dropdown">
+              
+            <button class="dropbtn">Danh Mục</button>
+            <div class="dropdown-content">
+
                 <?php
                     include "connect.php";
                     echo "<form action= method=GET>";
-                   foreach($sql = $con->query("SELECT DISTINCT Loaicay,Types FROM db_trees") as $value){
+                   foreach($sql = $con->query("SELECT DISTINCT Species,Types FROM db_trees") as $value){
                     
-                    echo "<a href =ds_trees_homepage.php?id=".$value['Types'].">".$value['Loaicay']."</a>";
+                    echo "<a href =ds_trees_homepage.php?id=".$value['Types'].">".$value['Species']."</a>";
                     
                    }
                    echo "</form>";
                 ?>
-                <!-- <a href="ds_trees_l1_homepage.php">Cây ăn quả</a>
-                <a href="ds_trees_l2_homepage.php">Cây kiểng</a>
-                <a href="ds_trees_l3_homepage.php">Cây dây leo</a>
-                <a href="ds_trees_l4_homepage.php">Cây thân gỗ</a>
-                <a href="ds_trees_l5_homepage.php">Cây thảo dược</a> -->
+                </div>
+            </div>
+
+            <div class="dropdown">
+            <button class="dropbtn">Khác</button>
+            </div>
+            
+            </ul>
+
+            
+            
+            
                 <div class="search-container">
-                    <form action="search_page.php" method ="GET" onsubmit="return signup()">
+                <form action="search_page.php" method ="GET" onsubmit="return signup()">
                     <input type="text" placeholder="Tìm kiếm.." id="search" name="search" onkeyup="showResult(this.value)">
                     <button type="submit"><i class="fa fa-search"></i></i></button>
                      
                      </form>
-                    
-                   <div id="show" onclick="showss(this.value)"></div> 
-                  
-                   
+                     <div id="show" onclick="showss(this.value)"></div> 
                 </div>
             </div>
 
@@ -129,59 +178,43 @@ function signup(){
                 <?php
                 include "connect.php";
 
-                $Tencay=[];
-                $Luottruycap=[];
+                $TreeName=[];
+                $NumberAccess=[];
                 $Luottruycap_dxx=[];
                 // $result =mysqli_query($con,"SELECT * FROM db_trees ");
                 
                 foreach ($sql = $con->query("SELECT * FROM db_trees") as $value){
-                    array_push($Luottruycap,$value['Luottruycap']);
+                    array_push($NumberAccess,$value['NumberAccess']);
                 
                     }
-                rsort($Luottruycap); 
+                rsort($NumberAccess); 
                 $i=0;
                 while($i<8){
                         
-                        array_push($Luottruycap_dxx,$Luottruycap[$i]);
+                        array_push($Luottruycap_dxx,$NumberAccess[$i]);
                     
                     $i++;
                 }
               
                 foreach($Luottruycap_dxx as $value){
                     // echo $value;
-                    $sql = $con->query("SELECT Mact FROM db_trees WHERE Luottruycap='$value'");
+                    $sql = $con->query("SELECT Code FROM db_trees WHERE NumberAccess='$value'");
                     $sql = $sql->fetch_assoc();
-                    $tree1= $sql['Mact'];
+                    $tree1= $sql['Code'];
                     // echo $tree1;
-                    $sqlx = $con->query("SELECT * FROM db_trees WHERE Mact='$tree1'");
+                    $sqlx = $con->query("SELECT * FROM db_trees WHERE Code='$tree1'");
                     $sqlx = $sqlx->fetch_assoc();
                     
                        echo " <div class='col-3 mt-3' >
-                                <img style='width: 100%; height: 250px' src='".$sqlx['Hinh']."'>
-                                <br><center><a href =detail_trees.php?id=".$sqlx['Mact'].">  ".$sqlx['Tencay']." </a></center>
+                                <img style='width: 100%; height: 250px' src='".$sqlx['Avatar']."'>
+                                <br><center><a href =detail_trees.php?id=".$sqlx['Code'].">  ".$sqlx['TreeName']." </a></center>
                         </div>";
 
                 }
                 
                 
 
-                    // foreach ($sql = $con->query("SELECT * FROM db_trees") as $value){
-                    //     echo "<tr id='tr'>
-                    //     <td id='link'><a href =detail_trees.php?id=".$value['Mact']."><img src='".$value['Hinh']."'height='200' width='200'>Xem chi tiết</a></td>
-                    //     <td style='width:700px'><h3>".$value['Tencay']."</h3></br> ".$value['Dacdiem']."...</td>
-                    //     </tr>";
-                    //     echo '</br>';
-                    //     echo '</br>';
-                      
-                    //     }
-                        
-                        
-                
-                //         <div class="col-3 mt-3" >
-                //                 <img style="width: 100%; height: 250px" src=<?php echo $row['Hinh']>
-                //                 <br><a href= "php echo 'detail_trees.php?id='.$row['Mact'].' '" > <?php echo $row['Tencay'] </a>
-                //         </div>
-        
+                    
                 
             
             

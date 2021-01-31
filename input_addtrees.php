@@ -40,17 +40,17 @@ else{
 
 
      //Lấy dữ liệu từ form về
-     $tencay = $_POST['Tencay'];
-     $dacdiem = $_POST['Dacdiem'];
-     $loaicay=$_POST['Loaicay'];
-     $cachchamsoc = $_POST['Cachchamsoc'];
-     $hinhanh="./img/".$_FILES['Hinh']['name'];
-     move_uploaded_file($_FILES['Hinh']['tmp_name'],$hinhanh);
-     $motacay = $_POST['Motacay'];
+     $TreeName = $_POST['TreeName'];
+     $Characteristics = $_POST['Characteristics'];
+     $Species=$_POST['Species'];
+     $HowToCare = $_POST['HowToCare'];
+     $hinhanh="./img/".$_FILES['Avatar']['name'];
+     move_uploaded_file($_FILES['Avatar']['tmp_name'],$hinhanh);
+     $Describe = $_POST['Describe'];
      //Thao tác với CSDL
      include "connect.php";
-     $sql = "INSERT INTO db_trees(Tencay, Dacdiem, Loaicay, Cachchamsoc, Hinh, Motacay)
-     VALUES('$tencay','$dacdiem', '$loaicay', '$cachchamsoc', '$hinhanh', '$motacay')";
+     $sql = "INSERT INTO db_trees(TreeName, Characteristics, Species, HowToCare, Avatar, Describe)
+     VALUES('$TreeName','$Characteristics', '$Species', '$HowToCare', '$hinhanh', '$Describe')";
      $con->query($sql);
      $sql = "SELECT * FROM db_trees";
      $result = $con->query($sql);

@@ -30,10 +30,10 @@
                       <?php
                     include "connect.php";
                     echo "<form action= method=GET>";
-                   foreach($sql = $con->query("SELECT DISTINCT Loaicay,Types FROM db_trees") as $value){
+                   foreach($sql = $con->query("SELECT DISTINCT Species,Types FROM db_trees") as $value){
                     
-                    // echo "<a href =ds_trees_homepage.php?id=".$value['Types'].">".$value['Loaicay']."</a>";
-                    echo "<th class=\"but\"><button ><a href =ds_trees_admin.php?id=".$value['Types']." style=\"text-decoration: none\">".$value['Loaicay']."</a></button></th>";
+                    // echo "<a href =ds_trees_homepage.php?id=".$value['Types'].">".$value['Species']."</a>";
+                    echo "<th class=\"but\"><button ><a href =ds_trees_admin.php?id=".$value['Types']." style=\"text-decoration: none\">".$value['Species']."</a></button></th>";
                    }
                    echo "</form>";
                     ?>

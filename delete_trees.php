@@ -21,22 +21,22 @@
 	<body>
 		<marquee direction="right"><h1> Đã xóa sản phẩm !!!</h1></marquee>
 <?php 
-	$mact=$_GET['id'];
-	// echo $mact;
+	$Code=$_GET['id'];
+	// echo $Code;
 	include "connect.php";
-	$data = $con->query("SELECT Loaicay FROM db_trees WHERE Mact='$mact' ");
+	$data = $con->query("SELECT Species FROM db_trees WHERE Code='$Code' ");
 	$data = $data->fetch_assoc();
-	$loaicay_null=$data['Loaicay'];
-	// echo $loaicay_null;
-    $delete =$con->query("DELETE FROM db_trees WHERE Mact=$mact");
+	$Species_null=$data['Species'];
+	// echo $Species_null;
+    $delete =$con->query("DELETE FROM db_trees WHERE Code=$Code");
 
 	 echo "<form action=chitiet.php method=GET>";
 	 echo '<table frame="border" border=4>';
 	 echo "<tr id='tr'><th>Tên cây </th><th>Lựa chọn</th>";
-	 foreach ($sql = $con->query("SELECT Mact,Tencay FROM db_trees WHERE Loaicay='$loaicay_null' ") as $value){
+	 foreach ($sql = $con->query("SELECT Code,TreeName FROM db_trees WHERE Species='$Species_null' ") as $value){
 		 echo "<tr id='tr'>
-		 <td > ".$value['Tencay']."</td>
-		 <td><h3><a href =detail_trees.php?id=".$value['Mact'].">Xem chi tiết</a>||<a href='#' onclick='notices(".$value['Mact'].")' >Xóa</a>||<a href=update_trees.php?id=".$value['Mact']." >Sửa</a></h3></td>
+		 <td > ".$value['TreeName']."</td>
+		 <td><h3><a href =detail_trees.php?id=".$value['Code'].">Xem chi tiết</a>||<a href='#' onclick='notices(".$value['Code'].")' >Xóa</a>||<a href=update_trees.php?id=".$value['Code']." >Sửa</a></h3></td>
 		</tr>"; 
 		 }
 	   echo "</table>";

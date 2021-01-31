@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <?php
 	session_start();
@@ -33,22 +32,17 @@
 else{
     header("location:loginadmin.html");
 }
-    $Mact = $_GET['Mact'];
-    // $Tencay = $_GET['Tencay'];
-    $Cachchamsoc = $_GET['Cachchamsoc'];
-    // $Loaicay = $_GET['Loaicay'];
-    // $Cachchamsoc = $_GET['Cachchamsoc'];
-    // $Motacay = $_GET[s'Motacay'];
+    $Code = $_GET['Code'];
+    $Characteristics = $_GET['Characteristics'];
     include "connect.php";
-    //require 'connect.php';
     $con->set_charset('utf8');
-    $sql = "UPDATE db_trees SET Cachchamsoc ='$Cachchamsoc' WHERE Mact = '$Mact'";
-    
-    $data = $con->query("SELECT Mact FROM db_trees WHERE Mact = '$Mact'");
+    $sql = "UPDATE db_trees SET Characteristics ='$Characteristics' WHERE Code = '$Code'";
+    $data = $con->query("SELECT Code FROM db_trees WHERE Code = '$Code'");
     $data = $data->fetch_assoc();
     echo '<marquee><h1 >Đã sửa thành công</h1></marquee>';
     echo'<br>';
-    echo' <h2 class="copyright"><a href =detail_trees.php?id='.$data['Mact'].'>Quay về xem chi tiết</a></h2>';
+    echo' <h2 class="copyright"><a href =detail_trees.php?id='.$data['Code'].'>Quay về xem chi tiết</a></h2>';
+    echo' <h2 class="copyright"><a href =ds_trees.php.>Quay về danh sách cây</a></h2>';
     $con->query($sql);
     $con->close();
 ?>

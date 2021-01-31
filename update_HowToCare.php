@@ -19,8 +19,8 @@
 
     <script>
 
-function signup_cachchamsoc(){
-    var key= document.getElementById("search_cachchamsoc").value;
+function signup_HowToCare(){
+    var key= document.getElementById("search_HowToCare").value;
     var ok=true;
     if (key ==""  ){
         alert("Vui lòng điền từ khóa !");
@@ -32,25 +32,18 @@ function signup_cachchamsoc(){
 	return ok;
 }
     
-       function notices_cachchamsoc(value){
+       function notices_HowToCare(value){
 	  var result = confirm("Are you sure?")
 		if(result)  {
-		// 	var xmlhttp = new XMLHttpRequest();
-	 	// 	xmlhttp.onreadystatechange = function() {
-	   	// 	if (this.readyState == 4 && this.status == 200) {
-		//  	document.getElementById("notices").innerHTML = this.responseText;
-	   	// 		}
-	 	// 	};
-	 	// xmlhttp.open("GET",`input_update_cachchamsoc.php?id=${value}`,true);
 	 	xmlhttp.send();
 		alert("You have updated! ");
 		} else {
             alert("You not updated! "); 
 		     ok=false;    
                 let action = document.getElementById("form_ccs");
-                    action.setAttribute("action", `update_cachchamsoc.php`);
+                    action.setAttribute("action", `update_HowToCare.php`);
                    
-                  window.location.reload(`update_cachchamsoc.php?id=${value}`)
+                  window.location.reload(`update_HowToCare.php?id=${value}`)
 			   }
               
               
@@ -81,40 +74,32 @@ function signup_cachchamsoc(){
     else{
         header("location:loginadmin.html");
     }
-    $mact = $_GET['Mact'];
+    $Code = $_GET['Code'];
     include "connect.php";
 
-    $data = $con->query("SELECT Mact, Tencay, Dacdiem, Loaicay, Cachchamsoc, Hinh, Motacay FROM db_trees WHERE Mact = '$mact'");
+    $data = $con->query("SELECT * FROM db_trees WHERE Code = '$Code'");
     $data = $data->fetch_assoc();
 
 
-    /* Update hình ảnh cần kiểm tra nếu cần */
-    // echo '<form action=input_update_hinh.php method="GET">';
-    // echo '<input type="hidden" name="Mact" value='.$data['Mact'].'>';
-    // echo '<img src='.$data['Hinh'].' alt="hinhsanpham" width = "25%">'.'<br>';
-    // echo '<input type="file" name="Hinh">';
-    /*Update - Đặc điểm*/
-
-    /*Update - Cách chăm sóc*/
     echo '<hr>';
     echo '<hr>';
     echo '<h1>Cách chăm sóc</h1>';
     echo '<div class="form">';
-    echo '<form action=input_update_cachchamsoc.php method="GET" onsubmit="return signup_cachchamsoc()" id=form_ccs >';
+    echo '<form action=input_update_HowToCare.php method="GET" onsubmit="return signup_HowToCare()" id=form_ccs >';
     echo '<table width="1280" cellspacing="0" cellpadding="1" border="2" align="center" style="background: azure;">' ;
-    echo '<input type="hidden" name="Mact" value='.$data['Mact'].'>';
+    echo '<input type="hidden" name="Code" value='.$data['Code'].'>';
     echo "<tr class='tr'>
         <td><h2 style='width: 200px;' >Nội dung hiện tại</h2></td>
-        <td id='location' style='width: 1300px;'>".$data['Cachchamsoc']."</td>;
+        <td id='location' style='width: 1300px;'>".$data['HowToCare']."</td>;
         
     </tr>";
     echo "<tr class='tr'>
         <td><h2>Điền nội dung cần sửa</h2></td>
-        <td><textarea rows='5' cols='0' id='search_cachchamsoc' placeholder='Đây là vùng nhập text' name='Cachchamsoc' style='width: 1070px;height: 200px;'></textarea></td>
+        <td><textarea rows='5' cols='0' id='search_HowToCare' placeholder='Đây là vùng nhập text' name='HowToCare' style='width: 1070px;height: 200px;'></textarea></td>
 
     </tr>";
     echo "<tr>
-        <td colspan='2' ><center><input type='submit' value=' Xác nhận ' onclick=notices_cachchamsoc(".$data['Mact'].") style='width:200px;height: 30px;' ></center></td>
+        <td colspan='2' ><center><input type='submit' value=' Xác nhận ' onclick=notices_HowToCare(".$data['Code'].") style='width:200px;height: 30px;' ></center></td>
     </tr>";
    
     echo '</table>';

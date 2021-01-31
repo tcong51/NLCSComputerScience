@@ -21,8 +21,8 @@
 
 
 
-    function signup_dacdiem(){
-    var key= document.getElementById("search_dacdiem").value;
+    function signup_Characteristics(){
+    var key= document.getElementById("search_Characteristics").value;
     var ok=true;
     if (key ==""  ){
         alert("Vui lòng điền từ khóa !");
@@ -45,8 +45,8 @@ function signup_mota(){
                            }
 	return ok;
 }
-function signup_cachchamsoc(){
-    var key= document.getElementById("search_cachchamsoc").value;
+function signup_HowToCare(){
+    var key= document.getElementById("search_HowToCare").value;
     var ok=true;
     if (key ==""  ){
         alert("Vui lòng điền từ khóa !");
@@ -58,18 +58,10 @@ function signup_cachchamsoc(){
 	return ok;
 }
     
-       function notices_cachchamsoc(value){
+       function notices_HowToCare(value){
 	  var result = confirm("Are you sure?")
       ok=true;
 		if(result)  {
-		// 	var xmlhttp = new XMLHttpRequest();
-	 	// 	xmlhttp.onreadystatechange = function() {
-	   	// 	if (this.readyState == 4 && this.status == 200) {
-		//  	document.getElementById("notices").innerHTML = this.responseText;
-	   	// 		}
-	 	// 	};
-	 	// xmlhttp.open("GET",`input_update_cachchamsoc.php?id=${value}`,true);
-	 	// xmlhttp.send();
          ok=true;
 		alert("You have updated! ");
 		} else {
@@ -86,20 +78,10 @@ function signup_cachchamsoc(){
               
                
    	}
-       function notices_motacay(value){
+       function notices_Describe(value){
 	  var result = confirm("Are you sure?")
       ok=true;
 		if(result)  {
-		// 	var xmlhttp = new XMLHttpRequest();
-	 	// 	xmlhttp.onreadystatechange = function() {
-	   	// 	if (this.readyState == 4 && this.status == 200) {
-		//  	document.getElementById("notices").innerHTML = this.responseText;
-	   	// 		}
-	 	// 	};
-	 	// xmlhttp.open("GET",`input_update_motacay.php?id=${value}`,true);
-	 	// xmlhttp.send();
-            
-
 		alert("You have updated! ");
         ok=true;
 		} else {
@@ -115,21 +97,14 @@ function signup_cachchamsoc(){
      return ok;
                    
    	}
-    //    setcookie("$id", value, time()+20);
-       function notices_dacdiem(value){
+    
+       function notices_Characteristics(value){
         
         
 	  var result = confirm("Are you sure?")
       ok=true;
 		if(result)  {
-		// 	var xmlhttp = new XMLHttpRequest();
-	 	// 	xmlhttp.onreadystatechange = function() {
-	   	// 	if (this.readyState == 4 && this.status == 200) {
-		//  	document.getElementById("notices").innerHTML = this.responseText;
-	   	// 		}
-	 	// 	};
-	 	// xmlhttp.open("GET",`input_update_dacdiem.php?id=`,true);
-	 	// xmlhttp.send();
+		
 		alert("You have updated! ");
         ok=true;
         
@@ -171,20 +146,20 @@ function signup_cachchamsoc(){
     else{
         header("location:loginadmin.html");
     }
-    $mact = $_GET['Mact'];
+    $Code = $_GET['Code'];
 
     include "connect.php";
 
     //require 'connect.php';
     
-    $data = $con->query("SELECT Mact, Tencay, Dacdiem, Loaicay, Cachchamsoc, Hinh, Motacay FROM db_trees WHERE Mact = '$mact'");
+    $data = $con->query("SELECT Code FROM db_trees WHERE Code = '$Code'");
     $data = $data->fetch_assoc();
     
     echo "<div id='button'>
     <center>
-    <th><button><a href='update_dacdiem.php?Mact=".$data['Mact']."' style='width:300px;height:100px;font-size: 30px;text-decoration: none;'>Sửa đặc điểm</a></th>
-    <th><button><a href='update_cachchamsoc.php?Mact=".$data['Mact']."' style='width:300px;height:100px;font-size: 30px;text-decoration: none;'>Sửa cách chăm sóc</a></th>
-    <th><button><a href='update_mota.php?Mact=".$data['Mact']."' style='width:300px;height:100px;font-size: 30px;text-decoration: none;'>Sửa mô tả</a></th>
+    <th><button><a href='update_Characteristics.php?Code=".$data['Code']."' style='width:300px;height:100px;font-size: 30px;text-decoration: none;'>Sửa đặc điểm</a></th>
+    <th><button><a href='update_HowToCare.php?Code=".$data['Code']."' style='width:300px;height:100px;font-size: 30px;text-decoration: none;'>Sửa cách chăm sóc</a></th>
+    <th><button><a href='update_Describe.php?Code=".$data['Code']."' style='width:300px;height:100px;font-size: 30px;text-decoration: none;'>Sửa mô tả</a></th>
     </center>
     </div>";
     

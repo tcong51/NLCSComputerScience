@@ -56,28 +56,28 @@
 		<div class="header-main">
                       <h1>DANH SÁCH CÂY 
 					  <?php
-						$types =$_GET['id'];
+						$Types =$_GET['id'];
 						include "connect.php";  
-						$sql = $con->query("SELECT DISTINCT * FROM db_trees WHERE Types='$types'");
+						$sql = $con->query("SELECT DISTINCT * FROM db_trees WHERE Types='$Types'");
 						$sql = $sql->fetch_assoc();
-						$str = mb_strtoupper($sql['Loaicay'],'UTF-8');
+						$str = mb_strtoupper($sql['Species'],'UTF-8');
 						echo $str;
 						$con->close();?></h1>
 </div>
 <!--header end here-->
 
 <?php
-$types =$_GET['id'];
+$Types =$_GET['id'];
 include "connect.php";  
 echo "<form action= method=GET>";
 echo '<table width="1000" cellspacing="0" cellpadding="1" border="2" align="center">' ;
 echo "<tr id='tr'><th>Tên Cây </th><th colspan=3>Thao Tác</th></tr>";
-foreach ($sql = $con->query("SELECT Mact,Tencay FROM db_trees WHERE Types='$types' ") as $value){
+foreach ($sql = $con->query("SELECT Code,TreeName FROM db_trees WHERE Types='$Types' ") as $value){
     echo "<tr id='tr'>
-    <td > ".$value['Tencay']."</td>
-    <td><h3><a href =detail_trees_admin.php?id=".$value['Mact'].">Xem chi tiết</a></h3></td>
-	<td><h3><a href='#' onclick='notices(".$value['Mact'].")' >Xóa</a></h3></td>	
-	<td><h3><a href=update_trees.php?Mact=".$value['Mact']." >Sửa</a></td>
+    <td > ".$value['TreeName']."</td>
+    <td><h3><a href =detail_trees_admin.php?id=".$value['Code'].">Xem chi tiết</a></h3></td>
+	<td><h3><a href='#' onclick='notices(".$value['Code'].")' >Xóa</a></h3></td>	
+	<td><h3><a href=update_trees.php?Code=".$value['Code']." >Sửa</a></td>
 	</tr>"; 
     }
   echo "</table>";
