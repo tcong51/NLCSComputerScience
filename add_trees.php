@@ -66,7 +66,7 @@
 				<th style="width: 500px;height:50px" align="left"></th>
 				<td> Hình ảnh </td>
 				<td></td>
-				<td><input type="file" name="Hinh" style="width: 700px;"><br>
+				<td><input type="file" name="Avatar" style="width: 700px;"><br>
             </td></tr>
             <tr>
 				<th style="width: 500px;height:50px" align="left"><td > Mô tả cây</td> </th>
