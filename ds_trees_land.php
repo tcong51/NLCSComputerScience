@@ -184,9 +184,9 @@
         <h2><center>DANH SÁCH CÂY <?php
 						$Types =$_GET['id'];
 						include "connect.php";  
-						$sql = $con->query("SELECT DISTINCT * FROM species WHERE Code='$Types'");
+						$sql = $con->query("SELECT DISTINCT * FROM landtype WHERE Code='$Types'");
 						$sql = $sql->fetch_assoc();
-						$str = mb_strtoupper($sql['Species'],'UTF-8');
+						$str = mb_strtoupper($sql['LandName'],'UTF-8');
 						echo $str;
 						$con->close();?></center></h2>
     </div>
@@ -198,7 +198,7 @@ include "connect.php";
 
 echo "<table >" ;
 
-foreach ($sql = $con->query("SELECT DISTINCT * FROM db_trees WHERE Species='$Types' ") as $value){
+foreach ($sql = $con->query("SELECT DISTINCT * FROM db_trees WHERE LandType='$Types' ") as $value){
     echo "<tr id='tr'>
     
     <td id='link' ><img src='".$value['Avatar']."'></td>

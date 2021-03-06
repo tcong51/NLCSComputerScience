@@ -117,9 +117,9 @@ function signup(){
                 <?php
                     include "connect.php";
                     echo "<form action= method=GET>";
-                   foreach($sql = $con->query("SELECT DISTINCT Species,Types FROM db_trees") as $value){
+                   foreach($sql = $con->query("SELECT DISTINCT * FROM species") as $value){
                     
-                    echo "<a href =ds_trees_homepage.php?id=".$value['Types'].">".$value['Species']."</a>";
+                    echo "<a href =ds_trees_homepage.php?id=".$value['Code'].">".$value['Species']."</a>";
                     
                    }
                    echo "</form>";
@@ -128,7 +128,20 @@ function signup(){
             </div>
 
             <div class="dropdown">
-            <button class="dropbtn">Khác</button>
+            <button class="dropbtn">Đất Trồng</button>
+            <div class="dropdown-content">
+
+                    <?php
+                        include "connect.php";
+                        echo "<form action= method=GET>";
+                    foreach($sql = $con->query("SELECT DISTINCT * FROM landtype") as $value){
+                        
+                        echo "<a href =ds_trees_land.php?id=".$value['Code'].">".$value['LandName']."</a>";
+                        
+                    }
+                    echo "</form>";
+                    ?>
+</div>
             </div>
             
             </ul>
@@ -222,5 +235,27 @@ function signup(){
     </div>
     <div id="footer">
     </div>
+<!--Chat bot -->
+<script>!(function () {
+  let e = document.createElement("script"),
+    t = document.head || document.getElementsByTagName("head")[0];
+  (e.src =
+    "https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js"),
+    (e.async = !0),
+    (e.onload = () => {
+      window.WebChat.default(
+        {
+          customData: { language: "en" },
+          // socketUrl: "https://bf-botfront.development.agents.botfront.cloud",
+          // add other props here
+          socketUrl: "http://localhost:5005",
+        },
+        null
+      );
+    }),
+    t.insertBefore(e, t.firstChild);
+})();
+</script>
+<!--         -->
 </body>
 </html>
