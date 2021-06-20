@@ -136,7 +136,7 @@
               
             <button class="dropbtn">Danh Mục</button>
             <div class="dropdown-content">
-
+<!-- 
                 <?php
                     include "connect.php";
                     echo "<form action= method=GET>";
@@ -146,7 +146,7 @@
                     
                    }
                    echo "</form>";
-                ?>
+                ?> -->
                 </div>
             </div>
 
@@ -182,6 +182,7 @@
 <!-- -->
     <div id="ten-content">
         <h2><center>DANH SÁCH CÂY <?php
+        //In SPECIES
 						$Types =$_GET['id'];
 						include "connect.php";  
 						$sql = $con->query("SELECT DISTINCT * FROM species WHERE Code='$Types'");

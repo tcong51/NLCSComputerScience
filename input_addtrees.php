@@ -37,24 +37,45 @@
 else{
     header("location:loginadmin.html");
 }
-
-
      //Lấy dữ liệu từ form về
      $TreeName = $_POST['TreeName'];
+
      $Characteristics = $_POST['Characteristics'];
-     $Species=$_POST['Species'];
+ 
      $HowToCare = $_POST['HowToCare'];
+ 
      $hinhanh="./img/".$_FILES['Avatar']['name'];
+
      move_uploaded_file($_FILES['Avatar']['tmp_name'],$hinhanh);
+
      $Describe = $_POST['Describe'];
+
+     $NumberAccess = 0;
+
+     $Area = $_POST['Area'];
+
+     $Benefit = $_POST['Benefit'];
+
+     $Climate = $_POST['Climate'];
+
+     $Growthtime = $_POST['Growthtime'];
+ 
+     $Humidity = $_POST['Humidity'];
+
+     $LandType = $_POST['LandType'];
+
+     $Light = $_POST['Light'];
+
+ 
+     $Species=$_POST['Species'];
+
      //Thao tác với CSDL
      include "connect.php";
-     $sql = "INSERT INTO db_trees(TreeName, Characteristics, Species, HowToCare, Avatar, Describe)
-     VALUES('$TreeName','$Characteristics', '$Species', '$HowToCare', '$hinhanh', '$Describe')";
-     $con->query($sql);
+    $sql = "INSERT INTO `db_trees` (`Code`, `TreeName`, `Characteristics`, `HowToCare`, `Avatar`, `Describe`, `NumberAccess`, `Area`, `Benefit`, `Climate`, `Growthtime`, `Humidity`, `LandType`, `Light`, `Species`) VALUES (NULL, '$TreeName', '$Characteristics', '$HowToCare', '$hinhanh', '$Describe', '$NumberAccess', '$Area', '$Benefit', '$Climate', '$Growthtime', '$Humidity', '$LandType', '$Light', '$Species')";
+    $con->query($sql);
+    //  "INSERT INTO `db_trees` (`Code`, `TreeName`, `Characteristics`, `HowToCare`, `Avatar`, `Describe`, `NumberAccess`, `Area`, `Benefit`, `Climate`, `Growthtime`, `Humidity`, `LandType`, `Light`, `Species`) VALUES ('', '', '', '', '', '', '', '', '', '', '', '', '', '', '')
      $sql = "SELECT * FROM db_trees";
      $result = $con->query($sql);
-    
     $con->close();
 ?>
     <h2><button  onclick="window.location.href='ds_trees.php'" style="height:50px;width:200px">Danh sách cây </button>

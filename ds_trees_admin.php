@@ -56,9 +56,9 @@
 		<div class="header-main">
                       <h1>DANH SÁCH CÂY 
 					  <?php
-						$Types =$_GET['id'];
+						$Species =$_GET['id'];
 						include "connect.php";  
-						$sql = $con->query("SELECT DISTINCT * FROM db_trees WHERE Types='$Types'");
+						$sql = $con->query("SELECT DISTINCT * FROM species WHERE Code ='$Species'");
 						$sql = $sql->fetch_assoc();
 						$str = mb_strtoupper($sql['Species'],'UTF-8');
 						echo $str;
@@ -67,12 +67,12 @@
 <!--header end here-->
 
 <?php
-$Types =$_GET['id'];
+$Species =$_GET['id'];
 include "connect.php";  
 echo "<form action= method=GET>";
 echo '<table width="1000" cellspacing="0" cellpadding="1" border="2" align="center">' ;
 echo "<tr id='tr'><th>Tên Cây </th><th colspan=3>Thao Tác</th></tr>";
-foreach ($sql = $con->query("SELECT Code,TreeName FROM db_trees WHERE Types='$Types' ") as $value){
+foreach ($sql = $con->query("SELECT * FROM db_trees WHERE Species='$Species' ") as $value){
     echo "<tr id='tr'>
     <td > ".$value['TreeName']."</td>
     <td><h3><a href =detail_trees_admin.php?id=".$value['Code'].">Xem chi tiết</a></h3></td>

@@ -120,6 +120,10 @@
 
 }
 </style>
+
+
+
+
 <body>
     <div id="wrapper">
         <div id="header"></div>
@@ -176,6 +180,8 @@
 </div>
 <!-- -->
 	<div id="content">
+  
+ 
 	<?php 
 	include "connect.php";
 	$a[]="";
@@ -259,6 +265,9 @@ if ($key !== "") {
 
 }
 echo " Khoảng $dem kết quả tìm kiếm cho với từ khóa '$search' :";
+
+
+
 	echo "</br>";
 	echo "</br>";
 	echo "</br>";
@@ -267,8 +276,10 @@ echo $hint === "" ? "Không tìm thấy" : $hint;
 $con->close();
 
 ?>
+
 </div>  
 </body>
+
 <div id="footer">
     </div>
 </html>

@@ -35,7 +35,6 @@ else{
     $Code = $_GET['Code'];
     $Characteristics = $_GET['Characteristics'];
     include "connect.php";
-    $con->set_charset('utf8');
     $sql = "UPDATE db_trees SET Characteristics ='$Characteristics' WHERE Code = '$Code'";
     $data = $con->query("SELECT Code FROM db_trees WHERE Code = '$Code'");
     $data = $data->fetch_assoc();
